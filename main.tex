@@ -1,0 +1,101 @@
+%%%%% find . -type f -not -name '*.tex'  -newer main.tex -delete
+%%%%% pandoc main.tex -o output/main.docx
+%%%%% pdflatex -output-directory=output main.tex
+
+%%%%%%%%%%%%%%%%% DOCUMENT TYPE DEFINITION
+
+\documentclass[openright, a4paper, twoside]{report}
+
+%%%%%%%%%%%%%%%%% END OF DOCUMENT TYPE DEFINITION
+
+
+\input{configs.tex}
+%%%%%%%%%%%%%%%%% PARAGRAPHS CONFIGURATION
+
+\setlength{\parindent}{1.3cm}
+\setlength{\parskip}{0.2cm}
+
+%%%%%%%%%%%%%%%%% END OF PARAGRAPHS CONFIGURATION
+
+
+%%%%%%%%%%%%%%%%% PREAMBLE
+
+
+\author{Anup Adhikari}
+\date{2019}
+
+\title{Protein Drug Interaction from their sequence}
+\newcommand{\mysubtitle}{Using the SMILES and SEQUENCE information}
+\newcommand{\mygrade}{Electrical Engineering}
+\newcommand{\myuniversity}{Tribhuwan University}
+\newcommand{\myschool}{Institute of Engineering}
+\newcommand{\mydepartment}{Department of Electronics and Computer Engineering}
+\newcommand{\myadvisorA}{Dr. Surendra Shrestha}
+%\newcommand{\myadvisorB}{Department Bertan of Electrical Engineering}
+%\newcommand{\myadvisorC}{Department Bertan of Electrical Engineering}
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+%%%%%%%%%%%%%%%%% END OF PREAMBLE
+
+
+%%%%%%%%%%%%%%%%% MAIN DOCUMENT
+
+\begin{document}
+
+\frenchspacing
+
+% Frontmatter
+
+%\input{frontmatter/1-coverpage.tex}
+\input{frontmatter/2-titlepage.tex}
+\cleardoublepage
+\setcounter{page}{1}
+\linespread{2}
+\input{frontmatter/3-dedication.tex}
+\input{frontmatter/4-abstract.tex}
+\input{frontmatter/5-acknowledges.tex}
+
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+% \printnomenclature
+
+% \newcommand{\listequationsname}{List of Equations}
+% \newlistof{myequations}{equ}{\listequationsname}
+% \newcommand{\myequations}[1]{%
+% \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
+% \setlength{\cftmyequationsnumwidth}{2.5em}% Width of equation number in List of Equations
+% \listofmyequations
+% Mainmatter
+
+
+
+
+\input{mainmatter/1-Introduction/introduction.tex}
+\input{mainmatter/2-Development/development.tex}
+\input{mainmatter/3-Methodology/methodology.tex}
+\input{mainmatter/4-Results/results.tex}
+\input{mainmatter/5-Conclusion/conclusion.tex}
+
+% Backmatter
+
+\input{backmatter/appendix/appendix.tex}
+\input{backmatter/6-glossary.tex}
+
+% Bibliography
+\bibliographystyle{unsrt}
+\bibliography{bibliography/sample}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+
+
+\end{document}
+
+%%%%%%%%%%%%%%%%% END OF MAIN DOCUMENT

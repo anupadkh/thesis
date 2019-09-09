@@ -1,0 +1,85 @@
+%%%%%%%%%%%%%%%%% PACKAGES
+
+\usepackage[english]{babel}  % Last language is the documents standard one.
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{hyperref}
+\hypersetup{colorlinks=false}
+\usepackage{lscape}
+\usepackage{amsmath} % Extra commands for math
+\usepackage{amssymb} % Math symbols
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{color}
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage[acronym]{glossaries}
+\makeglossaries
+\input{bibliography/glossary.tex}
+% \usepackage [ Bjornstrup ]{ fncychap }
+% \usepackage{nomencl} % Nomenclature
+% \makenomenclature
+
+\usepackage{booktabs}
+\usepackage{indentfirst} % Package to indent the first paragraph
+\usepackage{lipsum} % Package for dummy text
+
+\usepackage{afterpage}
+
+\usepackage{mathptmx}
+\usepackage{anyfontsize}
+\usepackage{t1enc}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+
+%%%%%%%%%%%%%%%%% END OF PACKAGES
+
+
+
+%%%%%%%%%%%%%%%%% PATHS
+
+\graphicspath{{./frontmatter/images/}{./mainmatter/1-Introduction/images/}{./mainmatter/2-Development/images/}{./mainmatter/3-Methodoly/images/}{./mainmatter/4-Results/images/}{./mainmatter/5-Conclusion/images/}{./backmatter/appendix/images/}}
+
+%%%%%%%%%%%%%%%%% END OF PATHS
+
+
+
+
+%%%%%%%%%%%%%%%%% HEADINGS CONFIGURATION
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[LE,RO]{\textsl{\rightmark}}
+\fancyhead[LO,RE]{\textsl{\leftmark}}
+
+
+\renewcommand{\chaptermark}[1]{%
+\markboth{\chaptername
+\ \thechapter.\ #1}{}}
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+% Delete headings of blank pages
+
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+\hbox{}
+\vspace*{\fill}
+%\begin{center}
+%This page intentionally contains only this sentence.
+%\end{center}
+\vspace{\fill}
+\thispagestyle{empty}
+\newpage
+\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+%%%%%%%%%%%%%%%%% END OF HEADINGS CONFIGURATION

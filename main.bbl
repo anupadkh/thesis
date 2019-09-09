@@ -1,0 +1,36 @@
+\begin{thebibliography}{1}
+
+\bibitem{Kanehisa2000}
+M.~Kanehisa.
+\newblock {KEGG: Kyoto Encyclopedia of Genes and Genomes}.
+\newblock {\em Nucleic Acids Research}, 28(1):27--30, jan 2000.
+
+\bibitem{Tang2013}
+Jing Tang, Agnieszka Szwajda, Sushil Shakyawar, Tao Xu, Petteri Hintsanen,
+  Krister Wennerberg, and Tero Aittokallio.
+\newblock {Making Sense of Large-Scale Kinase Inhibitor Bioactivity Data Sets:
+  A Comparative and Integrative Analysis}.
+\newblock {\em Journal of Chemical Information and Modeling}, 54(3):735--743,
+  mar 2014.
+
+\bibitem{Gaulton2017}
+Anna Gaulton, Anne Hersey, Micha{\l} Nowotka, A.~Patr{\'{i}}cia Bento, Jon
+  Chambers, David Mendez, Prudence Mutowo, Francis Atkinson, Louisa~J. Bellis,
+  Elena Cibri{\'{a}}n-Uhalte, Mark Davies, Nathan Dedman, Anneli Karlsson,
+  Mar{\'{i}}a~Paula Magari{\~{n}}os, John~P. Overington, George Papadatos, Ines
+  Smit, and Andrew~R. Leach.
+\newblock {The ChEMBL database in 2017}.
+\newblock {\em Nucleic Acids Research}, 45(D1):D945--D954, jan 2017.
+
+\bibitem{UniProtConsortium2018}
+The {UniProt Consortium}.
+\newblock {UniProt: the universal protein knowledgebase}.
+\newblock {\em Nucleic Acids Research}, 46(5):2699--2699, mar 2018.
+
+\bibitem{Schaffer2001}
+A.~A. Schaffer.
+\newblock {Improving the accuracy of PSI-BLAST protein database searches with
+  composition-based statistics and other refinements}.
+\newblock {\em Nucleic Acids Research}, 29(14):2994--3005, jul 2001.
+
+\end{thebibliography}

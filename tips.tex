@@ -1,0 +1,114 @@
+% This file doesn't compile!!! Its only purpose is to help the person who is writing the document.
+
+% Figure
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=0.3\linewidth]{introduction/fig/Felix_the_cat.pdf}
+\caption{Felix the Cat}
+\label{fig:felix}
+\end{figure}
+
+
+% Subfigure
+
+\begin{figure}[tb]
+	\centering
+	\subfigure[A horrible one.]{
+		\label{fig:fig2sub1}
+        \includegraphics[width=0.5\linewidth]{introduction/fig/figure1.jpg}}
+	\subfigure[A proper one.]{
+		\label{fig:fig2sub2}
+		\includegraphics[width=0.6\linewidth]{introduction/fig/figure2.pdf}}
+	\caption{A figure with two subfigures.}
+	\label{fig:fig2}
+\end{figure}
+
+
+% Landspace figure
+
+\begin{landscape}
+	\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\linewidth]{introduction/fig/Felix_the_cat.pdf}
+\caption{Here's a large drawing of Felix the Cat that wouldn't fit in a portrait page}
+\label{fig:felix2}
+\end{figure}
+\end{landscape}
+
+
+% Footnote
+
+Write the text and put a footnote this way \footnote{Note explanation}
+
+% Citation
+
+Use the function \cite{gowar1989power}, where \emph{gowar1989power} is the reference inserted in the sample.bib file.
+
+% Equation
+
+Use the website : https://www.codecogs.com/latex/eqneditor.php
+
+\begin{equation}
+v(x)=\frac{1}{2}\sin(2 \omega t + \phi) e^{-j s t}
+\label{eq:cacona}
+\end{equation}
+
+\begin{samepage}
+Sometimes, the symbols in an equation are defined as follows\footnote{Some authors like to define their symbols this way.}:
+\begin{equation}
+	V(t)=A \sin(\omega t+\theta_0)
+\end{equation}
+\begin{tabular}{lll}
+	where & $V$ & is a voltage waveform,\\
+	& $A$ & is the amplitude of the voltage,\\
+	& $\omega$ & is the angular frequency,\\
+	& $t$ & is the time.
+\end{tabular}
+\end{samepage}
+
+% Tables
+
+Use the website : https://www.tablesgenerator.com/
+
+\begin{table}[tb]
+	\centering
+	\begin{tabular}{lll}
+		Parameter & Value & Units\\
+		\hline
+		$P$ & 1 & kW \\
+		$Q$ & 0 & kVAr\\
+	    \hline
+	\end{tabular}
+	\caption{Characteristic parameters of the system}
+	\label{tab:tab1}
+\end{table}
+
+
+% Algorithms and code
+
+Insert the package \usepackage{listings} and search for the configuration of the language you want to use. For example : 
+
+\usepackage{listings} % To use source code
+
+\begin{lstlisting}[caption=Source code for {\it hello.m},label=lst:code1,breaklines=true,basewidth=4pt,prebreak=**,postbreak=**,frame=single]
+for i:=maxint to 0 do
+begin
+{ do nothing }
+end;
+Write('Case insensitive ');
+Write('Pascal keywords.');
+\end{lstlisting}
+   
+
+% Titles page
+
+Doctorate Thesis : 
+
+https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_5):_Customising_Your_Title_Page_and_Abstract
+
+Rapport Français de Stage
+
+https://www.overleaf.com/latex/templates/graduation-project-cover-page/qtmbhjbwjqcd
+
+

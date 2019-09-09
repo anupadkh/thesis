@@ -1,0 +1,41 @@
+\chapter{Introduction}
+
+
+\section{Background}
+Finding the interaction of drugs and proteins based simply on primary structure information of drugs and proteins is one of the many challenges faced in drug-synthesis process.
+
+With the advent of new machine learning techniques and along with the rise of deep-learning techniques, we are closer to create a good prediction of analogy.
+However, the chemical properties of drugs and the targets complicate the situation as they react differently with slight change in protein sequence. Moreover, the complexes tend to behave similarly even when the protein sequences are distantly related, one of the results of tertiary structures that the proteins are form of.
+
+The deep learning methods are quite good at predicting the molecular behaviour of the drug. However they present no good means when predicting the behaviour of proteins. The major fallback being that the simple encoding techniques don’t incorporate the proteins behaviour related to hydrophobicity, acidity, secondary and tertiary structures information.
+
+The Stacked Generalized Prediction on the other hand works by basing the prediction guesses based on a number of prediction functions. Here, we use the sequence information of proteins to calculate the predictions on different feature transformation techniques and generalize those predictions using a stack of dense layers.
+
+The Dataset we used scores the interaction of proteins and drugs based on Kb scores. We use 2111 drugs from CHEMBL and 229 proteins from UniProt to get an interaction of 118254, by removing the unrecognized interactions. The interactions are based on Kb score, collected from KEGG(​Kyoto Encyclopedia of Genes and Genomes)​ dataset \cite{Kanehisa2000}.
+
+\iffalse
+
+For citations, use the function \textbackslash cite. \cite{gowar1989power} The references file is the sample.bib one. Google Scholar provides almost all the references in LaTeX form.
+
+To insert a footnote, use the following command. \footnote{This is a footnote.} When necessary to use a nomenclature, define it on the same page for a better organization. Dont create NSN (Non-sense nomenclatures).
+
+For figures, tables, equations and further information, open the file "tips.tex". If what you need is not found there, Google it.
+
+% Add nomenclature at each new used nomenclature
+\fi
+
+\section{Statement of Problem}
+
+\lipsum[2-6]
+
+\section{Objectives}
+
+\lipsum[2]
+
+\section{Scope of Work}
+
+\lipsum[2-3]
+
+\section{Organization of Report}
+
+\lipsum[2-4]
