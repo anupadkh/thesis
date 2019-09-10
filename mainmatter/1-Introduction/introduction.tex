@@ -10,8 +10,11 @@ However, the chemical properties of drugs and the targets complicate the situati
 The deep learning methods are quite good at predicting the molecular behaviour of the drug. However they present no good means when predicting the behaviour of proteins. The major fallback being that the simple encoding techniques don’t incorporate the proteins behaviour related to hydrophobicity, acidity, secondary and tertiary structures information.
 
 The Stacked Generalized Prediction on the other hand works by basing the prediction guesses based on a number of prediction functions. Here, we use the sequence information of proteins to calculate the predictions on different feature transformation techniques and generalize those predictions using a stack of dense layers.
-
-The Dataset we used scores the interaction of proteins and drugs based on Kb scores. We use 2111 drugs from CHEMBL and 229 proteins from UniProt to get an interaction of 118254, by removing the unrecognized interactions. The interactions are based on Kb score, collected from KEGG(​Kyoto Encyclopedia of Genes and Genomes)​ dataset \cite{Kanehisa2000}.
+\iffalse
+(52498, 254)
+180244
+\fi
+The Dataset we used scores the interaction of proteins and drugs based on Kb scores. We use 52498 drugs from CHEMBL and 254 proteins from UniProt to get an interaction of 180244, by removing the unrecognized interactions. The interactions are based on KIBA score, collected from KEGG(​Kyoto Encyclopedia of Genes and Genomes)​ dataset \cite{Kanehisa2000}.
 
 \iffalse
 
@@ -26,16 +29,15 @@ For figures, tables, equations and further information, open the file "tips.tex"
 
 \section{Statement of Problem}
 
-\lipsum[2-6]
+
 
 \section{Objectives}
 
-\lipsum[2]
+
 
 \section{Scope of Work}
 
-\lipsum[2-3]
+
 
 \section{Organization of Report}
 
-\lipsum[2-4]

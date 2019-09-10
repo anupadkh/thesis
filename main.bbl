@@ -33,4 +33,29 @@ A.~A. Schaffer.
   composition-based statistics and other refinements}.
 \newblock {\em Nucleic Acids Research}, 29(14):2994--3005, jul 2001.
 
+\bibitem{Xu2015}
+Ruifeng Xu, Jiyun Zhou, Hongpeng Wang, Yulan He, Xiaolong Wang, and Bin Liu.
+\newblock {Identifying DNA-binding proteins by combining support vector machine
+  and PSSM distance transformation}.
+\newblock {\em BMC Systems Biology}, 9(1):1--12, 2015.
+
+\bibitem{Wong2018}
+Andrew~K.C. Wong, Ho~Yin Sze-To, and Gary~L. Johanning.
+\newblock {Pattern to Knowledge: Deep Knowledge-Directed Machine Learning for
+  Residue-Residue Interaction Prediction}.
+\newblock {\em Scientific Reports}, 8(1):1--14, 2018.
+
+\bibitem{Jeong2011}
+Jong~Cheol Jeong, Xiaotong Lin, and Xue~Wen Chen.
+\newblock {On position-specific scoring matrix for protein function
+  prediction}.
+\newblock {\em IEEE/ACM Transactions on Computational Biology and
+  Bioinformatics}, 8(2):308--315, 2011.
+
+\bibitem{Mishra2019}
+Avdesh Mishra, Pujan Pokhrel, and Md~Tamjidul Hoque.
+\newblock {StackDPPred: a stacking based prediction of DNA-binding protein from
+  sequence}.
+\newblock {\em Bioinformatics}, 35(3):433--441, feb 2019.
+
 \end{thebibliography}

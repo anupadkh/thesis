@@ -1,10 +1,14 @@
+% find . -type f -name 'main.*' -not -name '*.tex' -not -name '*.pdf' -delete
 %%%%% find . -type f -not -name '*.tex'  -newer main.tex -delete
 %%%%% pandoc main.tex -o output/main.docx
 %%%%% pdflatex -output-directory=output main.tex
+%%% not working
+% find . -type -not -name '[{tex}|{jpg}|{png}|]'
+% find . -type f -not \(-name '*gz' -or -name '*tex' -or -name '*jpg' -or -name '*png' -or -name '*bib' \) -delete
 
 %%%%%%%%%%%%%%%%% DOCUMENT TYPE DEFINITION
 
-\documentclass[openright, a4paper, twoside]{report}
+\documentclass[openright, a4paper, oneside, openany]{report}
 
 %%%%%%%%%%%%%%%%% END OF DOCUMENT TYPE DEFINITION
 
@@ -28,12 +32,14 @@
 \newcommand{\mysubtitle}{Using the SMILES and SEQUENCE information}
 \newcommand{\mygrade}{Electrical Engineering}
 \newcommand{\myuniversity}{Tribhuwan University}
-\newcommand{\myschool}{Institute of Engineering}
+\newcommand{\myinstitute}{Institute of Engineering}
 \newcommand{\mydepartment}{Department of Electronics and Computer Engineering}
+\newcommand{\mycampus}{Pulchowk Campus}
 \newcommand{\myadvisorA}{Dr. Surendra Shrestha}
 %\newcommand{\myadvisorB}{Department Bertan of Electrical Engineering}
 %\newcommand{\myadvisorC}{Department Bertan of Electrical Engineering}
 
+\newcommand{\roll}{073 MSCS 652}
 \makeatletter
 \let\thetitle\@title
 \let\theauthor\@author
@@ -87,7 +93,7 @@
 % Backmatter
 
 \input{backmatter/appendix/appendix.tex}
-\input{backmatter/6-glossary.tex}
+\printglossary[type=\acronymtype]
 
 % Bibliography
 \bibliographystyle{unsrt}
