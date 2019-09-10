@@ -18,20 +18,21 @@
 \contentsline {subsubsection}{CHEMBL}{12}{section*.8}
 \contentsline {subsection}{\numberline {3.2.3}PSI-BLAST}{12}{subsection.3.2.3}
 \contentsline {subsubsection}{PSSM-DT}{13}{section*.9}
-\contentsline {subsection}{\numberline {3.2.4}Residue Residue feature}{13}{subsection.3.2.4}
-\contentsline {subsubsection}{Residue Probing Transformation(RPT) feature}{13}{section*.10}
+\contentsline {subsubsection}{Evolutionary Distance Transformation Matrix}{13}{section*.10}
+\contentsline {subsection}{\numberline {3.2.4}Residue feature}{13}{subsection.3.2.4}
+\contentsline {subsubsection}{Residue Probing Transformation(RPT) feature}{13}{section*.11}
 \contentsline {section}{\numberline {3.3}Deep Learning Model}{14}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Components description used from Tensorflow (Keras)}{14}{subsection.3.3.1}
-\contentsline {subsubsection}{Embedding Layer}{14}{section*.11}
-\contentsline {subsubsection}{Dense Layer}{15}{section*.12}
-\contentsline {subsubsection}{Dropout Layer}{15}{section*.13}
-\contentsline {subsubsection}{Global Max Pooling Layer}{15}{section*.14}
-\contentsline {subsubsection}{Concatenation Layer}{15}{section*.15}
-\contentsline {subsubsection}{Convolution Neural Network}{16}{section*.16}
-\contentsline {subsubsection}{LSTM}{16}{section*.17}
-\contentsline {chapter}{\numberline {4}Results}{17}{chapter.4}
-\contentsline {section}{\numberline {4.1}First Section}{17}{section.4.1}
+\contentsline {subsubsection}{Embedding Layer}{14}{section*.12}
+\contentsline {subsubsection}{Dense Layer}{14}{section*.13}
+\contentsline {subsubsection}{Dropout Layer}{15}{section*.14}
+\contentsline {subsubsection}{Global Max Pooling Layer}{15}{section*.15}
+\contentsline {subsubsection}{Concatenation Layer}{16}{section*.16}
+\contentsline {subsubsection}{Convolution Neural Network}{16}{section*.17}
+\contentsline {subsubsection}{LSTM}{16}{section*.18}
+\contentsline {chapter}{\numberline {4}Experiments and Results}{18}{chapter.4}
+\contentsline {section}{\numberline {4.1}Experiment}{18}{section.4.1}
 \contentsline {chapter}{\numberline {5}Conclusion}{19}{chapter.5}
 \contentsline {section}{\numberline {5.1}First Section}{19}{section.5.1}
 \contentsline {chapter}{\numberline {A}R2RSRV}{21}{appendix.A}
-\contentsline {chapter}{Bibliography}{23}{appendix*.18}
+\contentsline {chapter}{Bibliography}{23}{appendix*.19}

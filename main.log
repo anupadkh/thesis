@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.11)  10 SEP 2019 22:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.11)  11 SEP 2019 03:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -732,31 +732,24 @@ Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
 \f@ncyO@erf=\skip75
 \f@ncyO@olf=\skip76
 \f@ncyO@orf=\skip77
-)
-
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 57.
-
-
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 58.
-
-) (/anup_files/FILES/personal/Thesis/main.aux)
+)) (/anup_files/FILES/personal/Thesis/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 59.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/ucsencs.def
@@ -764,7 +757,7 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 \c@lstlisting=\count184
 \AtBeginShipoutBox=\box48
-Package hyperref Info: Link coloring OFF on input line 54.
+Package hyperref Info: Link coloring OFF on input line 59.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -772,9 +765,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count185
 )
-LaTeX Info: Redefining \ref on input line 54.
-LaTeX Info: Redefining \pageref on input line 54.
-LaTeX Info: Redefining \nameref on input line 54.
+LaTeX Info: Redefining \ref on input line 59.
+LaTeX Info: Redefining \pageref on input line 59.
+LaTeX Info: Redefining \nameref on input line 59.
  (/anup_files/FILES/personal/Thesis/main.out) (/anup_files/FILES/personal/Thesis/main.out)
 \@outlinefile=\write7
 \openout7 = `main.out'.
@@ -926,15 +919,15 @@ Chapter 2.
 
 ]
 Chapter 3.
-<mainmatter/3-Methodology/images/block.png, id=207, 723.70375pt x 221.82875pt>
+<mainmatter/3-Methodology/images/block.png, id=209, 723.70375pt x 221.82875pt>
 File: mainmatter/3-Methodology/images/block.png Graphic file (type png)
  <use mainmatter/3-Methodology/images/block.png>
 Package pdftex.def Info: mainmatter/3-Methodology/images/block.png used on input line 14.
 (pdftex.def)             Requested size: 426.79135pt x 130.82027pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 26.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 25.
 
-Overfull \hbox (0.10327pt too wide) in paragraph at lines 27--28
+Overfull \hbox (0.10327pt too wide) in paragraph at lines 26--27
 []\T1/ptm/m/n/10 It is a community-driven database which holds large-scale molec-u-lar datasets gen-er-ated by genome
  []
 
@@ -942,41 +935,41 @@ Overfull \hbox (0.10327pt too wide) in paragraph at lines 27--28
 
  </anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/block.png>] (/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/data/uni-34.def
 File: uni-34.def 2013/05/13 UCS: Unicode data U+2200..U+22FF
-) [12] [13] <mainmatter/3-Methodology/images/build_combined_categorical_tensor_contact_new.png, id=279, 1503.6175pt x 1428.33624pt>
+) [12] [13] <mainmatter/3-Methodology/images/build_combined_categorical_tensor_contact_new.png, id=280, 1503.6175pt x 1428.33624pt>
 File: mainmatter/3-Methodology/images/build_combined_categorical_tensor_contact_new.png Graphic file (type png)
  <use mainmatter/3-Methodology/images/build_combined_categorical_tensor_contact_new.png>
-Package pdftex.def Info: mainmatter/3-Methodology/images/build_combined_categorical_tensor_contact_new.png used on input line 142.
+Package pdftex.def Info: mainmatter/3-Methodology/images/build_combined_categorical_tensor_contact_new.png used on input line 144.
 (pdftex.def)             Requested size: 426.79135pt x 405.42368pt.
- <mainmatter/3-Methodology/images/dense.png, id=281, 256.5585pt x 181.8795pt>
+ <mainmatter/3-Methodology/images/dense.png, id=282, 256.5585pt x 181.8795pt>
 File: mainmatter/3-Methodology/images/dense.png Graphic file (type png)
  <use mainmatter/3-Methodology/images/dense.png>
-Package pdftex.def Info: mainmatter/3-Methodology/images/dense.png used on input line 155.
+Package pdftex.def Info: mainmatter/3-Methodology/images/dense.png used on input line 170.
 (pdftex.def)             Requested size: 213.39568pt x 151.28464pt.
- [14 </anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/build_combined_categorical_tensor_contact_new.png>] <mainmatter/3-Methodology/images/dropout.jpeg, id=289, 616.3025pt x 329.23pt>
+ <mainmatter/3-Methodology/images/dropout.jpeg, id=284, 616.3025pt x 329.23pt>
 File: mainmatter/3-Methodology/images/dropout.jpeg Graphic file (type jpg)
  <use mainmatter/3-Methodology/images/dropout.jpeg>
-Package pdftex.def Info: mainmatter/3-Methodology/images/dropout.jpeg used on input line 164.
+Package pdftex.def Info: mainmatter/3-Methodology/images/dropout.jpeg used on input line 179.
 (pdftex.def)             Requested size: 213.39568pt x 113.9964pt.
- <mainmatter/3-Methodology/images/pooling.png, id=290, 999.735pt x 292.09125pt>
+ [14] <mainmatter/3-Methodology/images/pooling.png, id=295, 999.735pt x 292.09125pt>
 File: mainmatter/3-Methodology/images/pooling.png Graphic file (type png)
  <use mainmatter/3-Methodology/images/pooling.png>
-Package pdftex.def Info: mainmatter/3-Methodology/images/pooling.png used on input line 174.
+Package pdftex.def Info: mainmatter/3-Methodology/images/pooling.png used on input line 189.
 (pdftex.def)             Requested size: 320.0935pt x 93.52013pt.
- <mainmatter/3-Methodology/images/cnn.jpg, id=295, 571.13374pt x 202.7575pt>
+ [15 </anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/build_combined_categorical_tensor_contact_new.png>] <mainmatter/3-Methodology/images/cnn.jpg, id=307, 571.13374pt x 202.7575pt>
 File: mainmatter/3-Methodology/images/cnn.jpg Graphic file (type jpg)
  <use mainmatter/3-Methodology/images/cnn.jpg>
-Package pdftex.def Info: mainmatter/3-Methodology/images/cnn.jpg used on input line 186.
+Package pdftex.def Info: mainmatter/3-Methodology/images/cnn.jpg used on input line 201.
 (pdftex.def)             Requested size: 213.39568pt x 75.75542pt.
- [15 </anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/dense.png> </anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/dropout.jpeg>] <mainmatter/3-Methodology/images/LSTMBlockDiagram.png, id=307, 803.0pt x 712.6625pt>
+ <mainmatter/3-Methodology/images/LSTMBlockDiagram.png, id=309, 803.0pt x 712.6625pt>
 File: mainmatter/3-Methodology/images/LSTMBlockDiagram.png Graphic file (type png)
  <use mainmatter/3-Methodology/images/LSTMBlockDiagram.png>
-Package pdftex.def Info: mainmatter/3-Methodology/images/LSTMBlockDiagram.png used on input line 196.
+Package pdftex.def Info: mainmatter/3-Methodology/images/LSTMBlockDiagram.png used on input line 211.
 (pdftex.def)             Requested size: 213.39568pt x 189.3875pt.
-) (/anup_files/FILES/personal/Thesis/mainmatter/4-Results/results.tex [16 </anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/pooling.png> </anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/cnn.jpg> </anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/LSTMBlockDiagram.png (PNG copy)>]
+) (/anup_files/FILES/personal/Thesis/mainmatter/4-Results/results.tex [16 </anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/dense.png> </anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/dropout.jpeg>] [17 </anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/pooling.png> </anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/cnn.jpg> </anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/LSTMBlockDiagram.png (PNG copy)>]
 Chapter 4.
-[17
+) (/anup_files/FILES/personal/Thesis/mainmatter/5-Conclusion/conclusion.tex [18
 
-]) (/anup_files/FILES/personal/Thesis/mainmatter/5-Conclusion/conclusion.tex [18]
+]
 Chapter 5.
 [19
 
@@ -994,20 +987,20 @@ No file main.acr.
 ] [22]) [23
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 105.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 105.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
  (/anup_files/FILES/personal/Thesis/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 105.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 105.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 110.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 110.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4E68EAFDB85FD06533570679FC386E36;1524.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 105.
+(rerunfilecheck)             Checksum: DFD9190EA54292BE07DE4FF552D35EA7;1529.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 110.
  ) 
 Here is how much of TeX's memory you used:
- 26705 strings out of 492995
- 481714 string characters out of 6132703
- 699775 words of memory out of 5000000
- 29555 multiletter control sequences out of 15000+600000
+ 26712 strings out of 492995
+ 481792 string characters out of 6132703
+ 699840 words of memory out of 5000000
+ 29560 multiletter control sequences out of 15000+600000
  64627 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,12n,56p,2020b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1022,10 +1015,10 @@ pdfTeX warning (dest): name{glo:pssm} has been referenced but does not exist, re
 pdfTeX warning (dest): name{glo:kegg} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /anup_files/FILES/personal/Thesis/main.pdf (24 pages, 625632 bytes).
+Output written on /anup_files/FILES/personal/Thesis/main.pdf (24 pages, 623585 bytes).
 PDF statistics:
- 401 PDF objects out of 1000 (max. 8388607)
- 350 compressed objects within 4 object streams
- 98 named destinations out of 1000 (max. 500000)
+ 405 PDF objects out of 1000 (max. 8388607)
+ 354 compressed objects within 4 object streams
+ 100 named destinations out of 1000 (max. 500000)
  253 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -14,6 +14,7 @@
 
 
 \input{configs.tex}
+\DeclareUnicodeCharacter{0080}{HERE-HERE-HERE}
 %%%%%%%%%%%%%%%%% PARAGRAPHS CONFIGURATION
 
 \setlength{\parindent}{1.3cm}
@@ -47,6 +48,10 @@
 \makeatother
 
 %%%%%%%%%%%%%%%%% END OF PREAMBLE
+
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+  #1\ignorespaces
+}
 
 
 %%%%%%%%%%%%%%%%% MAIN DOCUMENT

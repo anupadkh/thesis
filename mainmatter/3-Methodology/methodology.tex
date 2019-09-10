@@ -16,10 +16,9 @@ Statistical Analyses to DO:
 \label{fig:system}
 \end{figure}
 
-{The figure }~\ref{fig:system}
-{
+The figure ~\ref{fig:system}
 shows the various components used to form the prediction system. The idea is basic in that protein interaction depends on the structural and chemical properties. The structural components are fulfilled and
-}
+
 
 \section{Dataset}
 
@@ -106,7 +105,10 @@ Two forms of \acrshort{pssm} distance transformation techniques are used to tran
 
 Thus we have (380 Eqn:~\ref{eq:pssmddt}+20 Eqn:~\ref{eq:pssmsdt} = 400) x lg matrix which will be used as protein-specific vector in this work.
 
-\subsection{Residue Residue feature}
+\subsubsection{Evolutionary Distance Transformation Matrix}
+The mutational information of protein can be more informative than the sequence information itself. First, a new equation named as evolutionary difference formula(EDF) is proposed to represent mutation difference between adjacent residues. Secondly, the PSSM is converted into 20  20 matrix (ED-PSSM). 
+
+\subsection{Residue feature} 
 The Statistical Residue Vector Space \acrshort{srv} \cite{Wong2018} plays an important role in Residue Residue Interaction and thus creates a basis for structural stability of the protein sequence itself. Though related more to the tertiary structure of protein sequence itself, we regard it to create a correlated sequence information where two proteins are related distantly by sequence but highly related with functional characteristic of protein. Table ~\ref{table:r2r} shows the table used in this work. It is a 20 x 20 matrix whose rows and columns represent 20 standard amino acids.
 
 \subsubsection{Residue Probing Transformation(RPT) feature}
@@ -135,7 +137,7 @@ where,
 
 \section{Deep Learning Model}
 
-The Features thus formed are then subjected to deep learning model using keras library in python. We use the Embedding feature provided by keras as other features for both drug fingerprint and protein sequence. The implemented model is represented by Fig. ~\ref{fig:dlm}.
+The Features thus formed are then subjected to deep learning model using keras library in python. We use the Embedding feature provided by keras as other features for both drug fingerprint and protein sequence. The implemented model is represented by Fig. ~\ref{fig:dlm}. The input layers are described in Table ~\ref{table:inputs}.
 
 \begin{figure}[ht]
 \centering
@@ -143,6 +145,19 @@ The Features thus formed are then subjected to deep learning model using keras l
 \caption{Deep Learning Model}
 \label{fig:dlm}
 \end{figure}
+\begin{table}[ht]\centering
+  \begin{tabular}{|l|l|l|l|}
+    
+    \hline \label{table:inputs}
+    S.No. & Input Layer Name & Used Feature Vector & Type \\ \hline
+    1 & input\_1 & One Hot Encoding & Drug \\ \hline
+    2 & input\_2 & One Hot Encoding & Protein \\ \hline
+    3 & input\_3 & Evolutionary Distance Transformation& Protein \\ \hline
+    4 & input\_4 & PSSM-DT & Protein \\ \hline
+    5 & input\_5 & RDT & Protein \\   \hline 
+  \end{tabular} 
+  \caption{Inputs Used in the Deep Learning Network} 
+\end{table}
 
 \subsection{Components description used from Tensorflow (Keras)}
 \subsubsection{Embedding Layer}
