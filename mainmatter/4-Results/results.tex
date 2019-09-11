@@ -28,4 +28,26 @@ These are the structural components of protein especially related to alpha and b
 % We explore basically the following algorithms for analyses on protein-drug interactions:
 
 \subsubsection{Stacked Features, LSTM Network}
-Basically, we implement the ~\ref{fig:dlm} for our model design. It is implemented in Python using the TensorFlow framework consisting of keras. The training contained of 100 epochs and required full 4 complete days to complete the training in a high GPU processors.
+Basically, we implement the ~\ref{fig:dlm} for our model design. It is implemented in Python using the TensorFlow framework consisting of keras. The training contained of 100 epochs and required full 4 complete days to complete the training in a high GPU processors. The training and testing was done in a 5-fold cross-validation set prepared manually. To evaluate the performance of the model, we used concordance index(CI)\cite{Xu2015} as defined by eqn~\ref{eq:ci}:
+\begin{equation}
+    CI = \frac{1}{Z} \sum_{\delta_i > \delta_j} h(b_i - b_j)
+    \label{eq:ci}
+\end{equation}
+where $b_i$ is the prediction value for higher affinity $\delta_i$ and $b_j$ is the prediction value for smallery affinity $\delta_j$, $Z$ is the normalization constant and $h(m)$ is the unit step function:
+\begin{equation} h(x) = 
+    \begin{cases}
+        1,& \quad {if x>0} \\
+        0.5, & \quad{ if x=0 } \\
+        0, & \quad{if x<0} \\
+    \end{cases}
+\end{equation}
+
+\section{Results}
+The validation loss and the cindex scores were 16\% and 90\% respectively when we used our full model. 
+
+\iffalse
+The accuracy plots and cindex plots are shown in Figure ~\ref{fig:results}
+\begin{figure}
+    
+\end{figure}
+\fi
