@@ -87,7 +87,7 @@ The sequence related information of protein is referenced using UniProt Identifi
 The molecular fingerprints related to drugs are referenced usning CHEMBL Identifier and the drug sequence is called from CHEMBL database. \cite{Gaulton2017}
 
 \subsection{PSI-BLAST}
-It relates with multiple sequence alignments from a family of protein sequences\cite{Schaffer2001}. This helps us to create a \acrshort{pssm}~\ref{eq:pssm} matrix referred to as secondary protein structure. The improvement in drug-contact prediction can be thought for amino acid composition being tuned with the scoring system. For this study, the PSSM profile of every protein sequence is obtained by executing iteration of PSI-BLAST against \cite[KEGG]{Schaffer2001} protein. PSSM profile is a matrix of L*20 dimensions where, 20 referring to standard type of amino acids and L being the length of the protein. The larger positive scores represent conserved positions, which in turn implies critical functional residues that are required to perform various intermolecular interactions.\cite[PSSM]{Schaffer2001}
+It relates with multiple sequence alignments from a family of protein sequences\cite{Schaffer2001}. This helps us to create a \acrshort{pssm} - Equation (\ref{eq:pssm}) - matrix referred to as secondary protein structure. The improvement in drug-contact prediction can be thought for amino acid composition being tuned with the scoring system. For this study, the PSSM profile of every protein sequence is obtained by executing iteration of PSI-BLAST against \cite[KEGG]{Schaffer2001} protein. PSSM profile is a matrix of L*20 dimensions where, 20 referring to standard type of amino acids and L being the length of the protein. The larger positive scores represent conserved positions, which in turn implies critical functional residues that are required to perform various intermolecular interactions.\cite[PSSM]{Schaffer2001}
 
 \begin{equation}
   PSSM = \begin{bmatrix}
@@ -125,6 +125,7 @@ The mutational information of protein can be more informative than the sequence 
 where $\Omega$ is an integer that represents the dimension of the vector whose value is 400.. The non-co-occurance probability of two amino acids separated by distance \textit{d} can be computed as:
 \begin{equation}
   f(A_x,A_y) = \sum_{d=1}^{D} \frac{1}{L-d} \sum_{i=1}^{L-d} (P_{i,x} - P_{i+d,y})^2
+  \label{eq:edt}
 \end{equation}
 where $P_{i,x}$ and $P_{i+d,y}$ are the elements in the PSSM profile; $A_x$ and $A_y$ represent any of the the 20 different amino acids in the protein sequence. Finally we spread the $f(A_x,A_y)$ in equation ~\ref{eq:Pmat} as:
 $ \partial_1 = f(A_1,A_2) $, 
@@ -175,9 +176,9 @@ The Features thus formed are then subjected to deep learning model using keras l
     S.No. & Input Layer Name & Used Feature Vector & Type \\ \hline
     1 & input\_1 & One Hot Encoding & Drug \\ \hline
     2 & input\_2 & One Hot Encoding & Protein \\ \hline
-    3 & input\_3 & Evolutionary Distance Transformation& Protein \\ \hline
-    4 & input\_4 & PSSM-DT & Protein \\ \hline
-    5 & input\_5 & RDT & Protein \\   \hline 
+    3 & input\_3 & Evolutionary Distance Transformation Vector& Protein \\ \hline
+    4 & input\_4 & PSSM-DT Vector & Protein \\ \hline
+    5 & input\_5 & Residue Probing Transformation Vector & Protein \\   \hline 
   \end{tabular} 
   \caption{Inputs Used in the Deep Learning Network} 
 \end{table}

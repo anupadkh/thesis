@@ -3,6 +3,29 @@
 
 \section{Experiments}
 
-The simple technique of encoding the sequence information of drugs and proteins to identify if a drug will interact or not has a major pitfall in that while drugs encoding information can be used to make drug related predictions, the protein encodings live i
+\iffalse
+SVM-Regression
+Random-Forest Regression
+Deep Learning Network
 
+Neural Net Sequence Embeddings
+One-Hot Encodings
+Modfied n-grams skip-grams
+\fi
 
+The focus of the experiments are concentrated on the properties of protein as they have complex structures. The binding of protein and drug depend on various attributes of protein like acidity, hydrophobicity, binding pockets etc and the structure of drug. The attributes are quite closely related to primary and secondary structure of protein themselves. Therefore, our model aims to relate all these multiple components with matrix representation and confirming to the Fig.~\ref{fig:kiba_drug_protein} prediction.
+
+\subsection{Features Selection}
+\subsubsection{Primary Feature Selection}
+We explored the other embedding technique used in language theory. The modified N-Grams Skip-Grams (m-NGSG) was supposed to undertake the mutational agreements when the proteins and drug interaction was brought in question. However, it fared quite badly than the Neural Net Sequence Embeddings. Mostly the issue can be related to that if the algorithm misses the tight relationship among the amino-acid neighborhood, then the protein with different structure may seem to act similarly: a strong disagreement on principle that certain proteins with slight modification on the sequence have different functional and chemical properties. It could still be used for Poission-Hidden Markov Model for some other properties, but primary encodings can't be relied on m-NGSG. 
+
+Therefore we relied on Neural Net Sequence Embedding technique to form the primary representation. Both protein and drug were converted to Embedding vectors after creating their one-hot encoding.
+
+\subsubsection{Secondary Features Selection}
+These are the structural components of protein especially related to alpha and beta strands of Protein segments. All the protein Sequences are subjected to Equation~(\ref{eq:pssm}) from the one-hot encodings. The \acrshort{pssm} matrix is calculated using PSI-BLAST\cite{Schaffer2001}. Then all the testing protein sets are evaluated with the resultant PSSM to form a new PSSM matrix specific to the testing protein. Thus, we expect to explore how proteins relate with the interaction experiments with the protein domain. From the \acrshort{pssm}, we evaluate the other evolutionary and distance vectors using equations \ref{eq:rpt}, \ref{eq:pssmddt}, \ref{eq:pssmsdt} and \ref{eq:edt}.
+
+\subsection{Implementation}
+% We explore basically the following algorithms for analyses on protein-drug interactions:
+
+\subsubsection{Stacked Features, LSTM Network}
+Basically, we implement the ~\ref{fig:dlm} for our model design. It is implemented in Python using the TensorFlow framework consisting of keras. The training contained of 100 epochs and required full 4 complete days to complete the training in a high GPU processors.

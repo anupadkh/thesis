@@ -28,16 +28,38 @@ For figures, tables, equations and further information, open the file "tips.tex"
 \fi
 
 \section{Statement of Problem}
+The simple technique of encoding the sequence information of drugs and proteins to identify if a drug will interact with the protein or not has a major issue in that while drugs encoding information can be used to make drug related predictions, the protein encodings don't properly form their representational vectors. Therefore, modeling a machine learning algorithm sometimes overfit the situation or poorly classify the problem. In this work, we explore various techniques and reproduce a regression problem for solving the prediction problem.
 
+\subsection{Selection of Prediction Score}
+
+Out of the many score functions; STITCH, Davis, Metz\_Anastassiadis and KIBA scores, we found that the prediction of drug and protein interaction problem is convenient with KIBA scores. Again, KIBA scores database consists of experimental data and secondary data (from literature) of drug-target interaction. Choosing the KIBA as the output score for two protein and drug sequences, we model our machine learning algorithm by following a proper feature encoding technique.
+
+\subsection{Selection of Features}
+
+For the protein family, the focus here is with the kinase target family because of its essential roles in cellular signaling transduction for many cancers and inflammatory diseases. We concentrate on proteins dataset, specifically because their interaction is quite tricky when considered among chemical, atomic, structural and electrical nature of protein residues. Our basis for forming the matrices and vectors related to protein sequence comes from the fact that these feature sets represent specific properties related to the protein and its residues. Also, the literatures describing the feature sets characteristics and results motivates us towards the selection of these parameters: \acrshort{pssmdt}, \acrshort{edt}, \acrshort{rpt} and embedding vectors.
 
 
 \section{Objectives}
+The objectives of the research 
+\begin{itemize}
+    \item To determine the efficient different transformation matrices related to protein.
+    \item To determine the right machine learning algorithm for modeling the protein-drug interactions.
+\end{itemize}
 
-
-
-\section{Scope of Work}
+% \section{Scope of Work}
 
 
 
 \section{Organization of Report}
 
+\subsection{Choosing Method of Interaction}
+Out of the two methods of contact prediction: Global Methods and Local Methods, where Global Method tries to predict the label of one residue pair considering the label of others while Local Method tries to predict the label of one residue pair without considering the label of others; we use Global Methods as a means of contact prediction. We try to run different variations in Residual Methods: Using Distance Prediction, Folding, Coevolutionary features engineering. 
+
+\subsection{Creating Analogy with Image}
+For any protein sequence, instead of regarding them as segments, we try to run the whole protein sequence as an image: the residual contacts representing the pixels of the image.
+
+\subsection{Deep Learning Network Selection}
+Convnets, as they still are quite helpful in solving an image recognition problem, we used their variations to understand the performance with protein drug set. As a higher level of optimization problem, we use LSTM to create different components of Model Selection. 
+
+\subsection{Training and Testing}
+A basic PC was used to create initial models. A server with 4 CPUs was then used thence after the models were selected for training. The testing was done in normal PC for validation and respective Confusion Matrices and results were evaluated.
