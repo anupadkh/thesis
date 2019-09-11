@@ -1,14 +1,17 @@
-\select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces System Block Diagram}}{11}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Deep Learning Model}}{15}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Dense Layer}}{16}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces }}{16}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces }}{17}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Convolutional Neural Network}}{17}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Long Short Term Memory}}{17}{figure.3.7}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces System Block Diagram}}{10}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Data Distribution of KIBA-interaction scores, Drug Sequences and Protein Sequences}}{11}{figure.3.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {KIBA Scores}}}{11}{figure.3.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Logarithmic One Hot Encodings of Drug Sequence}}}{11}{figure.3.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {One Hot Encodings of Protein Sequence}}}{11}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Deep Learning Model}}{14}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Dense Layer}}{15}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Dropout Layer}}{15}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Pooling Layer}}{15}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Convolutional Neural Network}}{16}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Long Short Term Memory}}{16}{figure.3.8}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

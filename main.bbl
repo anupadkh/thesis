@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Kanehisa2000}
 M.~Kanehisa.
@@ -38,6 +38,13 @@ Ruifeng Xu, Jiyun Zhou, Hongpeng Wang, Yulan He, Xiaolong Wang, and Bin Liu.
 \newblock {Identifying DNA-binding proteins by combining support vector machine
   and PSSM distance transformation}.
 \newblock {\em BMC Systems Biology}, 9(1):1--12, 2015.
+
+\bibitem{Zhang2014}
+Lichao Zhang, Xiqiang Zhao, and Liang Kong.
+\newblock {Predict protein structural class for low-similarity sequences by
+  evolutionary difference information into the general form of Chou's pseudo
+  amino acid composition}.
+\newblock {\em Journal of Theoretical Biology}, 355:105--110, aug 2014.
 
 \bibitem{Wong2018}
 Andrew~K.C. Wong, Ho~Yin Sze-To, and Gary~L. Johanning.
