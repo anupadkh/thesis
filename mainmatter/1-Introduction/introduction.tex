@@ -1,15 +1,21 @@
 \chapter{Introduction}
 \section{Background}
-Computer-aided drug discovery methods are the developing paradigms in bio-informatics ever since the "Next Industrial Revolution" possibilities started growing with computational power and technical human resources in biomedicine~\cite{Leelananda2016}.
+Treatment of diseases have mostly been associated with applying foreign medicinal components into human body. The rudimentary means of curing diseases has been growing with applied ayurbedas since the past. The chemical perspective of curing diseases slowly evolved into modern chemistry as drug facilities developed around the globe. The extensive research and documentation changed the world where people have come to trust fully in chemist's drugs to mitigate the ailments in the body. With the growing chemical status of the community, the need to develop better drugs and quick solutions is in high demand. The major reasons being the identification of new diseases and understanding the mechanism to cure such diseases.
 
+~\acrfull{cadd} mechanism are the developing paradigms in bio-informatics ever since the "Next Industrial Revolution" possibilities started growing with computational power and technical human resources in biomedicine~\cite{Leelananda2016,Brown2017}. \acrfull{hts} was evolving eventually to find precedence over finding novel therapeutics. Based on the computational resources required,~\acrshort{cadd} can be classified into two general categories: Structure-based \acrshort{cadd} and Ligand-based~\acrshort{cadd}. Structure based \acrshort{cadd} relies on knowledge of target protein structure to calculate interaction energies for all the compounds tested whereas Ligand-based \acrshort{cadd} exploits similarities of known active and inactive molecules.
 
-
+This work relates mostly to the Structure based \acrshort{cadd} and partly to Ligand-based \acrshort{cadd}. The parameters of our work can be associated with \begin{itemize}
+    \setlength\parindent{24pt}
+    \item Target Structure, De novo design 
+    \item Ligand Structure, Ligand based virtual screening
+\end{itemize}
+Target Structure and Ligand Structures are the major parameters of the research. The de-novo design has not been explored yet but we can test the drug designs from Structure Generator\footnote{Structure Generator: The molecules which are highly active, readily synthesizable and devoid of undesirable properties are used to construct new possible drugs and can be tested with multiple targets.}. The other aspects of target identification -- Molecular Dynamics, Pharmacophore modeling, Ligand Docking, \acrfull{qsar} etc. are beyond the scope of this work. So, the predictions from the model can't be relied fully to conclude the results. The pharmacophore models should take the results from this work and make decisive conclusions. 
 
 \iffalse
 (52498, 254)
 180244
 \fi
-The Dataset we used scores the interaction of proteins and drugs based on Kb scores. We use 52498 drugs from CHEMBL and 254 proteins from UniProt to get an interaction of 180244, by removing the unrecognized interactions. The interactions are based on KIBA score, collected from KEGG(​Kyoto Encyclopedia of Genes and Genomes)​ dataset \cite{Kanehisa2000}.
+The Dataset scores the interaction of proteins and drugs based on Kb scores. We use 52498 drugs from CHEMBL and 254 proteins from UniProt to get an interaction of 180244, by removing the unrecognized interactions. The interactions are based on KIBA score, collected from KEGG(​Kyoto Encyclopedia of Genes and Genomes)​ dataset \cite{Kanehisa2000}.
 
 \iffalse
 
@@ -37,6 +43,7 @@ For the protein family, the focus here is with the kinase target family because 
 \section{Objectives}
 The objectives of the research are:
 \begin{itemize}
+    \setlength\parindent{36pt}
     \item To determine the efficient different transformation matrices related to protein.
     \item To determine the right machine learning algorithm for modeling the protein-drug interactions.
 \end{itemize}
