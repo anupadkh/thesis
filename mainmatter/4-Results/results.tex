@@ -43,7 +43,11 @@ where $b_i$ is the prediction value for higher affinity $\delta_i$ and $b_j$ is 
 \end{equation}
 
 \section{Results}
-The validation loss and the cindex scores(equation~\ref{eq:ci}) were 16\% and 90\% respectively when we used our full model. The similarity measures are evaluated using \cite{Cock2009}.
+The training of the model proved a better choice as we placed a LSTM layer to get a generalization of all the feature sets extracted from the drug and protein sequence. In a primordial network, the c-index rised from 70\% to 75\% simply between the choice of Dense Layer and LSTM Layer. 
+
+Also by the use of the feature sets, the accuracy increased by 3\% in our model. The validation loss and the cindex scores(equation~\ref{eq:ci}) were 16\% and 89\% respectively when we used our full model.
+
+\iffalse The similarity measures are evaluated using \cite{Cock2009}. \fi
 
 \iffalse
 The accuracy plots and cindex plots are shown in Figure ~\ref{fig:results}

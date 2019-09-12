@@ -2,12 +2,13 @@
 
 
 \section{No Free Lunch Algorithm (NFL)}
-The no free lunch theorem for search and optimization \cite{Wolpert2005} applies to finite spaces and algorithms that do not resample points. All algorithms that search for an extrema of a cost function perform exactly the same when averaged over all possible cost functions.
+The no free lunch theorem for search and optimization applies to finite spaces and algorithms that do not resample points. It states "All algorithms that search for an extrema of a cost function perform exactly the same when averaged over all possible cost functions." To increase the scope of NFL-like analyses, we need to make two slight extensions: first, we must broaden the definition of performance measures to allow for dependence on $f$-the list of multiple functions, and second, we need to generalize fitness functions to allow for nondeterminism. \cite{Wolpert2005}
 
 The search problem in case of proteins can be thought to comprise of different sample spaces: Primary Structures, Secondary Structures, Evolutionary Structures, Chemical Parameters, Atomic Parameters etc. This work only tries to explore the primary, secondary and evolutionary nature of protein-residues.
 
 \subsubsection{Generalized Optimization}
-The major implication of \acrshort{nfl} is useful when the sample spaces are operated by different algorithms. The theorem being that all algorithms in different sample spaces produce the highest optimum results. Generalized Optimization follows hence when these different algorithms are optimized to work on different sample spaces of the problem at hand.
+
+The major implication of \acrshort{nfl} is useful when the sample spaces are operated by different algorithms. The theorem being that all algorithms in different sample spaces produce the highest optimum results for a given problem. Generalized Optimization follows that when these different algorithms that are optimized in different sample spaces are included in one algorithm, then the method provides us the best predictions.
 
 
 \section{Literature Review}

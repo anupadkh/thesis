@@ -1,9 +1,9 @@
 \iffalse
 
 % curl http://ulms2019.nsdevil.com:10002/edit/lms/self/data/original_kiba/figures.zip -o /anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/figures.zip; % login error so file not downloaded
-mv ~/Downloads/figures.zip /anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/figures.zip;
-unzip /anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/figures.zip -d "/anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/"; 
-rm /anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/figures.zip
+% mv ~/Downloads/figures.zip /anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/figures.zip;
+% unzip /anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/figures.zip -d "/anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/"; 
+% rm /anup_files/FILES/personal/Thesis/mainmatter/3-Methodology/images/figures.zip
 
 
 Statistical Analyses to DO:
@@ -23,9 +23,9 @@ Things to do:
 \begin{figure}[ht]
   % \def\svgwidth{\columnwidth}
   % \includesvg{mainmatter/3-Methodology/images/block.svg}
-\includegraphics[width=1\linewidth]{mainmatter/3-Methodology/images/block.pdf}
-\caption{System Block Diagram}
-\label{fig:system}
+  \includegraphics[width=1\linewidth]{mainmatter/3-Methodology/images/block.pdf}
+  \caption{System Block Diagram}
+  \label{fig:system}
 \end{figure}
 
 The Figure ~\ref{fig:system} shows the various components used to form the prediction system. The idea is basic in that protein interaction depends on the structural and chemical properties. The structural components are fulfilled and
@@ -143,7 +143,7 @@ $ \partial_{400} = f(A_20, A_20) $
 The Statistical Residue Vector Space \acrshort{srv} \cite{Wong2018} plays an important role in Residue Residue Interaction and thus creates a basis for structural stability of the protein sequence itself. Though related more to the tertiary structure of protein sequence itself, we regard it to create a correlated sequence information where two proteins are related distantly by sequence but highly related with functional characteristic of protein. Table ~\ref{table:r2r} shows the table used in this work. It is a 20 x 20 matrix whose rows and columns represent 20 standard amino acids.
 
 \subsubsection{Residue Probing Transformation(RPT) feature}
-RPT as proposed by \cite[{Jeong et al.}]{Jeong2011}, and implemented by \cite[Pujan et al.]{Mishra2019}, emphasizes domains with similar conservation rates by grouping domain families based on their conservation score in the PSSM profile.
+RPT as proposed by Jeong et al.\cite{Jeong2011}, and implemented by Pujan et al.\cite{Mishra2019}, emphasize domains with similar conservation rates by grouping domain families based on their conservation score in the PSSM profile.
 \begin{equation}
   RPT = \begin{bmatrix}
     H_{1,1} & H_{1,2} & \dots & H_{1,20} \\
@@ -173,13 +173,12 @@ The Features thus formed are then subjected to deep learning model using keras l
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\linewidth]{mainmatter/3-Methodology/images/build_combined_categorical_tensor_contact_new.png}
-\caption{Deep Learning Model}
+\caption{Deep Learning Model to predict Protein-Drug Interaction}
 \label{fig:dlm}
 \end{figure}
 \begin{table}[ht]\centering
   \begin{tabular}{|l|l|l|l|}
-    
-    \hline \label{table:inputs}
+    \hline 
     S.No. & Input Layer Name & Used Feature Vector & Type \\ \hline
     1 & input\_1 & One Hot Encoding & Drug \\ \hline
     2 & input\_2 & One Hot Encoding & Protein \\ \hline
@@ -188,6 +187,7 @@ The Features thus formed are then subjected to deep learning model using keras l
     5 & input\_5 & Residue Probing Transformation Vector & Protein \\   \hline 
   \end{tabular} 
   \caption{Inputs Used in the Deep Learning Network} 
+  \label{table:inputs}
 \end{table}
 
 \subsection{Components description used from Tensorflow (Keras)}
@@ -246,7 +246,7 @@ Our model becomes undesirable when every component of the input layer makes a si
 \begin{figure}
   [ht] \centering
   \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/dropout.jpeg}
-  \caption{Dropout Layer}
+  \caption[Dropout Layer]{a) Standard neural network whose all the nodes have weights connected to higher nodes and lower nodes \\ b) Certain nodes belonging to same levels are disconnected. Some weights are also disconnected from other nodes depending on the percentage of dropout applied.}
   \label{fig:dropout}
 
 \end{figure}
@@ -267,17 +267,17 @@ Concatenation Layer as the name implies is used to simply join two vectors so th
 To learn the local patterns in the input vector, we use \acrshort{cnn}. While Dense Layers and \acrshort{lstm} learn the global patterns, \acrshort{cnn} is used to understand the local patterns. It does so by increasing the depth layer, which in turn is designed to learn different patterns as shown in Figure ~\ref{fig:cnn}.
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/cnn.jpg}
+  \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/cnn.png}
   \caption{Convolutional Neural Network}
   \label{fig:cnn}
 \end{figure}
 
 \subsubsection{LSTM}
 As the \acrfull{rnn} often suffers from vanishing gradient problem~\footnote{Vanishing Gradient:During the training of RNN, the model vectors form a part of a loop and makes an unstable network.}, we use a \acrshort{lstm} Layer to learn the global pattern of the feature sets resulting after concatenation of different stacked layers outputs. The LSTM architecture can be seen in Figure ~\ref{fig:lstm}:
-\begin{figure}
-  [ht]
+\begin{figure} 
+  [t]
   \centering
-  \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/LSTM.pdf}
+  \includegraphics[width=1\linewidth]{mainmatter/3-Methodology/images/LSTM.pdf}
   \caption{Long Short Term Memory}
   \label{fig:lstm}
 \end{figure}
