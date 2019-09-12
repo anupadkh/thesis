@@ -13,7 +13,7 @@
 \usepackage{subfigure}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{color}
-\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
 % \usepackage [ Bjornstrup ]{ fncychap }
 % \usepackage{nomencl} % Nomenclature
 % \makenomenclature
@@ -27,7 +27,6 @@
 \usepackage{mathptmx}
 \usepackage{anyfontsize}
 \usepackage{t1enc}
-\usepackage{blindtext}
 
 \newcommand\blankpage{%
     \null
@@ -82,3 +81,42 @@
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
 %%%%%%%%%%%%%%%%% END OF HEADINGS CONFIGURATION
+
+%%%%%%%%%%%%%%%%% Caption
+\usepackage{caption}
+\captionsetup{%
+  font=footnotesize,% set font size to footnotesize
+  labelfont=bf % bold label (e.g., Figure 3.2) font
+}
+\usepackage{array,booktabs}
+\usepackage{framed}
+\usepackage{float}
+\usepackage[framed,amsmath,thmmarks]{ntheorem}
+\usepackage{titlesec}
+
+%  Title Formats
+\titleformat{\chapter}[hang] 
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter:}{8pt}{} 
+\titlespacing*{\chapter}{0pt}{-35pt}{20pt}
+\titleformat*{\section}{\normalfont\Large\bfseries}
+\titleformat*{\subsection}{\normalfont\large\bfseries}
+\titleformat*{\subsubsection}{\normalfont\normalsize\bfseries}
+
+% Clear empty pages between chapters
+\let\origdoublepage\cleardoublepage
+\newcommand{\clearemptydoublepage}{%
+  \clearpage
+  {\pagestyle{empty}\origdoublepage}%
+}
+\let\cleardoublepage\clearemptydoublepage
+
+\usepackage{setspace}
+% \usepackage[nottoc,notlof,notlot]{tocbibind} 
+% \usepackage {tikz}
+% \usetikzlibrary {positioning}
+% %\usepackage {xcolor}
+% \definecolor {processblue}{cmyk}{0.96,0,0,0}
+
+% \usepackage{footnote}
+% \usepackage{amsfonts}
+% \usepackage{svg}

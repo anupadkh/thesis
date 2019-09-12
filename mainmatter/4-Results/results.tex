@@ -13,7 +13,7 @@ One-Hot Encodings
 Modfied n-grams skip-grams
 \fi
 
-The focus of the experiments are concentrated on the properties of protein as they have complex structures. The binding of protein and drug depend on various attributes of protein like acidity, hydrophobicity, binding pockets etc and the structure of drug. The attributes are quite closely related to primary and secondary structure of protein themselves. Therefore, our model aims to relate all these multiple components with matrix representation and confirming to the Fig.~\ref{fig:kiba_drug_protein} prediction.
+The focus of the experiments are concentrated on the properties of protein as they have complex structures. The binding of protein and drug depend on various attributes of protein like acidity, hydrophobicity, binding pockets etc and the structure of drug. The attributes are quite closely related to primary and secondary structure of protein themselves. Therefore, our model aims to relate all these multiple components with matrix representation and confirming to the Figure.~\ref{fig:kiba_drug_protein} prediction.
 
 \subsection{Features Selection}
 \subsubsection{Primary Feature Selection}
@@ -28,7 +28,7 @@ These are the structural components of protein especially related to alpha and b
 % We explore basically the following algorithms for analyses on protein-drug interactions:
 
 \subsubsection{Stacked Features, LSTM Network}
-Basically, we implement the ~\ref{fig:dlm} for our model design. It is implemented in Python using the TensorFlow framework consisting of keras. The training contained of 100 epochs and required full 4 complete days to complete the training in a high GPU processors. The training and testing was done in a 5-fold cross-validation set prepared manually. To evaluate the performance of the model, we used concordance index(CI)\cite{Xu2015} as defined by eqn~\ref{eq:ci}:
+Basically, we implement the ~\ref{fig:dlm} for our model design. It is implemented in Python using the TensorFlow framework consisting of keras. The training contained of 100 epochs and required full 4 complete days to complete the training in a high GPU processors. The training and testing was done in a 5-fold cross-validation set prepared manually. To evaluate the performance of the model, we used concordance index(CI)\cite{Xu2015} as defined by equation~\ref{eq:ci}:
 \begin{equation}
     CI = \frac{1}{Z} \sum_{\delta_i > \delta_j} h(b_i - b_j)
     \label{eq:ci}
