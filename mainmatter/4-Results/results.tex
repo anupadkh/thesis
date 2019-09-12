@@ -13,11 +13,11 @@ One-Hot Encodings
 Modfied n-grams skip-grams
 \fi
 
-The focus of the experiments are concentrated on the properties of protein as they have complex structures. The binding of protein and drug depend on various attributes of protein like acidity, hydrophobicity, binding pockets etc and the structure of drug. The attributes are quite closely related to primary and secondary structure of protein themselves. Therefore, our model aims to relate all these multiple components with matrix representation and confirming to the Figure.~\ref{fig:kiba_drug_protein} prediction.
+The focus of the experiments are concentrated on the properties of protein as they have complex structures. The binding of protein and drug depend on various attributes of protein like acidity, hydrophobicity, binding pockets etc and the structure of drug. The attributes are quite closely related to primary and secondary structure of protein themselves. Therefore, our model aims to relate all these multiple components with matrix representation and confirming to the Figure ~\ref{fig:kiba_drug_protein} prediction.
 
 \subsection{Features Selection}
 \subsubsection{Primary Feature Selection}
-We explored the other embedding technique used in language theory. The modified N-Grams Skip-Grams (m-NGSG) was supposed to undertake the mutational agreements when the proteins and drug interaction was brought in question. However, it fared quite badly than the Neural Net Sequence Embeddings. Mostly the issue can be related to that if the algorithm misses the tight relationship among the amino-acid neighborhood, then the protein with different structure may seem to act similarly: a strong disagreement on principle that certain proteins with slight modification on the sequence have different functional and chemical properties. It could still be used for Poission-Hidden Markov Model for some other properties, but primary encodings can't be relied on m-NGSG. 
+The sequence information of drugs and proteins live in their canonical form. Exploring to the other embedding technique used in language theory, the modified N-Grams Skip-Grams (m-NGSG) was supposed to undertake the mutational agreements when the proteins and drug interaction was brought in question. However, it fared quite badly than the Neural Net Sequence Embeddings. Mostly the issue can be related to that if the algorithm misses the tight relationship among the amino-acid neighborhood, then the protein with different structure may seem to act similarly: a strong disagreement on principle that certain proteins with slight modification on the sequence have different functional and chemical properties. It could still be used for Poisson-Hidden Markov Model for some other properties, but primary encodings can't be relied on m-NGSG. 
 
 Therefore we relied on Neural Net Sequence Embedding technique to form the primary representation. Both protein and drug were converted to Embedding vectors after creating their one-hot encoding.
 
@@ -28,7 +28,7 @@ These are the structural components of protein especially related to alpha and b
 % We explore basically the following algorithms for analyses on protein-drug interactions:
 
 \subsubsection{Stacked Features, LSTM Network}
-Basically, we implement the ~\ref{fig:dlm} for our model design. It is implemented in Python using the TensorFlow framework consisting of keras. The training contained of 100 epochs and required full 4 complete days to complete the training in a high GPU processors. The training and testing was done in a 5-fold cross-validation set prepared manually. To evaluate the performance of the model, we used concordance index(CI)\cite{Xu2015} as defined by equation~\ref{eq:ci}:
+Basically, we implement the ~\ref{fig:dlm} for our model design. It is implemented in Python using the TensorFlow framework consisting of keras. The training contained of 100 epochs and required full 4 complete days to complete the training in quad-core processor. The training and testing was done in a 5-fold cross-validation set prepared manually. To evaluate the performance of the model, we used concordance index(CI)\cite{Xu2015} as defined by equation~\ref{eq:ci}:
 \begin{equation}
     CI = \frac{1}{Z} \sum_{\delta_i > \delta_j} h(b_i - b_j)
     \label{eq:ci}
@@ -43,7 +43,7 @@ where $b_i$ is the prediction value for higher affinity $\delta_i$ and $b_j$ is 
 \end{equation}
 
 \section{Results}
-The validation loss and the cindex scores were 16\% and 90\% respectively when we used our full model. 
+The validation loss and the cindex scores(equation~\ref{eq:ci}) were 16\% and 90\% respectively when we used our full model. The similarity measures are evaluated using \cite{Cock2009}.
 
 \iffalse
 The accuracy plots and cindex plots are shown in Figure ~\ref{fig:results}

@@ -63,27 +63,31 @@
 \frenchspacing
 
 % Frontmatter
+\cleardoublepage
+\linespread{2}
+
 %\input{frontmatter/1-coverpage.tex}
 \input{frontmatter/2-titlepage.tex}
-\cleardoublepage
-\setcounter{page}{1}
-\linespread{2}
 % \input{frontmatter/3-dedication.tex}
+\thispagestyle{empty}
 \input{frontmatter/4-abstract.tex}
+\thispagestyle{empty}
 \input{frontmatter/5-acknowledges.tex}
-
+\thispagestyle{empty}
 
 \tableofcontents
+\thispagestyle{empty}
 {
 \let\oldnumberline\numberline%
 \renewcommand{\numberline}{\figurename~\oldnumberline}%
 \listoffigures
-}
+}\thispagestyle{empty}
 {
 \let\oldnumberline\numberline%
 \renewcommand{\numberline}{\tablename~\oldnumberline}%
 \listoftables
 }
+\thispagestyle{empty}
 \addtocontents{toc}{~\hfill\textbf{Page}\par}
 \addtocontents{lof}{~\hfill\textbf{Page}\par}
 \addtocontents{lot}{~\hfill\textbf{Page}\par}
@@ -100,6 +104,9 @@
 
 
 % \renewcommand{\doublespacing}
+
+
+
 \input{mainmatter/1-Introduction/introduction.tex}
 \input{mainmatter/2-Development/development.tex}
 \input{mainmatter/3-Methodology/methodology.tex}
