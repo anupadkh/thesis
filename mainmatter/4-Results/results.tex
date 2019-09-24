@@ -45,7 +45,23 @@ where $b_i$ is the prediction value for higher affinity $\delta_i$ and $b_j$ is 
 \section{Results}
 The training of the model proved a better choice as we placed a LSTM layer to get a generalization of all the feature sets extracted from the drug and protein sequence. In a primordial network, the c-index rised from 70\% to 75\% simply between the choice of Dense Layer and LSTM Layer. 
 
-Also by the use of the feature sets, the accuracy increased by 3\% in our model. The validation loss and the cindex scores(equation~\ref{eq:ci}) were 16\% and 89\% respectively when we used our full model.
+The validation loss and the cindex scores(equation~\ref{eq:ci}) were 16\% and 89\% respectively when we used our full model. The plot of ~\acrshort{kiba} prediction scores and the actual scores for training sets is shown in Figure ~\ref{fig:pred_train}
+\begin{figure}[ht]
+    \subfigure[Training Actual Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/train_y.png}}
+    \subfigure[Training Predicted Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/pred_train_y.png}}
+    \subfigure[Training Scores Difference]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/train_diff.png}}
+    \caption{Training Results based on KIBA Score Prediction}
+    \label{fig:pred_train}
+\end{figure}
+
+Similarly, the prediction scores and actual scores for validation sets is shown in Figure ~\ref{fig:val_train}
+\begin{figure}[ht]
+    \subfigure[Testing Actual Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/val_y.png}}
+    \subfigure[Testing Predicted Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/pred_val_y.png}}
+    \subfigure[Testing Scores Difference]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/val_difference.png}}
+    \caption{Testing Results on KIBA score Prediction}
+    \label{fig:val_train}
+\end{figure}
 
 \iffalse The similarity measures are evaluated using \cite{Cock2009}. \fi
 

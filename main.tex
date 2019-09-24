@@ -45,6 +45,7 @@
 \let\thetitle\@title
 \let\theauthor\@author
 \let\thedate\@date
+\let\themonth\@month
 \makeatother
 
 \setlength{\headheight}{15pt}
@@ -54,6 +55,8 @@
 \newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
   #1\ignorespaces
 }
+
+
 
 
 %%%%%%%%%%%%%%%%% MAIN DOCUMENT
@@ -74,24 +77,30 @@
 \thispagestyle{empty}
 \input{frontmatter/5-acknowledges.tex}
 \thispagestyle{empty}
-
+\renewcommand{\contentsname}{Table of Contents}
 \tableofcontents
 \thispagestyle{empty}
+
 {
 \let\oldnumberline\numberline%
-\renewcommand{\numberline}{\figurename~\oldnumberline}%
+\renewcommand{\numberline}{\figurename~\oldnumberline}
 \listoffigures
-}\thispagestyle{empty}
+\thispagestyle{empty}
+}
+
 {
 \let\oldnumberline\numberline%
 \renewcommand{\numberline}{\tablename~\oldnumberline}%
 \listoftables
 }
 \thispagestyle{empty}
+
 \addtocontents{toc}{~\hfill\textbf{Page}\par}
 \addtocontents{lof}{~\hfill\textbf{Page}\par}
 \addtocontents{lot}{~\hfill\textbf{Page}\par}
 
+\printglossary[type=\acronymtype]
+\thispagestyle{empty}
 % \printnomenclature
 
 % \newcommand{\listequationsname}{List of Equations}
@@ -104,10 +113,11 @@
 
 
 % \renewcommand{\doublespacing}
-
-
-
+% \newpage
+% \pagenumbering{arabic}
+% \setcounter{page}{0}
 \input{mainmatter/1-Introduction/introduction.tex}
+
 \input{mainmatter/2-Development/development.tex}
 \input{mainmatter/3-Methodology/methodology.tex}
 \input{mainmatter/4-Results/results.tex}
@@ -117,7 +127,6 @@
 % Backmatter
 
 \input{backmatter/appendix/appendix.tex}
-\printglossary[type=\acronymtype]
 
 % Bibliography
 \renewcommand{\bibname}{References}
