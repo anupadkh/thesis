@@ -1,9 +1,11 @@
-\subsection{\acrfull{pssm}}
+\subsection{Position Specific Score Matrix}
 
-\acrfull{pssm} is a very useful protein feature. The protein feature
-\begin{table}[h]
-    \centering
-    \caption{protein fasta sequence}
+\acrfull{pssm} is a very useful protein feature. The protein feature represented by PSSM depends on the sequence of all the proteins in consideration. The HUMAN genome protein (a database of more than 100,000) is downloaded from UniProt Library and we construct the PSSM matrix for each of the kinase proteins based on this HUMAN Genome Protein Database. Doing so, we try to characterize the PSSM matrix according to human proteins in a motivation to anticipate the prediction of new identified kinase proteins.
+
+\begin{table}
+  \centering
+  \caption{PSSM Analysis Design} 
+  \begin{subtable}[]{protein fasta sequence}
     \begin{tabular}{|l|l|}
     \hline
     
@@ -19,11 +21,10 @@
     10 & AAGGTAAGT \\ \hline
     
     \end{tabular}
-\end{table}
+    
+  \end{subtable}
 
-\begin{table}[h]
-    \centering
-    \caption{Frequency Table}
+  \begin{subtable}[]{Frequency Table}
     \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
     \hline
     
@@ -34,14 +35,13 @@
     T & 4 & 1 & 1 & 0 & 10 & 1 & 1 & 2 & 6 \\ \hline
     
     \end{tabular}
-\end{table}
+  \end{subtable}
 
-\begin{table}[h]
-    \centering
-    \caption{Log-Likelihood Matrix}
+  \begin{subtable}[]
+    {Log-Likelihood Matrix}
     \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
-    \hline
-    
+    \hline 
+
         & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
     A & 0.3 & 0.6 & 0.1 & 0.00 & 0.00 & 0.6 & 0.7 & 0.2 & 0.1 \\ \hline
     C & 0.2 & 0.2 & 0.1 & 0.00 & 0.00 & 0.2 & 0.1 & 0.1 & 0.2 \\ \hline
@@ -49,33 +49,54 @@
     T & 0.4 & 0.1 & 0.1 & 0.00 & 1.00 & 0.1 & 0.1 & 0.2 & 0.6 \\ \hline
     
     \end{tabular}
+  \end{subtable}
+
+  \begin{subtable}[]
+    {Log-Likelihood Matrix for the motif}
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+    \hline 
+    
+        & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
+    A & 0.3 &  &  &  &  &  & 0.7 &  &  \\ \hline
+    C &  &  & 0.1 & 0.00 & 0.00 & 0.20 &  &  & 0.2 \\ \hline
+    G &  & 0.1 &  &  &  &  &  & 0.5 &  \\ \hline
+    T &  &  &  &  &  &  &  &  &  \\ \hline
+    
+    \end{tabular}
+    \caption{Sliding Window Score Calculation}
+    \label{table:motif_movement}
+  \end{subtable}
+  
+  \label{table:PSSM_Analysis} 
 \end{table}
 
-\seqsplit{ACTCagccccagcGGAGGTGAAGGACGTCCTTCCCCAGGAGCCGGTGAGAAGCGCAGTCGGGGGCACGGGGATGAGCTCAGGGGCCTCTAGAAAGATGTAGCTGGGACCTCGGGAAGCCCTGGCCTCCAGGTAGTCTCAGGAGAGCTACTCAGGGTCGGGCTTGGGGAGAGGAGGAGCGGGGGTGAGGCCAGCAGCA}
+The Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating PSSM score values. The sequence following shows the process of calculating the scores once the PSSM distribution of the whole family is calculated. Table \ref{table:motif_movement} shows the score distribution of lowercase amino acid sequence (starting after 4th position) determined by the size of the sliding window.
 
-.3, .1, .1,0,0,0.2,.7,.5,.2  == Sum(2.1) -- posix (4) 
+\seqsplit{ACTC\textbf{agccccagc}GGAGGTGAAGGACGTCCTTCCCCAGGAGCCGGTGAGAAGCGCAGTCGGGGGCACGGGGATGAGCTCAGGGGCCTCTAGAAAGATGTAGCTGGGACCTCGGGAAGCCCTGGCCTCCAGGTAGTCTCAGGAGAGCTACTCAGGGTCGGGCTTGGGGAGAGGAGGAGCGGGGGTGAGGCCAGCAGCA} 
 
-\begin{table}[h]
+\begin{wraptable}{br}{5.5cm}
+% \begin{table}[!ht]
     \centering
-    \caption{Score by sliding window motifs}
+    \caption{Score of sliding window motifs} \label{wrapTable:pssm-score}
     \begin{tabular}{|l|l|}
     \hline
     
-    0 & 1.09999999 \\ \hline
+    0 & 1.099 \\ \hline
     1 & 1 \\ \hline
     2 & 2.2 \\ \hline
     3 & 2.1 \\ \hline
     4 & 2.1 \\ \hline
-    5 & 1.300000003 \\ \hline
+    5 & 1.300 \\ \hline
     6 & 1.3 \\ \hline
     7 & 1.4 \\ \hline
     8 & 2 \\ \hline
     9 & 2.9 \\ \hline
     
     \end{tabular}
-\end{table}
+% \end{table}
+\end{wraptable}
 
-
+.3, .1, .1, 0, 0, .2, .7, .5, .2  == Sum(2.1) - posix(4) -- See Table \ref{wrapTable:pssm-score}
 
 \begin{figure}
     \centering 
@@ -85,9 +106,10 @@
            \subfigure[One Hot Encodings of Protein Sequence]{\includegraphics[width=.7\textwidth]{mainmatter/3-Methodology/images/figures/prot_length.png}}
            \caption[Dataset Distribution]{Data Distribution of KIBA-interaction scores, Drug Sequences and Protein Sequences}
            \label{fig:kiba_drug_protein}
-  \end{figure}
+\end{figure}
   
-  \subsection{UniProt and CHEMBL }
+\iffalse
+  \subsection{UniProt and CHEMBL}
   
   \subsubsection{UniProt} 
   The sequence related information of protein is referenced using UniProt Identifier and protein sequence (FASTA) is called using the api from UniProt. \cite{UniProtConsortium2018}
@@ -95,7 +117,7 @@
   
   \subsubsection{CHEMBL}
   The molecular fingerprints related to drugs are referenced usning CHEMBL Identifier and the drug sequence is called from CHEMBL database. \cite{Gaulton2017}
-  
+  \fi
   \subsection{PSI-BLAST}
   PSI-Blast tools relates with multiple sequence alignments from a family of protein sequences\cite{Schaffer2001}. This helps us to create a \acrshort{pssm} - Equation (\ref{eq:pssm}) - matrix referred to as secondary protein structure. The improvement in drug-contact prediction can be thought for amino acid composition being tuned with the scoring system. For this study, the PSSM profile of every protein sequence is obtained by executing iteration of PSI-BLAST against \cite[KEGG]{Schaffer2001} protein. PSSM profile is a matrix of L*20 dimensions where, 20 referring to standard type of amino acids and L being the length of the protein. The larger positive scores represent conserved positions, which in turn implies critical functional residues that are required to perform various intermolecular interactions.\cite[PSSM]{Schaffer2001}
   
@@ -167,7 +189,55 @@
     f_{s_{i,j}} = \frac{s_{i,j}}{L} (i,j = 1,2,\dots,20)
     \label{eq:rptF}
   \end{equation}
+
+  \subsection{Labelled Encodings}
   
+  The labeled encoding techniques is used to represent the canonical structure of drugs and proteins. The structural canonical information is preserved while sending the feature set to deep learning method. An array of integers is formed from particular sequence while representing the structural information.
+  
+  The Labelled Encodings of protein and drugs can be defined by Table \ref{table:label_encoding} :
+  \begin{table}[h]
+    \centering
+    \begin{subtable}{Protein Labeled Encoding Technique}
+      \centering
+      % \caption{Protein Labeled Encoding Technique}
+      \begin{tabular}{|cccc|}
+        \hline
+        A --> 1 & C --> 2 & B --> 3 & E --> 4 \\ \hline
+        D --> 5 & G --> 6 & F --> 7 & I --> 8 \\ \hline
+      \end{tabular}
+    \end{subtable}  
+
+    \begin{subtable}{Drugs Labeled Encoding Technique}
+      \centering
+      % \caption{Drugs Labeled Encoding Technique}
+      \begin{tabular}{|cccc|}
+        \hline
+        \# --> 1 & \% --> 2 & : --> 3 & + --> 5 \\ \hline
+        4 --> 13 & 7 --> 14 & F --> 25 & I --> 26 \\ \hline
+      \end{tabular}
+    \end{subtable}
+    \caption{Labeled Encoding of Proteins and Drugs}
+    \label{table:label_encoding}
+  \end{table}
+  
+  % CHARPROTSET = { "A": 1, "C": 2, "B": 3, "E": 4, "D": 5, "G": 6,
+	% 			"F": 7, "I": 8, "H": 9, "K": 10, "M": 11, "L": 12,
+	% 			"O": 13, "N": 14, "Q": 15, "P": 16, "S": 17, "R": 18,
+	% 			"U": 19, "T": 20, "W": 21,
+	% 			"V": 22, "Y": 23, "X": 24,
+	% 			"Z": 25 }
+
+  % CHARCANSMISET = { "#": 1, "%": 2, ")": 3, "(": 4, "+": 5, "-": 6,
+	% 		 ".": 7, "1": 8, "0": 9, "3": 10, "2": 11, "5": 12,
+	% 		 "4": 13, "7": 14, "6": 15, "9": 16, "8": 17, "=": 18,
+	% 		 "A": 19, "C": 20, "B": 21, "E": 22, "D": 23, "G": 24,
+	% 		 "F": 25, "I": 26, "H": 27, "K": 28, "M": 29, "L": 30,
+	% 		 "O": 31, "N": 32, "P": 33, "S": 34, "R": 35, "U": 36,
+	% 		 "T": 37, "W": 38, "V": 39, "Y": 40, "[": 41, "Z": 42,
+	% 		 "]": 43, "_": 44, "a": 45, "c": 46, "b": 47, "e": 48,
+	% 		 "d": 49, "g": 50, "f": 51, "i": 52, "h": 53, "m": 54,
+	% 		 "l": 55, "o": 56, "n": 57, "s": 58, "r": 59, "u": 60,
+	% 		 "t": 61, "y": 62 }
   
   \section{Deep Learning Model}
   
@@ -184,13 +254,12 @@
     \begin{tabular}{|l|l|l|l|}
       \hline 
       S.No. & Input Layer Name & Used Feature Vector & Type \\ \hline
-      1 & input\_1 & One Hot Encoding & Drug \\ \hline
-      2 & input\_2 & One Hot Encoding & Protein \\ \hline
+      1 & input\_1 & Label Encodings & Drug \\ \hline
+      2 & input\_2 & Label Encodings & Protein \\ \hline
       3 & input\_3 & Evolutionary Distance Transformation Vector& Protein \\ \hline
       4 & input\_4 & PSSM-DT Vector & Protein \\ \hline
       5 & input\_5 & Residue Probing Transformation Vector & Protein \\   \hline 
     \end{tabular} 
-    
     \label{table:inputs}
   \end{table}
   
@@ -212,7 +281,7 @@
   
   \end{figure}
   
-  \subsubsection{Global Max Pooling Layer}
+  \subsubsection{Pooling Layer}
   The Pooling layer is used to downsample the learned parameters from the grid of 3 dimensions returned by Convolution Layer. It gets reduced to 1 dimension by taking the highest values from the window size(corresponding to shape of 1\textsuperscript{st} dimensional element).
   \begin{figure}
     [ht]\centering
@@ -233,6 +302,7 @@
     \label{fig:cnn}
   \end{figure}
   
+  \iffalse
   \subsubsection{LSTM}
   As the \acrfull{rnn} often suffers from vanishing gradient problem~\footnote{Vanishing Gradient:During the training of RNN, the model vectors form a part of a loop and makes an unstable network.}, we use a \acrshort{lstm} Layer to learn the global pattern of the feature sets resulting after concatenation of different stacked layers outputs. The LSTM architecture can be seen in Figure ~\ref{fig:lstm}:
   \begin{figure} 
@@ -243,7 +313,4 @@
     \label{fig:lstm}
   \end{figure}
   In Figure~\ref{fig:lstm}, we can see that it contains a forget node, memory node and output node. These three nodes balance the information that needs to be removed, stored for future updates and necessarily fire the output node to make correct prediction.
-  
-  
-  
-  
+  \fi

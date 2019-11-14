@@ -1,22 +1,33 @@
 \setcounter{page}{1}
 \chapter{Introduction}
 \section{Background}
-Treatment of diseases have mostly been associated with applying foreign medicinal components into human body. The rudimentary means of curing diseases has been growing with applied ayurbedas since the past. The chemical perspective of curing diseases slowly evolved into modern chemistry as drug facilities developed around the globe. The extensive research and documentation changed the world where people have come to trust fully in chemist's drugs to mitigate the ailments in the body. With the growing chemical status of the community, the need to develop better drugs and quick solutions is in high demand. The major reasons being the identification of new diseases and understanding the mechanism to cure such diseases.
+Treatment of diseases have mostly been associated with applying foreign medicinal components into human body. The rudimentary means of curing diseases has been growing with applied ayurbedas since the past. The chemical perspective of curing diseases slowly evolved into modern chemistry as drug facilities developed around the globe. The extensive research and documentation changed the world where people have come to trust fully in chemist's drugs to mitigate the ailments in the body. With the growing chemical intereset in the community, the need to develop better drugs and quick solutions increased even higher. With the identification of new diseases and dire need of understanding the mechanism to cure such diseases, the drug research started gaining its speed.
 
-~\acrfull{cadd} mechanism are the developing paradigms in bio-informatics ever since the "Next Industrial Revolution" possibilities started growing with computational power and technical human resources in biomedicine~\cite{Leelananda2016,Brown2017}. \acrfull{hts} was evolving eventually to find precedence over finding novel therapeutics. Based on the computational resources required,~\acrshort{cadd} can be classified into two general categories: Structure-based \acrshort{cadd} and Ligand-based~\acrshort{cadd}. Structure based \acrshort{cadd} relies on knowledge of target protein structure to calculate interaction energies for all the compounds tested whereas Ligand-based \acrshort{cadd} exploits similarities of known active and inactive molecules.
+~\acrfull{cadd} mechanism have been developing bio-informatics ever since the "Next Industrial Revolution" possibilities started grow~\cite{Leelananda2016,Brown2017}. The interest started as Fortune magazine published the article "Designing Drugs by Computer at Merk". Experimenting with computational power and technical human resources in biomedicine, the concepts started to form scopes like \acrfull{hts} -- A technique to screen desired drugs from other drugs. \acrshort{hts} was evolving eventually to find precedence over finding novel therapeutics. The desire to increase high hit rate did grow as the traditional \acrshort{hts} led to few probable leads. As research developed on computational drug design, \acrshort{cadd} study broadened based on the computational resources required. ~\acrshort{cadd} can be classified into two general categories: Structure-based \acrshort{cadd} and Ligand-based~\acrshort{cadd}.
 
-This work relates mostly to the Structure based \acrshort{cadd} and partly to Ligand-based \acrshort{cadd}. The parameters of our work can be associated with \begin{itemize}
+Structure based \acrshort{cadd} relies on knowledge of structural analysis of protein structures in particular to identify the drug leads. It associates to phenomenons like Binding Site Analyses, Docking Simulations, and Scoring Algorithms. In brief, all the structural properties of proteins are exploited to identify the possible drug candidates -- the molecules which fit in the protein structure description. This work borrows the representational feature sets of proteins and drugs from this discipline.
+
+%Target Structure Preparation, binding site detection, representation for docking simulations, scoring functions, sampling algorithms for docking,HTS, Site Characterization, Parmacophore model.  
+
+Ligand-based \acrshort{cadd} exploits similarities of known active and inactive molecules. It further exploits the chemical, electrical and functional properties from drugs and proteins. This work borrows the feature representations of chemical-electrical properties in the form of \acrfull{srv}.
+
+%Descriptors, Similarity Search Molecular, QSAR model, Pharmacophore, Prediction to Optimization
+
+This work relates mostly to the Structure based \acrshort{cadd} and partly to Ligand-based \acrshort{cadd}. 
+\iffalse
+The parameters of our work can be associated with \begin{itemize}
     \setlength\parindent{24pt}
-    \item Target Structure, De novo design 
-    \item Ligand Structure, Ligand based virtual screening
+    \item Target Structure %, De novo design 
+    \item Ligand Structure %, Ligand based virtual screening
 \end{itemize}
-Target Structure and Ligand Structures are the major parameters of the research. The de-novo design has not been explored yet but we can test the drug designs from Structure Generator\footnote{Structure Generator: The molecules which are highly active, readily synthesizable and devoid of undesirable properties are used to construct new possible drugs and can be tested with multiple targets.}. The other aspects of target identification -- Molecular Dynamics, Pharmacophore modeling, Ligand Docking, \acrfull{qsar} etc. are beyond the scope of this work. So, the predictions from the model can't be relied fully to conclude the results. The pharmacophore models should take the results from this work and make decisive conclusions. 
+\fi
+Target Structure and Ligand Structures are the major parameters of the research. The de-novo design has not been explored yet but the research method in this work can be used to test the drug designs for Structure Generator\footnote{Structure Generator: The molecules which are highly active, readily synthesizable and devoid of undesirable properties are used to construct new possible drugs and can be tested with multiple targets.}. The other aspects of target identification -- Molecular Dynamics, Pharmacophore modeling, Ligand Docking, \acrfull{qsar} etc. are beyond the scope of this work. So, the predictions from the model may not be sufficient to conclude the predicted interaction results. The pharmacophore models could take the results from this work and make decisive conclusions. 
 
 \iffalse
 (52498, 254)
 180244
 \fi
-The Dataset contains scores of the interaction of proteins and drugs based on \acrshort{kiba} scores. We use 52498 drugs from CHEMBL and 254 proteins from UniProt to get an interaction of 180244, by removing the unrecognized interactions. The interactions are based on KIBA score, collected from KEGG(​Kyoto Encyclopedia of Genes and Genomes)​ dataset \cite{Kanehisa2000}.
+The Dataset contains scores of the interaction of proteins and drugs based on \acrshort{kiba} scores. We use \arabic{no_drugs} drugs from CHEMBL and \arabic{no_proteins} proteins from UniProt to get their structural information. The interaction of 180244 is obtained from the research work produced by \cite{Tang2013}, and by removing the unrecognized interactions. The interactions is based on KIBA score -- an integrated approach by combining the power of thermodynamic constants and activity percentage of drug-target interaction profile.
 
 \iffalse
 
