@@ -67,13 +67,15 @@ The objectives of the research are:
 \section{Organization of Report}
 
 \subsection{Choosing Method of Interaction}
-Out of the two methods of contact prediction: Global Methods and Local Methods, where Global Method tries to predict the label of one residue pair considering the label of others while Local Method tries to predict the label of one residue pair without considering the label of others; we use Global Methods as a means of contact prediction. We try to run different variations in Residual Methods: Using Distance Prediction, Folding, Coevolutionary features engineering. 
+Out of the two methods of contact prediction: Global Methods and Local Methods, where Global Method tries to predict the label of one residue pair considering the label of others while Local Method tries to predict the label of one residue pair without considering the label of others; we use Global Methods as a means of contact prediction. We try to run different variations in Residual Methods: Using Distance Prediction, Coevolutionary features, Sequence Representation. 
 
+\iffalse
 \subsection{Creating Analogy with Image}
 For any protein sequence, instead of regarding them as segments, we try to run the whole protein sequence as an image: the residual contacts representing the pixels of the image.
+\fi
 
 \subsection{Deep Learning Network Selection}
-Convnets, as they still are quite helpful in solving an image recognition problem, we used their variations to understand the performance with protein drug set. As a higher level of optimization problem, we use LSTM to create different components of Model Selection. 
+Convnets, as they still are quite helpful in solving an image recognition problem, we used the stack of CNN with other keras layers to understand the performance of prediction of interaction with protein drug set. The image problem is in analogy as the different canonical dimension of drugs being mapped with canonical dimension of proteins. The value of pixel can be thought of as an interaction value of drug substituent with protein substituent.
 
 \subsection{Training and Testing}
-A basic PC was used to create initial models. A server with 4 CPUs was then used thence after the models were selected for training. The testing was done in normal PC for validation.
+A basic PC was used to create initial models. Google Colabs was used to train the deep convolutionary stack due to requirement of GPU. The models were saved on the runtime so that the next training could be resumed immediately after the cease of Colab's VM Session.
