@@ -8,7 +8,7 @@
 
 %%%%%%%%%%%%%%%%% DOCUMENT TYPE DEFINITION
 
-\documentclass[openright, a4paper, twoside, openany, 12pt]{report}
+\documentclass[openright, hidelinks, a4paper, twoside, openany, 12pt]{report}
 
 %%%%%%%%%%%%%%%%% END OF DOCUMENT TYPE DEFINITION
 
@@ -116,9 +116,11 @@
 % \newpage
 % \pagenumbering{arabic}
 % \setcounter{page}{0}
+\input{mainmatter/common.tex}
 \input{mainmatter/1-Introduction/introduction.tex}
 
 \input{mainmatter/2-Development/development.tex}
+
 \input{mainmatter/3-Methodology/methodology.tex}
 \input{mainmatter/4-Results/results.tex}
 % \input{mainmatter/5-Conclusion/conclusion.tex}

@@ -44,7 +44,7 @@ PubCHEM CID 11314340
 
 
 
-For the drug-target interaction (i.e. drug-protein interaction), we use KIBA scores \cite{Tang2013} instead of binary classification. Thus, we try to solve the problem into a regression problem to predict the drug and protein interaction. The KIBA score has two major advantages over binary classification: priority order of similarly interacting ligands-target (drugs-protein) can be created and the bias problem of unknown interactions is refrained in KIBA scores \cite{Tang2013,ozturk2018deepdta}. We use 52498 ligands as drugs and 254 human proteins as target for the prediction problem.
+For the drug-target interaction (i.e. drug-protein interaction), we use KIBA scores \cite{Tang2013} instead of binary classification. Thus, we try to solve the problem into a regression problem to predict the drug and protein interaction. The KIBA score regression has two major advantages over binary classification: interaction strength of similarly interacting ligands-target (drugs-protein) can be compared and the bias problem of unknown interactions is refrained \cite{Tang2013,ozturk2018deepdta}. Higher score means that there is more strength of interaction between the two. We use \arabic{no_drugs} ligands as drugs and \arabic{no_proteins} human proteins as target for the prediction problem.
 
 \begin{table}[h]
   \centering
@@ -60,4 +60,4 @@ For the drug-target interaction (i.e. drug-protein interaction), we use KIBA sco
   \end{tabular}
   \end{table}
 
-  \input{mainmatter/3-Methodology/system.tex}
+  \input{mainmatter/3-Methodology/sections/kiba.tex}
