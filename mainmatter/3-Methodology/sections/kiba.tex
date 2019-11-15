@@ -1,16 +1,3 @@
-\section{System Block}
-
-\begin{figure}[h]
-  % \def\svgwidth{\columnwidth}
-  % \includesvg{mainmatter/3-Methodology/images/block.svg}
-  \includegraphics[width=1\linewidth]{mainmatter/3-Methodology/images/block.pdf}
-  \caption{Schematic Block Diagram for Protein-Drug Prediction}
-  \label{fig:system}
-\end{figure}
-
-The Figure ~\ref{fig:system} shows the various components used to form the prediction system. The idea is basic in that protein interaction depends on the structural and chemical properties. The primary canonical structure of protein-drug set are fed into interaction block. The interaction parameter is filtered accordingly to the filter type. Similarly, the drug feature set are created to be trained with the machine learning algorithm. Finally, after training the training dataset, we cross validate the model with test dataset.
-
-
 \section{Dataset Description}
 
 \iffalse
@@ -59,5 +46,3 @@ where,  [{S}] is the experimental substrate concentration and K\textsubscript{m}
 
 
 All the bioactivity types are available from CHEMBL\cite{Gaulton2017}. Based on interaction data available, we remove the unknown values and get a total of 180244 interaction KIBA score values in the range of -3.09 to 17.8. With the standard deviation of 1.22, it represents a total of \arabic{no_proteins} proteins and \arabic{no_drugs} drugs.
-
-\input{mainmatter/3-Methodology/sections/pssm.tex}

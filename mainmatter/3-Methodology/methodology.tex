@@ -18,6 +18,19 @@ Things to do:
 
 \section{System Overview}
 
+\subsection{System Block}
+
+\begin{figure}[h]
+  % \def\svgwidth{\columnwidth}
+  % \includesvg{mainmatter/3-Methodology/images/block.svg}
+  \includegraphics[width=1\linewidth]{mainmatter/3-Methodology/images/system_block.pdf}
+  \caption{System Block Diagram for Protein-Drug Prediction}
+  \label{fig:system}
+\end{figure}
+
+Figure ~\ref{fig:system} shows the different stages our research goes for building a protein drug prediction system. The data is collected by exploring the available internet sources and required dataset is downloaded for processing. From the data, the missing values are removed in data preprocessing to aid proper training. From the raw drugs and proteins profile, SMILES and FASTA sequences are extracted respectively. Now the features are extraced based on the sequence provided. Then, the features are fed into Deep Learning Algorithm where the training is done to create the right prediction system. Again
+
+
 \subsection{Data Collection}
 
 The dataset is collected from open-internet database. There are basically three types of data required in this work: protein, drug and interaction sets. The UniProt Library has been used for extracting proteins features, PubChem for drug features, and NCBI for interaction scores. Additionally, PSI-BLAST is used to generate PSSM matrices for the protein features downloaded.
@@ -63,4 +76,16 @@ For the drug-target interaction (i.e. drug-protein interaction), we use KIBA sco
   \end{tabular}
   \end{table}
 
+
+various components used to form the prediction system. The idea is basic in that protein interaction depends on the structural and chemical properties. The primary canonical structure of protein-drug set are fed into interaction block. The interaction parameter is filtered accordingly to the filter type. Similarly, the drug feature set are created to be trained with the machine learning algorithm. Finally, after training the training dataset, we cross validate the model with test dataset.
+
+\section{Working}
+\begin{figure}[h]
+  \includegraphics[width=1\linewidth]{mainmatter/3-Methodology/images/Algorithm.pdf}
+  \caption{Schematic Block Diagram for Protein-Drug Prediction}
+  \label{fig:system2}
+\end{figure}
+
+
   \input{mainmatter/3-Methodology/sections/kiba.tex}
+  \input{mainmatter/3-Methodology/sections/pssm.tex}

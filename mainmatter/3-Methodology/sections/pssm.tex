@@ -70,7 +70,7 @@
   \label{table:PSSM_Analysis} 
 \end{table}
 
-The Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating PSSM score values. The sequence following shows the process of calculating the scores once the PSSM distribution of the whole family is calculated. Table \ref{table:motif_movement} shows the score distribution of lowercase amino acid sequence (starting after 4th position) determined by the size of the sliding window.
+Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating PSSM score values. The sequence following shows the process of calculating the scores once the PSSM distribution of the whole family is calculated. Table \ref{table:motif_movement} shows the score distribution of lowercase amino acid sequence (starting after 4th position) determined by the size of the sliding window.
 
 \seqsplit{ACTC\textbf{agccccagc}GGAGGTGAAGGACGTCCTTCCCCAGGAGCCGGTGAGAAGCGCAGTCGGGGGCACGGGGATGAGCTCAGGGGCCTCTAGAAAGATGTAGCTGGGACCTCGGGAAGCCCTGGCCTCCAGGTAGTCTCAGGAGAGCTACTCAGGGTCGGGCTTGGGGAGAGGAGGAGCGGGGGTGAGGCCAGCAGCA} 
 
@@ -119,14 +119,14 @@ The Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating P
   The molecular fingerprints related to drugs are referenced usning CHEMBL Identifier and the drug sequence is called from CHEMBL database. \cite{Gaulton2017}
   \fi
   \subsection{PSI-BLAST}
-  PSI-Blast tools relates with multiple sequence alignments from a family of protein sequences\cite{Schaffer2001}. This helps us to create a \acrshort{pssm} - Equation (\ref{eq:pssm}) - matrix referred to as secondary protein structure. The improvement in drug-contact prediction can be thought for amino acid composition being tuned with the scoring system. For this study, the PSSM profile of every protein sequence is obtained by executing iteration of PSI-BLAST against \cite[KEGG]{Schaffer2001} protein. PSSM profile is a matrix of L*20 dimensions where, 20 referring to standard type of amino acids and L being the length of the protein. The larger positive scores represent conserved positions, which in turn implies critical functional residues that are required to perform various intermolecular interactions.\cite[PSSM]{Schaffer2001}
+  PSI-Blast tools relates with multiple sequence alignments from a family of protein sequences\cite{Schaffer2001}. This helps us to create a \acrshort{pssm} - Equation (\ref{eq:pssm}) - matrix referred to as secondary protein structure. For this study, the PSSM profile of every protein sequence is obtained by executing iteration of PSI-BLAST against \cite[KEGG]{Schaffer2001} protein. PSSM profile is a matrix of L*20 dimensions where, 20 referring to standard type of amino acids and L being the length of the protein. The larger positive scores represent conserved positions, which in turn implies critical functional residues that are required to perform various intermolecular interactions.\cite[PSSM]{Schaffer2001}
   
   \begin{equation}
     PSSM = \begin{bmatrix}
       P_{1,1} & P_{1,2} & \dots & P_{1,20} \\
       P_{2,1} & P_{2,2} & \dots & P_{2,20} \\
       \vdots  & \vdots  & \ddots & \vdots \\
-      P_{2,1} & P_{2,2} & \dots & P_{2,20} \\
+      P_{L,1} & P_{L,2} & \dots & P_{L,20} \\
     \end{bmatrix}
     \label{eq:pssm}
   \end{equation}
@@ -134,13 +134,13 @@ The Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating P
   \subsubsection{PSSM-DT}
   Two forms of \acrshort{pssm} distance transformation techniques are used to transform the \acrshort{pssm} information into fixed dimensional vectors \cite{Xu2015}. The PSSM-DT (PSSM-Distance Transformation) can transform the \acrshort{pssm} information into uniform numeric representation by approximately measuring the occurrence probabilities of any pairs of amino acid. It results in two types of feature matrices: PSSM-SDT and PSSM-DDT defined by:
   
-  \begin{equation}
+  \begin{equation}[h]
     PSSM-SDT(i,lg) = \sum_{i=1}^{L-lg} S_{i,j} \times \frac{ S_{i,j+lg} }{L-lg} 
     \label{eq:pssmsdt}
   \end{equation}
   \textit{\center lg =  distance of separation between same amino acid sequence}
   
-  \begin{equation}
+  \begin{equation}[h]
     PSSM-DDT(i_1,i_2, lg) = \sum_{j=1}^{L-lg} S_{i_1,j} \times \frac{ S_{i_2,j+lg} }{ L-lg} 
     \label{eq:pssmddt}
   \end{equation}
@@ -165,7 +165,7 @@ The Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating P
   
   
   \subsection{Residue feature} 
-  The Statistical Residue Vector Space \acrshort{srv} \cite{Wong2018} plays an important role in Residue Residue Interaction and thus creates a basis for structural stability of the protein sequence itself. Though related more to the tertiary structure of protein sequence itself, we regard it to create a correlated sequence information where two proteins are related distantly by sequence but highly related with functional characteristic of protein. Table ~\ref{table:r2r} shows the table used in this work. It is a 20 x 20 matrix whose rows and columns represent 20 standard amino acids.
+  The Statistical Residue Vector Space \acrshort{srv} \cite{Wong2018} plays an important role in Residue Residue Interaction and thus creates a basis for structural stability of the protein sequence itself. Though related more to the tertiary structure of protein sequence itself, we regard it to create a correlated sequence information where two proteins are related distantly by sequence but highly related with functional characteristic of protein. Table ~\ref{table:r2r} is used in this work. It is a 20 x 20 matrix whose rows and columns represent 20 standard amino acids.
   
   \subsubsection{Residue Probing Transformation(RPT) feature}
   RPT as proposed by Jeong et al.\cite{Jeong2011}, and implemented by Pujan et al.\cite{Mishra2019}, emphasize domains with similar conservation rates by grouping domain families based on their conservation score in the PSSM profile.
@@ -272,7 +272,7 @@ The Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating P
   \input{mainmatter/3-Methodology/images/dense.tex}
   
   \subsubsection{Dropout Layer}
-  Our model becomes undesirable when every component of the input layer makes a significant changes to the output layer. To reduce the effect of unimportant features we use dropout layer. Thus the backpropagation network tries to ignore the noise features and minimizes the unrealizable prediction of the learning problem. This can be expressed diagrammatically in the Figure ~\ref{fig:dropout}.
+  Our model becomes undesirable when every component of the input layer makes a significant changes to the output layer. To reduce the effect of unimportant features we use dropout layer. Thus the backpropagation network tries to ignore the noise features and minimizes the unrealizable prediction of the learning problem. This can be expressed diagrammatically in Figure ~\ref{fig:dropout}.
   \begin{figure}
     [ht] \centering
     \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/dropout.jpeg}
@@ -283,9 +283,8 @@ The Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating P
   
   \subsubsection{Pooling Layer}
   The Pooling layer is used to downsample the learned parameters from the grid of 3 dimensions returned by Convolution Layer. It gets reduced to 1 dimension by taking the highest values from the window size(corresponding to shape of 1\textsuperscript{st} dimensional element).
-  \begin{figure}
-    [ht]\centering
-    \includegraphics[width=.75\linewidth]{mainmatter/3-Methodology/images/pooling.png}
+  \begin{figure}[h] \centering
+    \includegraphics[width=.75\linewidth]{mainmatter/3-Methodology/images/pooling.pdf}
     \caption{Pooling Layer}
     \label{fig:pool_layer}
   \end{figure}
