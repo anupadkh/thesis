@@ -59,27 +59,28 @@ The deep learning method was implemented with various filter sizes of Convolutio
     \begin{tabular}{|l|c|c|c|c|c|c|}
     \hline 
     
-     S.No. & Drug Smiles & FASTA & Setting & CI-val & MSE & CI-train \\ 
-     & Window Size &  Window Size  &  & &  &  \\  \hline 
-    1 & 4 & 8 & 1 & 0.813936 & 0.811580 & 0.893064 \\ \hline
-    2 & 4 & 12 & 1 & 0.810844 & 0.809919 & 1.285271 \\ \hline
-    3 & 8 & 8 & 1 & 0.873094 & 0.873648 & 0.177053 \\ \hline
-    4 & 8 & 12 & 1 & 0.807230 & 0.806509 & 1.056755 \\ \hline
-    \\ \hline
-    1 & 4 & 8 & 2 & 0.788051 & 0.789266 & 0.678707 \\ \hline
-    2 & 4 & 12 & 2 & 0.802355 & 0.802892 & 0.360900 \\ \hline
-    3 & 8 & 8 & 2 & 0.803720 & 0.806808 & 0.792821 \\ \hline
-    4 & 8 & 12 & 2 & 0.803853 & 0.805306 & 0.672790 \\ \hline
-    \\ \hline
-    1 & 4 & 8 & 3 & 0.815181 & 0.815076 & 1.562749 \\ \hline
-    2 & 4 & 12 & 3 & 0.805739 & 0.806455 & 1.541746 \\ \hline
-    3 & 8 & 8 & 3 & 0.813063 & 0.813148 & 1.259206 \\ \hline
-    4 & 8 & 12 & 3 & 0.824767 & 0.825603 & 1.396765 \\ \hline
-    \\ \hline
-    1 & 4 & 8 & 4 & 0.803982 & 0.804584 & 0.412271 \\ \hline
-    2 & 4 & 12 & 4 & 0.805961 & 0.807584 & 1.510426 \\ \hline
-    3 & 8 & 8 & 4 & 0.815464 & 0.816097 & 1.614631 \\ \hline
-    4 & 8 & 12 & 4 & 0.787073 & 0.787795 & 0.485298 \\ \hline
+     S.No. & Setting & Drug Smiles & FASTA &  CI-val & MSE  \\ 
+       &   & Window Size &  Window Size    & &    \\  \toprule \hline
+     1 & 1 & 4 & 8 & 0.813936 & 0.893064 \\ \hline
+     2 & 1 & 4 & 12 & 0.810844 & 1.285271 \\ \hline
+     3 & 1 & 8 & 8 & 0.873094 & 0.177053 \\ \hline
+     4 & 1 & 8 & 12 & 0.807230 & 1.056755 \\ \hline
+     \\ \hline
+     1 & 2 & 4 & 8 & 0.788051 & 0.678707 \\ \hline
+     2 & 2 & 4 & 12 & 0.802355 & 0.360900 \\ \hline
+     3 & 2 & 8 & 8 & 0.803720 & 0.792821 \\ \hline
+     4 & 2 & 8 & 12 & 0.803853 & 0.672790 \\ \hline
+     \\ \hline
+     1 & 3 & 4 & 8 & 0.815181 & 1.562749 \\ \hline
+     2 & 3 & 4 & 12 & 0.805739 & 1.541746 \\ \hline
+     3 & 3 & 8 & 8 & 0.813063 & 1.259206 \\ \hline
+     4 & 3 & 8 & 12 & 0.824767 & 1.396765 \\ \hline
+     \\ \hline
+     1 & 4 & 4 & 8 & 0.803982 & 0.412271 \\ \hline
+     2 & 4 & 4 & 12 & 0.805961 & 1.510426 \\ \hline
+     3 & 4 & 8 & 8 & 0.815464 & 1.614631 \\ \hline
+     4 & 4 & 8 & 12 & 0.787073 & 0.485298 \\ \hline
+     
     
     
     \end{tabular}
@@ -94,11 +95,17 @@ The Table \ref{table:results} shows that the optimal filter window size under al
         \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S1_CI.png}
     }
     \qquad
-    \subfloat[][Setting 2]{\includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S2_CI.png}}
+    \subfloat[][Setting 2]{
+        \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S2_CI.png}
+    }
     \qquad
-    \subfloat[][Setting 3]{\includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S3_CI.png}}
+    \subfloat[][Setting 3]{
+        \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S3_CI.png}
+    }
     \qquad
-    \subfloat[][Setting 4]{\includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S4_CI.png}}
+    \subfloat[][Setting 4]{
+        \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S4_CI.png}
+    }
     \caption{Plot of Training-Validation C-Index Scores over various Settings}
     \label{fig:ci_curve}
 \end{figure}
@@ -117,7 +124,7 @@ The training of the model proved a better choice as we added the new feature dim
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{mainmatter/4-Results/images/S1_loss.png}
-    \caption{Training and Validation Loss Plot of Setting 1 (S1) with Filter Size = 8}
+    \caption[Training Loss Plot]{Training and Validation Loss Plot of Setting 1 (S1) with Filter Size = 8}
     \label{fig:train_val_loss_plot}
 \end{figure}
 
