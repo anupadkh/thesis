@@ -74,8 +74,8 @@ Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating PSSM 
 
 \seqsplit{ACTC\textbf{agccccagc}GGAGGTGAAGGACGTCCTTCCCCAGGAGCCGGTGAGAAGCGCAGTCGGGGGCACGGGGATGAGCTCAGGGGCCTCTAGAAAGATGTAGCTGGGACCTCGGGAAGCCCTGGCCTCCAGGTAGTCTCAGGAGAGCTACTCAGGGTCGGGCTTGGGGAGAGGAGGAGCGGGGGTGAGGCCAGCAGCA} 
 
-\begin{wraptable}{br}{5.5cm}
-% \begin{table}[!ht]
+% \begin{wraptable}{br}{5.5cm}
+\begin{table}[H]
     \centering
     \caption{Score of sliding window motifs} \label{wrapTable:pssm-score}
     \begin{tabular}{|l|l|}
@@ -93,8 +93,8 @@ Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating PSSM 
     9 & 2.9 \\ \hline
     
     \end{tabular}
-% \end{table}
-\end{wraptable}
+\end{table}
+% \end{wraptable}
 
 .3, .1, .1, 0, 0, .2, .7, .5, .2  == Sum(2.1) - posix(4) -- See Table \ref{wrapTable:pssm-score}
 
@@ -134,13 +134,13 @@ Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating PSSM 
   \subsubsection{PSSM-DT}
   Two forms of \acrshort{pssm} distance transformation techniques are used to transform the \acrshort{pssm} information into fixed dimensional vectors \cite{Xu2015}. The PSSM-DT (PSSM-Distance Transformation) can transform the \acrshort{pssm} information into uniform numeric representation by approximately measuring the occurrence probabilities of any pairs of amino acid. It results in two types of feature matrices: PSSM-SDT and PSSM-DDT defined by:
   
-  \begin{equation}[h]
+  \begin{equation}[H]
     PSSM-SDT(i,lg) = \sum_{i=1}^{L-lg} S_{i,j} \times \frac{ S_{i,j+lg} }{L-lg} 
     \label{eq:pssmsdt}
   \end{equation}
   \textit{\center lg =  distance of separation between same amino acid sequence}
   
-  \begin{equation}[h]
+  \begin{equation}[H]
     PSSM-DDT(i_1,i_2, lg) = \sum_{j=1}^{L-lg} S_{i_1,j} \times \frac{ S_{i_2,j+lg} }{ L-lg} 
     \label{eq:pssmddt}
   \end{equation}
@@ -195,7 +195,7 @@ Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating PSSM 
   The labeled encoding techniques is used to represent the canonical structure of drugs and proteins. The structural canonical information is preserved while sending the feature set to deep learning method. An array of integers are formed from particular sequence while representing the structural information.
   
   The Labelled Encodings of protein and drugs can be defined by Table \ref{table:label_encoding} :
-  \begin{table}[h]
+  \begin{table}[H]
     \centering
     \begin{subtable}{Protein Labeled Encoding Technique}
       \centering

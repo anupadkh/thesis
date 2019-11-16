@@ -20,7 +20,7 @@ Things to do:
 
 \subsection{System Block}
 
-\begin{figure}[h]
+\begin{figure}[H]
   % \def\svgwidth{\columnwidth}
   % \includesvg{mainmatter/3-Methodology/images/block.svg}
   \includegraphics[width=1\linewidth]{mainmatter/3-Methodology/images/system_block.pdf}
@@ -62,7 +62,7 @@ PubCHEM CID 11314340
 
 For the drug-target interaction (i.e. drug-protein interaction), KIBA scores were used \cite{Tang2013} instead of binary classification. Thus, a regression model was used to predict the drug and protein interaction. The KIBA score regression has two major advantages over binary classification: interaction strength of similarly interacting ligands-target (drugs-protein) can be compared and the bias problem of unknown interactions is refrained \cite{Tang2013,ozturk2018deepdta}. Higher score means that there is more strength of interaction between the two. We use \arabic{no_drugs} ligands as drugs and \arabic{no_proteins} human proteins as target for the prediction problem.
 
-\begin{table}[h]
+\begin{table}[H]
   \centering
   \caption{KIBA Score Table}
   \begin{tabular}{|l|l|l|l|l|}
@@ -80,7 +80,7 @@ For the drug-target interaction (i.e. drug-protein interaction), KIBA scores wer
 Various components were used to form the prediction system. Protein interaction depends on its structural, chemical, molecular(related to H-bond) and electrostatic properties. The structural representation form basis for creating features in other properties. The primary canonical structure of protein-drug set are fed into interaction block. The interaction parameter is filtered accordingly to the filter type. Similarly, the drug feature set are created to be trained with the machine learning algorithm. Finally, after training the training dataset, cross validation of the model was done.
 
 \section{Building Components of Features Processing}
-\begin{figure}[ht]\centering
+\begin{figure}[H]\centering
   \includegraphics[width=0.9\linewidth]{mainmatter/3-Methodology/images/Algorithm.pdf}
   \caption{Schematic Block Diagram for Protein-Drug Prediction}
   \label{fig:system2}

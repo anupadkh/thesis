@@ -53,7 +53,7 @@ The deep learning method was implemented with various filter sizes of Convolutio
     \item Setting 4 (S2): The validation Protein and Drugs don't appear in training set
 \end{itemize}
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \caption{Experiments results under different settings (S1, S2, S3, S4)}
     \begin{tabular}{|l|c|c|c|c|c|c|}
@@ -89,7 +89,7 @@ The deep learning method was implemented with various filter sizes of Convolutio
 \section{Analysis}
 The Table \ref{table:results} shows that the optimal filter window size under all settings can be chosen equal to 8 for both drugs and proteins. The highest C-Index Score of (87.30\%) was obtained under Setting 1 when both the drugs and proteins were present in the validation set and training set. This can also be better realized visually from Figure \ref{fig:ci_curve}.
  
-\begin{figure}[h]\centering
+\begin{figure}[H]\centering
     \subfigure[Setting 1]{\includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S1_CI.png}}
     \subfigure[Setting 2]{\includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S2_CI.png}}
     \subfigure[Setting 3]{\includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S3_CI.png}}
@@ -101,7 +101,7 @@ The Table \ref{table:results} shows that the optimal filter window size under al
 \section{Conclusion}
 The training of the model proved a better choice as we added the new feature dimension for proteins to get a generalization of all the feature sets extracted from the drug and protein sequence.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \subfigure[Training Actual Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/train_y.png}}
     \subfigure[Training Predicted Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/pred_train_y.png}}
     \subfigure[Training Scores Difference]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/train_diff.png}}
@@ -117,7 +117,7 @@ The training of the model proved a better choice as we added the new feature dim
 \end{figure}
 
 Similarly, the prediction scores and actual scores for validation sets is shown in Figure ~\ref{fig:val_train}
-\begin{figure}[h]
+\begin{figure}[H]
     \subfigure[Testing Actual Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/val_y.png}}
     \subfigure[Testing Predicted Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/pred_val_y.png}}
     \subfigure[Testing Scores Difference]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/val_difference.png}}

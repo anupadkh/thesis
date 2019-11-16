@@ -3,13 +3,13 @@
   
   The Features formed from data processing block are then subjected to deep learning model. The implementation is done using  using keras library in python. The implemented model is represented by Figure ~\ref{fig:dlm}. The input layers are described in Table ~\ref{table:inputs}.
   
-  \begin{figure}[ht]
+  \begin{figure}[H]
   \centering
   \includegraphics[width=1\linewidth]{mainmatter/3-Methodology/images/DeepDF.pdf}
   \caption{Deep Learning Model to predict Protein-Drug Interaction}
   \label{fig:dlm}
   \end{figure}
-  \begin{table}[ht]\centering
+  \begin{table}[H]\centering
     \caption{Inputs Used in the Deep Learning Network} 
     \begin{tabular}{|l|l|l|l|}
       \hline 
@@ -29,7 +29,7 @@
 
   \subsubsection{Convolution Neural Network}
   To learn the local patterns in the input vector, we use \acrshort{cnn}. While Dense Layers can learn the global parameters, \acrshort{cnn} is used to understand the local patterns. It does so by increasing the depth layer, which in turn is designed to learn different patterns as shown in Figure ~\ref{fig:cnn}.
-  \begin{figure}[ht]
+  \begin{figure}[H]
     \centering
     \includegraphics[width=.8\linewidth]{mainmatter/3-Methodology/images/cnn.png}
     \caption{Convolutional Neural Network}
@@ -43,7 +43,7 @@
   \subsubsection{Dropout Layer}
   Our model becomes undesirable when every component of the input layer makes a significant change to the output layer. To reduce the effect of unimportant features the dropout layer was used. Thus the backpropagation network tries to ignore the noise features and minimizes the unrealizable prediction of the learning problem. This can be expressed diagrammatically in Figure ~\ref{fig:dropout}.
   \begin{figure}
-    [ht] \centering
+    [H] \centering
     \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/dropout.jpeg}
     \caption[Dropout Layer]{a) Standard neural network whose all the nodes have weights connected to higher nodes and lower nodes. b) Certain nodes belonging to same levels are disconnected. Some weights are also disconnected from other nodes depending on the percentage of dropout applied.}
     \label{fig:dropout}
@@ -52,7 +52,7 @@
   
   \subsubsection{Pooling Layer}
   The Pooling layer is used to downsample the learned parameters from the grid of 3 dimensions returned by Convolution Layer. It gets reduced to 1 dimension by taking the highest values from the window size(corresponding to shape of 1\textsuperscript{st} dimensional element).
-  \begin{figure}[h] \centering
+  \begin{figure}[H] \centering
     \includegraphics[width=.75\linewidth]{mainmatter/3-Methodology/images/pooling.pdf}
     \caption{Pooling Layer}
     \label{fig:pool_layer}
