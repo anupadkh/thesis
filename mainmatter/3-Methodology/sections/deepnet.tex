@@ -44,8 +44,10 @@
   Our model becomes undesirable when every component of the input layer makes a significant change to the output layer. To reduce the effect of unimportant features the dropout layer was used. Thus the backpropagation network tries to ignore the noise features and minimizes the unrealizable prediction of the learning problem. This can be expressed diagrammatically in Figure ~\ref{fig:dropout}.
   \begin{figure}
     [H] \centering
+    \captionsetup{justification=justified}
     \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/dropout.jpeg}
-    \caption[Dropout Layer]{a) Standard neural network whose all the nodes have weights connected to higher nodes and lower nodes. b) Certain nodes belonging to same levels are disconnected. Some weights are also disconnected from other nodes depending on the percentage of dropout applied.}
+    \caption[Dropout Layer]{a) Standard neural network whose all the nodes have weights connected to higher nodes and lower nodes. 
+    b) Certain nodes belonging to same levels are disconnected. Some weights are also disconnected from other nodes depending on the percentage of dropout applied.}
     \label{fig:dropout}
   
   \end{figure}
@@ -53,7 +55,7 @@
   \subsubsection{Pooling Layer}
   The Pooling layer is used to downsample the learned parameters from the grid of 3 dimensions returned by Convolution Layer. It gets reduced to 1 dimension by taking the highest values from the window size(corresponding to shape of 1\textsuperscript{st} dimensional element).
   \begin{figure}[H] \centering
-    \includegraphics[width=.75\linewidth]{mainmatter/3-Methodology/images/pooling.pdf}
+    \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/pooling.pdf}
     \caption{Pooling Layer}
     \label{fig:pool_layer}
   \end{figure}

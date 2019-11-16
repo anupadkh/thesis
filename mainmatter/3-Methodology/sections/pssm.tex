@@ -4,55 +4,59 @@
 
 \begin{table}
   \centering
-  \caption{PSSM Analysis Design} 
-  \begin{subtable}[]{protein fasta sequence}
-    \begin{tabular}{|l|l|}
-    \hline
-    
-    1 & GAGGTAAAC \\ \hline
-    2 & TCCGTAAGT \\ \hline
-    3 & CAGGTTGGA \\ \hline
-    4 & ACAGTCAGT \\ \hline
-    5 & TAGGTCATT \\ \hline
-    6 & TAGGTACTG \\ \hline
-    7 & ATGGTAACT \\ \hline
-    8 & CAGGTATAC \\ \hline
-    9 & TGTGTGAGT \\ \hline
-    10 & AAGGTAAGT \\ \hline
-    
-    \end{tabular}
-    
-  \end{subtable}
+  {\caption{PSSM Analysis Design}
+  \label{table:PSSM_Analysis} }
+    \subfloat[][Protein FASTA Sequence]{
+      \label{table:PSSM_Analysis:fasta} 
+      \begin{tabular}{|l|l|} \toprule
+      \hline
+      1 & GAGGTAAAC \\ \hline
+      2 & TCCGTAAGT \\ \hline
+      3 & CAGGTTGGA \\ \hline
+      4 & ACAGTCAGT \\ \hline
+      5 & TAGGTCATT \\ \hline
+      6 & TAGGTACTG \\ \hline
+      7 & ATGGTAACT \\ \hline
+      8 & CAGGTATAC \\ \hline
+      9 & TGTGTGAGT \\ \hline
+      10 & AAGGTAAGT \\ \hline
+      
+      \end{tabular}
+    }
+    \subfloat[][Frequency Table]{
+      \label{table:PSSM_Analysis:frequency}
+      \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|} \toprule
+        \hline
+        
+         & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
+        A & 3 & 6 & 1 & 0 & 0 & 6 & 7 & 2 & 1 \\ \hline
+        C & 2 & 2 & 1 & 0 & 0 & 2 & 1 & 1 & 2 \\ \hline
+        G & 1 & 1 & 7 & 10 & 0 & 1 & 1 & 5 & 1 \\ \hline
+        T & 4 & 1 & 1 & 0 & 10 & 1 & 1 & 2 & 6 \\ \hline
+        
+        \end{tabular}
 
-  \begin{subtable}[]{Frequency Table}
-    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
-    \hline
+    } 
+  
+  
+  \subfloat[][Log-Likelihood Matrix]{
+    % \rule{4cm}{0cm}
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|} \toprule
+      \hline 
+  
+          & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
+      A & 0.3 & 0.6 & 0.1 & 0.00 & 0.00 & 0.6 & 0.7 & 0.2 & 0.1 \\ \hline
+      C & 0.2 & 0.2 & 0.1 & 0.00 & 0.00 & 0.2 & 0.1 & 0.1 & 0.2 \\ \hline
+      G & 0.1 & 0.1 & 0.7 & 1.00 & 0.00 & 0.1 & 0.1 & 0.5 & 0.1 \\ \hline
+      T & 0.4 & 0.1 & 0.1 & 0.00 & 1.00 & 0.1 & 0.1 & 0.2 & 0.6 \\ \hline
+      
+      \end{tabular}  
+      \label{table:log_likelihood_pssm}
+    }
     
-     & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
-    A & 3 & 6 & 1 & 0 & 0 & 6 & 7 & 2 & 1 \\ \hline
-    C & 2 & 2 & 1 & 0 & 0 & 2 & 1 & 1 & 2 \\ \hline
-    G & 1 & 1 & 7 & 10 & 0 & 1 & 1 & 5 & 1 \\ \hline
-    T & 4 & 1 & 1 & 0 & 10 & 1 & 1 & 2 & 6 \\ \hline
-    
-    \end{tabular}
-  \end{subtable}
-
-  \begin{subtable}[]
-    {Log-Likelihood Matrix}
-    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
-    \hline 
-
-        & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
-    A & 0.3 & 0.6 & 0.1 & 0.00 & 0.00 & 0.6 & 0.7 & 0.2 & 0.1 \\ \hline
-    C & 0.2 & 0.2 & 0.1 & 0.00 & 0.00 & 0.2 & 0.1 & 0.1 & 0.2 \\ \hline
-    G & 0.1 & 0.1 & 0.7 & 1.00 & 0.00 & 0.1 & 0.1 & 0.5 & 0.1 \\ \hline
-    T & 0.4 & 0.1 & 0.1 & 0.00 & 1.00 & 0.1 & 0.1 & 0.2 & 0.6 \\ \hline
-    
-    \end{tabular}
-  \end{subtable}
-
-  \begin{subtable}[]
-    {Log-Likelihood Matrix for the motif}
+  
+  \subfloat[][Sliding Window Score Calculation]{
+    \centering
     \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
     \hline 
     
@@ -62,48 +66,43 @@
     G &  & 0.1 &  &  &  &  &  & 0.5 &  \\ \hline
     T &  &  &  &  &  &  &  &  &  \\ \hline
     
-    \end{tabular}
-    \caption{Sliding Window Score Calculation}
+    \end{tabular}  
     \label{table:motif_movement}
-  \end{subtable}
-  
-  \label{table:PSSM_Analysis} 
+    }
+
+    
+    \subfloat[][Score of sliding window motifs]{
+    \label{wrapTable:pssm-score}
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+      \hline
+      0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
+      1.099 & 1 & 2.2 & 2.1 & 2.1 & 1.300 & 1.3 & 1.4 & 2 & 2.9 \\ \hline
+      \end{tabular}
+    }
 \end{table}
 
 Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating PSSM score values. The sequence following shows the process of calculating the scores once the PSSM distribution of the whole family is calculated. Table \ref{table:motif_movement} shows the score distribution of lowercase amino acid sequence (starting after 4th position) determined by the size of the sliding window.
 
 \seqsplit{ACTC\textbf{agccccagc}GGAGGTGAAGGACGTCCTTCCCCAGGAGCCGGTGAGAAGCGCAGTCGGGGGCACGGGGATGAGCTCAGGGGCCTCTAGAAAGATGTAGCTGGGACCTCGGGAAGCCCTGGCCTCCAGGTAGTCTCAGGAGAGCTACTCAGGGTCGGGCTTGGGGAGAGGAGGAGCGGGGGTGAGGCCAGCAGCA} 
 
-% \begin{wraptable}{br}{5.5cm}
-\begin{table}[H]
-    \centering
-    \caption{Score of sliding window motifs} \label{wrapTable:pssm-score}
-    \begin{tabular}{|l|l|}
-    \hline
+% % \begin{wraptable}{br}{5.5cm}
+% \begin{table}[H]
+%     \centering
     
-    0 & 1.099 \\ \hline
-    1 & 1 \\ \hline
-    2 & 2.2 \\ \hline
-    3 & 2.1 \\ \hline
-    4 & 2.1 \\ \hline
-    5 & 1.300 \\ \hline
-    6 & 1.3 \\ \hline
-    7 & 1.4 \\ \hline
-    8 & 2 \\ \hline
-    9 & 2.9 \\ \hline
-    
-    \end{tabular}
-\end{table}
-% \end{wraptable}
+% \end{table}
+% % \end{wraptable}
 
 .3, .1, .1, 0, 0, .2, .7, .5, .2  == Sum(2.1) - posix(4) -- See Table \ref{wrapTable:pssm-score}
 
 \begin{figure}
     \centering 
           %  \subfloat[]{\includegraphics[width=.3\textwidth]{mainmatter/3-Methodology/images/data/distribution.png}}
-           \subfigure[KIBA Scores]{\includegraphics[width=.7\textwidth]{mainmatter/3-Methodology/images/figures/distribution.png}}
-           \subfigure[Logarithmic One Hot Encodings of Drug Sequence]{\includegraphics[width=.7\textwidth]{mainmatter/3-Methodology/images/figures/drug_length_logarithmic.png}}
-           \subfigure[One Hot Encodings of Protein Sequence]{\includegraphics[width=.7\textwidth]{mainmatter/3-Methodology/images/figures/prot_length.png}}
+          \qquad
+           \subfloat[][KIBA Scores]{\includegraphics[width=.49\textwidth]{mainmatter/3-Methodology/images/figures/distribution.png}}
+           \qquad
+           \subfloat[][Logarithmic Label Encodings of Drug Sequence]{\includegraphics[width=.49\textwidth]{mainmatter/3-Methodology/images/figures/drug_length_logarithmic.png}}
+           \qquad
+           \subfloat[][Logarithmic Labeled Encodings of Protein Sequence]{\includegraphics[width=.49\textwidth]{mainmatter/3-Methodology/images/figures/prot_length.png}}
            \caption[Dataset Distribution]{Data Distribution of KIBA-interaction scores, Drug Sequences and Protein Sequences}
            \label{fig:kiba_drug_protein}
 \end{figure}
@@ -197,17 +196,21 @@ Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating PSSM 
   The Labelled Encodings of protein and drugs can be defined by Table \ref{table:label_encoding} :
   \begin{table}[H]
     \centering
-    \begin{subtable}{Protein Labeled Encoding Technique}
-      \centering
-      % \caption{Protein Labeled Encoding Technique}
+    \caption{Labeled Encoding of Proteins and Drugs}
+    \label{table:label_encoding}
+    \qquad
+    \subfloat[][Label Encodings for Proteins]{
+      \label{table:label_encoding:prot}
       \begin{tabular}{|cccc|}
         \hline
         A --> 1 & C --> 2 & B --> 3 & E --> 4 \\ \hline
         D --> 5 & G --> 6 & F --> 7 & I --> 8 \\ \hline
       \end{tabular}
-    \end{subtable}  
+      }
 
-    \begin{subtable}{Drugs Labeled Encoding Technique}
+    \qquad
+    \subfloat[][Label Encodings for Drugs]{
+      \label{table:label_encoding:drugs}
       \centering
       % \caption{Drugs Labeled Encoding Technique}
       \begin{tabular}{|cccc|}
@@ -215,9 +218,7 @@ Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating PSSM 
         \# --> 1 & \% --> 2 & : --> 3 & + --> 5 \\ \hline
         4 --> 13 & 7 --> 14 & F --> 25 & I --> 26 \\ \hline
       \end{tabular}
-    \end{subtable}
-    \caption{Labeled Encoding of Proteins and Drugs}
-    \label{table:label_encoding}
+      }
   \end{table}
   
   % CHARPROTSET = { "A": 1, "C": 2, "B": 3, "E": 4, "D": 5, "G": 6,

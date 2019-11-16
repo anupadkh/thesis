@@ -12,7 +12,6 @@
 
 %%%%%%%%%%%%%%%%% END OF DOCUMENT TYPE DEFINITION
 
-
 \input{configs.tex}
 \DeclareUnicodeCharacter{0080}{HERE-HERE-HERE}
 %%%%%%%%%%%%%%%%% PARAGRAPHS CONFIGURATION
@@ -40,6 +39,13 @@
 %\newcommand{\myadvisorB}{Department Bertan of Electrical Engineering}
 %\newcommand{\myadvisorC}{Department Bertan of Electrical Engineering}
 
+
+
+\newcommand*{\subcaption}[2][]{%
+    \stepcounter{sub\@captype}%
+    \addtocounter{\@captype}{-1}%
+    \ifx\\#1\\\caption{#2}\else\caption[#1]{#2}\fi%
+}
 \newcommand{\roll}{073 MSCS 652}
 \makeatletter
 \let\thetitle\@title
@@ -69,6 +75,22 @@
 \cleardoublepage
 \linespread{2}
 \input{mainmatter/common.tex}
+
+
+% \renewcommand*{\thesubfloat}{\Alph{subfloat}}
+% \newcommand*{\startsubcaptions}{%
+%   \setcounter{sub\@captype}{0}
+%   \csappto{the\@captype}{.\csname thesub\@captype\endcsname}%
+% }
+% \renewcommand*{\subcaption}[2][]{%
+%     \stepcounter{sub\@captype}%
+%     \addtocounter{\@captype}{-1}%
+%     \ifx\\#1\\\caption{#2}\else\caption[#1]{#2}\fi%
+% }
+% \newcommand*{\nonumbercaption}[1]{%
+%   \refstepcounter{\@captype}%
+%   {\centering #1\par}%
+% }
 
 %\input{frontmatter/1-coverpage.tex}
 \input{frontmatter/2-titlepage.tex}

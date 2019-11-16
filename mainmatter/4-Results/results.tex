@@ -49,8 +49,8 @@ The deep learning method was implemented with various filter sizes of Convolutio
 \begin{itemize}
     \item Setting 1 (S1): The validation proteins and drugs appear in training set.
     \item Setting 2 (S2): The validation Protein is seen in training set but validation drugs aren't present while training.
-    \item Setting 3 (S2): The validation Protein is absent in training set but validation drugs are present in training set.
-    \item Setting 4 (S2): The validation Protein and Drugs don't appear in training set
+    \item Setting 3 (S3): The validation Protein is absent in training set but validation drugs are present in training set.
+    \item Setting 4 (S4): The validation Protein and Drugs don't appear in training set
 \end{itemize}
 
 \begin{table}[H]
@@ -90,10 +90,15 @@ The deep learning method was implemented with various filter sizes of Convolutio
 The Table \ref{table:results} shows that the optimal filter window size under all settings can be chosen equal to 8 for both drugs and proteins. The highest C-Index Score of (87.30\%) was obtained under Setting 1 when both the drugs and proteins were present in the validation set and training set. This can also be better realized visually from Figure \ref{fig:ci_curve}.
  
 \begin{figure}[H]\centering
-    \subfigure[Setting 1]{\includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S1_CI.png}}
-    \subfigure[Setting 2]{\includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S2_CI.png}}
-    \subfigure[Setting 3]{\includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S3_CI.png}}
-    \subfigure[Setting 4]{\includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S4_CI.png}}
+    \subfloat[][Setting 1]{
+        \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S1_CI.png}
+    }
+    \qquad
+    \subfloat[][Setting 2]{\includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S2_CI.png}}
+    \qquad
+    \subfloat[][Setting 3]{\includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S3_CI.png}}
+    \qquad
+    \subfloat[][Setting 4]{\includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S4_CI.png}}
     \caption{Plot of Training-Validation C-Index Scores over various Settings}
     \label{fig:ci_curve}
 \end{figure}
@@ -102,9 +107,9 @@ The Table \ref{table:results} shows that the optimal filter window size under al
 The training of the model proved a better choice as we added the new feature dimension for proteins to get a generalization of all the feature sets extracted from the drug and protein sequence.
 
 \begin{figure}[H]
-    \subfigure[Training Actual Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/train_y.png}}
-    \subfigure[Training Predicted Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/pred_train_y.png}}
-    \subfigure[Training Scores Difference]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/train_diff.png}}
+    \subfloat[Training Actual Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/train_y.png}}
+    \subfloat[Training Predicted Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/pred_train_y.png}}
+    \subfloat[Training Scores Difference]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/train_diff.png}}
     \caption{Training Results based on KIBA Score Prediction}
     \label{fig:pred_train}
 \end{figure}
@@ -118,9 +123,9 @@ The training of the model proved a better choice as we added the new feature dim
 
 Similarly, the prediction scores and actual scores for validation sets is shown in Figure ~\ref{fig:val_train}
 \begin{figure}[H]
-    \subfigure[Testing Actual Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/val_y.png}}
-    \subfigure[Testing Predicted Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/pred_val_y.png}}
-    \subfigure[Testing Scores Difference]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/val_difference.png}}
+    \subfloat[Testing Actual Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/val_y.png}}
+    \subfloat[Testing Predicted Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/pred_val_y.png}}
+    \subfloat[Testing Scores Difference]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/val_difference.png}}
     \caption{Testing Results on KIBA score Prediction}
     \label{fig:val_train}
 \end{figure}

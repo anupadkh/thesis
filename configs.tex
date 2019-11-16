@@ -10,7 +10,7 @@
 \usepackage{amsmath} % Extra commands for math
 \usepackage{amssymb} % Math symbols
 \usepackage{graphicx}
-\usepackage{subfigure}
+\usepackage{subfig}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{color}
 \usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
@@ -85,6 +85,7 @@
 
 %%%%%%%%%%%%%%%%% Caption
 \usepackage{caption}
+
 % \captionsetup{%
 %   font=footnotesize,% set font size to footnotesize
 %   labelfont=bf % bold label (e.g., Figure 3.2) font
@@ -105,6 +106,7 @@
 \usepackage{float}
 \usepackage[framed,amsmath,thmmarks]{ntheorem}
 \usepackage{titlesec}
+
 
 %  Title Formats
 \titleformat{\chapter}[hang] 
@@ -136,5 +138,7 @@
 % Add figure and table
 \usepackage{chngcntr}
 \usepackage{wrapfig}
-
-% \usepackage[backend=biber, style=alpabetic, citestyle=apa]{biblatex}
+\usepackage{booktabs}
+\captionsetup[table]{position=top}
+\captionsetup[subfloat]{position=bottom}
+\captionsetup[figure]{position=bottom}
