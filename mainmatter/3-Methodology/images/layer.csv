@@ -1,0 +1,47 @@
+# label: %component%
+# style: shape=%shape%;fillColor=%fill%;strokeColor=%stroke%;verticalLabelPosition=bottom;aspect=fixed;
+# namespace: csvimport-
+# connect: {"from":"id", "to":"refs", "invert":true, "style": \
+#            "curved=0;endArrow=none;endFill=0;dashed=1;strokeColor=#6c8ebf;"}
+# connect: {"from":"id", "to":"otherrefs", "invert":true, "style": \
+#            "curved=0;endArrow=none;endFill=0;dashed=1;strokeColor=#6c8ebf;"}
+# width: 80
+# height: 80
+# ignore: id,shape,fill,stroke,refs
+# nodespacing: 40
+# levelspacing: 40
+# edgespacing: 40
+# layout: horizontaltree
+## CSV data starts below this line
+id,step,fill,stroke,shape,refs,otherrefs
+1," Labeled Encoding (Drugs) ",#dae8fc,#6c8ebf,rectangle,,
+2," Embedding",#dae8fc,#6c8ebf,rectangle,1,
+3,Conv1D,#dae8fc,#6c8ebf,rectangle,2,
+4,Conv1D,#dae8fc,#6c8ebf,rectangle,3,
+5,Conv1D,#dae8fc,#6c8ebf,rectangle,4,
+6,GlobalMaxPooling,#dae8fc,#6c8ebf,rectangle,5,
+7,Concatenate,#dae8fc,#6c8ebf,rectangle,6,24
+8,Labeled Encoding (Proteins),#dae8fc,#6c8ebf,rectangle,,
+9," Embedding",#dae8fc,#6c8ebf,rectangle,8,
+10,Conv1D,#dae8fc,#6c8ebf,rectangle,9,
+11,Conv1D,#dae8fc,#6c8ebf,rectangle,10,
+12,Conv1D,#dae8fc,#6c8ebf,rectangle,11,
+13,GlobalMaxPooling,#dae8fc,#6c8ebf,rectangle,12,
+14,Residue Probing Transformation Matrix,#dae8fc,#6c8ebf,rectangle,,
+15,Conv1D,#dae8fc,#6c8ebf,rectangle,14,
+16,Conv1D,#dae8fc,#6c8ebf,rectangle,15,
+17,Conv1D,#dae8fc,#6c8ebf,rectangle,16,
+18,GlobalMaxPooling,#dae8fc,#6c8ebf,rectangle,17,
+19,PSSM-DT,#dae8fc,#6c8ebf,rectangle,,
+20,GlobalMaxPooling,#dae8fc,#6c8ebf,rectangle,19,
+21,Evolutionary Transformation Matrix,#dae8fc,#6c8ebf,rectangle,,
+22,GlobalMaxPooling,#dae8fc,#6c8ebf,rectangle,21,
+23,Concatenate,#dae8fc,#6c8ebf,rectangle,22,21
+24,Concatenate,#dae8fc,#6c8ebf,rectangle,13,18
+25,Concatenate,#dae8fc,#6c8ebf,rectangle,24,23
+26,Dense,#dae8fc,#6c8ebf,rectangle,25,
+27,Dropout,#dae8fc,#6c8ebf,rectangle,26,
+28,Dense,#dae8fc,#6c8ebf,rectangle,27,
+29,Dropout,#dae8fc,#6c8ebf,rectangle,28,
+30,Dense,#dae8fc,#6c8ebf,rectangle,29,
+31,Dense,#dae8fc,#6c8ebf,rectangle,30,

@@ -28,14 +28,14 @@ Things to do:
   \label{fig:system}
 \end{figure}
 
-Figure ~\ref{fig:system} shows the different stages our research goes for building a protein drug prediction system. The data is collected by exploring the available internet sources and required dataset is downloaded for processing. From the data, the missing values are removed in data preprocessing to aid proper training. From the raw drugs and proteins profile, SMILES and FASTA sequences are extracted respectively. Now the features are extraced based on the sequence provided. Then, the features are fed into Deep Learning Algorithm where the training is done to create the right prediction system. Again
+Figure ~\ref{fig:system} shows the different stages of research for building a protein drug prediction system. The data is collected by exploring the available internet sources and required dataset is downloaded for processing. From the data, the missing values are removed in data preprocessing to aid proper training. From the raw drugs and proteins profile, SMILES and FASTA sequences are extracted respectively. Now the features are extracted based on the sequence provided. Then, the features are fed into Deep Learning Algorithm where the training is performed to create the right prediction system. The training follows by testing and validation of data under different settings of protein and drug combinations.
 
 
 \subsection{Data Collection}
 
-The dataset is collected from open-internet database. There are basically three types of data required in this work: protein, drug and interaction sets. The UniProt Library has been used for extracting proteins features, PubChem for drug features, and NCBI for interaction scores. Additionally, PSI-BLAST is used to generate PSSM matrices for the protein features downloaded.
+The dataset is collected from open-internet database. Basically, there are three types of data required in this work: protein, drug and interaction sets. The UniProt Library has been used for extracting proteins features, PubChem for drug features, and NCBI for interaction scores. Additionally, PSI-BLAST is used to generate PSSM matrices for the protein features downloaded.
 
-UniProt contains database of 173,281 proteins of human (Homo sapiens) (until 2019). The protein document consists of the taxonomic classification, identifiers to other databases for cross-linking,  molecular properties, related specific bioactivity, functional property, canonical and isoforms of protein sequence. The protein fasta sequence in particular is of interest to the work produced. An api can be used to download the available information.  
+UniProt contains database of 173,281 proteins of human (Homo sapiens) (until 2019). The protein document consists of the taxonomic classification, identifiers to other databases for cross-linking,  molecular properties, related specific bioactivity, functional property, canonical and isoforms of protein sequence. The protein fasta sequence in particular is of interest to this research. An API can be used to download the available information.  
 \url{https://www.uniprot.org/help/programmatic_access}
 
 >O00311
@@ -60,7 +60,7 @@ PubCHEM CID 11314340
 
 
 
-For the drug-target interaction (i.e. drug-protein interaction), we use KIBA scores \cite{Tang2013} instead of binary classification. Thus, we try to solve the problem into a regression problem to predict the drug and protein interaction. The KIBA score regression has two major advantages over binary classification: interaction strength of similarly interacting ligands-target (drugs-protein) can be compared and the bias problem of unknown interactions is refrained \cite{Tang2013,ozturk2018deepdta}. Higher score means that there is more strength of interaction between the two. We use \arabic{no_drugs} ligands as drugs and \arabic{no_proteins} human proteins as target for the prediction problem.
+For the drug-target interaction (i.e. drug-protein interaction), KIBA scores were used \cite{Tang2013} instead of binary classification. Thus, a regression model was used to predict the drug and protein interaction. The KIBA score regression has two major advantages over binary classification: interaction strength of similarly interacting ligands-target (drugs-protein) can be compared and the bias problem of unknown interactions is refrained \cite{Tang2013,ozturk2018deepdta}. Higher score means that there is more strength of interaction between the two. We use \arabic{no_drugs} ligands as drugs and \arabic{no_proteins} human proteins as target for the prediction problem.
 
 \begin{table}[h]
   \centering
@@ -77,15 +77,18 @@ For the drug-target interaction (i.e. drug-protein interaction), we use KIBA sco
   \end{table}
 
 
-various components used to form the prediction system. The idea is basic in that protein interaction depends on the structural and chemical properties. The primary canonical structure of protein-drug set are fed into interaction block. The interaction parameter is filtered accordingly to the filter type. Similarly, the drug feature set are created to be trained with the machine learning algorithm. Finally, after training the training dataset, we cross validate the model with test dataset.
+Various components were used to form the prediction system. Protein interaction depends on its structural, chemical, molecular(related to H-bond) and electrostatic properties. The structural representation form basis for creating features in other properties. The primary canonical structure of protein-drug set are fed into interaction block. The interaction parameter is filtered accordingly to the filter type. Similarly, the drug feature set are created to be trained with the machine learning algorithm. Finally, after training the training dataset, cross validation of the model was done.
 
-\section{Working}
-\begin{figure}[h]
-  \includegraphics[width=1\linewidth]{mainmatter/3-Methodology/images/Algorithm.pdf}
+\section{Building Components of Features Processing}
+\begin{figure}[ht]\centering
+  \includegraphics[width=0.9\linewidth]{mainmatter/3-Methodology/images/Algorithm.pdf}
   \caption{Schematic Block Diagram for Protein-Drug Prediction}
   \label{fig:system2}
 \end{figure}
 
+Figure \ref{fig:system2} shows the building components of the Input Vectors for feeding the deep learning network. The KIBA Prediction id done by feeding canonical protein fasta and drug smiles. The other features are constructed on their basis. PSSM matrix is constructed using PSSM matrices of human genome protein library from UniProt~\cite{UniProtConsortium2018} and the protein's FASTA. Two features, \acrfull{et} and \acrfull{pssmdt} are extracted from PSSM. From FASTA, Labelled encodings and \acrfull{rpt} matrix are created. From the SMILES, only labelled encodings is extracted.
+
 
   \input{mainmatter/3-Methodology/sections/kiba.tex}
   \input{mainmatter/3-Methodology/sections/pssm.tex}
+  \input{mainmatter/3-Methodology/sections/deepnet.tex}
