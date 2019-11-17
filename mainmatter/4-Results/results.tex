@@ -47,6 +47,80 @@ where $b_i$ is the prediction value for higher affinity $\delta_i$ and $b_j$ is 
 
 The method proposed by this research, \acrfull{featdti} contains 3 \acrfull{cnn}-blocks. It evaluates \acrfull{rpt}, acrfull{edt} and \acrfull{pssmdt} based on the inputs (Protein FASTA and Drugs SMILES) provided. The features are then calculated by the model to calculate the \acrfull{kiba} scores.
 
+
+% __________________________________________________________________________________________________
+% Layer (type)                    Output Shape         Param #     Connected to                     
+% ==================================================================================================
+% input_10 (InputLayer)           (None, 2000, 1)      0                                            
+% __________________________________________________________________________________________________
+% input_8 (InputLayer)            (None, 1000)         0                                            
+% __________________________________________________________________________________________________
+% conv1d_16 (Conv1D)              (None, 1969, 32)     1056        input_10[0][0]                   
+% __________________________________________________________________________________________________
+% input_7 (InputLayer)            (None, 100)          0                                            
+% __________________________________________________________________________________________________
+% embedding_4 (Embedding)         (None, 1000, 128)    3328        input_8[0][0]                    
+% __________________________________________________________________________________________________
+% conv1d_17 (Conv1D)              (None, 1938, 64)     65600       conv1d_16[0][0]                  
+% __________________________________________________________________________________________________
+% embedding_3 (Embedding)         (None, 100, 128)     8320        input_7[0][0]                    
+% __________________________________________________________________________________________________
+% conv1d_13 (Conv1D)              (None, 989, 32)      49184       embedding_4[0][0]                
+% __________________________________________________________________________________________________
+% conv1d_18 (Conv1D)              (None, 1907, 96)     196704      conv1d_17[0][0]                  
+% __________________________________________________________________________________________________
+% input_11 (InputLayer)           (None, 400, 1)       0                                            
+% __________________________________________________________________________________________________
+% conv1d_10 (Conv1D)              (None, 97, 32)       16416       embedding_3[0][0]                
+% __________________________________________________________________________________________________
+% conv1d_14 (Conv1D)              (None, 978, 64)      24640       conv1d_13[0][0]                  
+% __________________________________________________________________________________________________
+% global_max_pooling1d_10 (Global (None, 96)           0           conv1d_18[0][0]                  
+% __________________________________________________________________________________________________
+% global_max_pooling1d_11 (Global (None, 1)            0           input_11[0][0]                   
+% __________________________________________________________________________________________________
+% input_12 (InputLayer)           (None, 400, 1)       0                                            
+% __________________________________________________________________________________________________
+% conv1d_11 (Conv1D)              (None, 94, 64)       8256        conv1d_10[0][0]                  
+% __________________________________________________________________________________________________
+% conv1d_15 (Conv1D)              (None, 967, 96)      73824       conv1d_14[0][0]                  
+% __________________________________________________________________________________________________
+% concatenate_5 (Concatenate)     (None, 97)           0           global_max_pooling1d_10[0][0]    
+%                                                                  global_max_pooling1d_11[0][0]    
+% __________________________________________________________________________________________________
+% global_max_pooling1d_12 (Global (None, 1)            0           input_12[0][0]                   
+% __________________________________________________________________________________________________
+% conv1d_12 (Conv1D)              (None, 91, 96)       24672       conv1d_11[0][0]                  
+% __________________________________________________________________________________________________
+% global_max_pooling1d_8 (GlobalM (None, 96)           0           conv1d_15[0][0]                  
+% __________________________________________________________________________________________________
+% concatenate_6 (Concatenate)     (None, 98)           0           concatenate_5[0][0]              
+%                                                                  global_max_pooling1d_12[0][0]    
+% __________________________________________________________________________________________________
+% global_max_pooling1d_7 (GlobalM (None, 96)           0           conv1d_12[0][0]                  
+% __________________________________________________________________________________________________
+% concatenate_7 (Concatenate)     (None, 194)          0           global_max_pooling1d_8[0][0]     
+%                                                                  concatenate_6[0][0]              
+% __________________________________________________________________________________________________
+% concatenate_8 (Concatenate)     (None, 290)          0           global_max_pooling1d_7[0][0]     
+%                                                                  concatenate_7[0][0]              
+% __________________________________________________________________________________________________
+% dense_5 (Dense)                 (None, 1024)         297984      concatenate_8[0][0]              
+% __________________________________________________________________________________________________
+% dropout_3 (Dropout)             (None, 1024)         0           dense_5[0][0]                    
+% __________________________________________________________________________________________________
+% dense_6 (Dense)                 (None, 1024)         1049600     dropout_3[0][0]                  
+% __________________________________________________________________________________________________
+% dropout_4 (Dropout)             (None, 1024)         0           dense_6[0][0]                    
+% __________________________________________________________________________________________________
+% dense_7 (Dense)                 (None, 512)          524800      dropout_4[0][0]                  
+% __________________________________________________________________________________________________
+% dense_8 (Dense)                 (None, 1)            513         dense_7[0][0]                    
+% ==================================================================================================
+% Total params: 2,344,897
+% Trainable params: 2,344,897
+% Non-trainable params: 0
+
 The deep learning method was implemented with various filter sizes of Convolutional Layer of Protein and Drugs. The different sizes were chosen as the lengths of drugs' canonical SMILES sequence and proteins' FASTA sequence differ. Only the comparable results have been shown in table \ref{table:results}. The training and validation plots under different settings is clearly shown by Figure \ref{fig:ci_curve}. The different settings described by Figure \ref{fig:train_val} are:
 \begin{itemize}
     \item Setting 1 (S1): The validation proteins and drugs appear in training set.
@@ -73,8 +147,8 @@ The deep learning method was implemented with various filter sizes of Convolutio
         \includegraphics[width=.2\textwidth]{mainmatter/4-Results/images/S4.png}
         \label{fig:s4}
     }
-    \caption[Different Settings Of Training and Validation Sets]{
-        Redish represents the Validation set and Bluish represents the Training Set, Description based on validation Set: \ref{sub@fig:s1} has repeated protein and drugs, \ref{sub@fig:s2} has repeated drugs but unique proteins, \ref{sub@fig:s3} has repeated proteins but unique drugs, and \ref{sub@fig:s4} has unique proteins and drugs.
+    \caption[Different Settings Of Training and Validation Sets]{Different Settings Of Training and Validation Sets
+       \textit{(Brown-Red represents the Validation set and Cyan represents the Training Set)}, Description based on validation Set: \ref{sub@fig:s1} has repeated protein and drugs, \ref{sub@fig:s2} has repeated drugs but unique proteins, \ref{sub@fig:s3} has repeated proteins but unique drugs, and \ref{sub@fig:s4} has unique proteins and drugs.
         }
     \label{fig:train_val}
 \end{figure}
@@ -159,9 +233,6 @@ The comparison between the scores evaluated in same dataset has been compared an
         
         \end{tabular}
 \end{table}
-
-\section{Conclusion}
-The training of the model proved a better choice as we added the new feature dimension for proteins to get a generalization of all the feature sets extracted from the drug and protein sequence.
 
 \begin{figure}[H]
     \subfloat[Training Actual Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/train_y.png}}

@@ -41,7 +41,7 @@ For figures, tables, equations and further information, open the file "tips.tex"
 \fi
  
 \section{Statement of Problem}
-The simple technique of encoding the sequence information of drugs and proteins to identify if a drug will interact with the protein or not has a major issue in that while drugs encoding information can be used to make drug related predictions, the protein encodings require additional feature vector input to properly form their representational vectors. For instance, the docking of drugs to protein structure doesn't only depend on surface area --a condition that structural representation can learn with proper algorithm --, but also with electric field and H-bond properties \cite{Wong2018}. Therefore, modeling a machine learning algorithm sometimes overfit the situation or poorly classify the problem. In this work, we explore various features integration like R2RSRV and PSSM matrix along with sequence feature set and reproduce a regression problem for solving the prediction problem.
+The simple technique of encoding the sequence information of drugs and proteins to identify if a drug will interact with the protein or not has a major issue in that while drugs encoding information can be used to make drug related predictions, the protein encodings require additional feature vector input to properly form their representational vectors. For instance, the docking of drugs to protein structure doesn't only depend on surface area, a condition that structural representation can learn with proper algorithm, but also with electric field and H-bond properties \cite{Wong2018}. Therefore, modeling a machine learning algorithm sometimes overfit the situation or poorly classify the problem. In this work, we explore various features integration like R2RSRV and PSSM matrix along with sequence feature set and reproduce a regression problem for solving the prediction problem.
 
 \subsection{Selection of Prediction Score}
 
@@ -57,7 +57,7 @@ The objectives of the research are:
 \begin{itemize}
     \setlength\parindent{36pt}
     \item To determine the effective feature matrices related to protein.
-    \item To determine the right machine learning algorithm for predicting the protein-drug interactions.
+    \item To design a deep learning architecture using \acrfull{cnn} for predicting the protein-drug interactions.
 \end{itemize}
 
 % \section{Scope of Work}

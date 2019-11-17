@@ -20,15 +20,16 @@ Things to do:
 
 \subsection{System Block}
 
+A protein-drug interaction problem goes through various stages of data processing for building a prediction system in a Deep Learning Network. The systematic diagram is shown by Figure \ref{fig:system}. The data is collected by exploring the available internet sources and required dataset is downloaded for processing. From the data, the missing values are removed in data preprocessing to aid proper training. From the raw drugs and proteins profile, SMILES and FASTA sequences are extracted respectively. Now the features are extracted based on the sequence provided. Then, the features are fed into Deep Learning Algorithm as shown in \ref{fig:system2} where the training is performed to create the right prediction system. The training follows by testing and validation of data under different settings of protein and drug combinations.
+
 \begin{figure}[H]
   % \def\svgwidth{\columnwidth}
   % \includesvg{mainmatter/3-Methodology/images/block.svg}
-  \includegraphics[width=1\linewidth]{mainmatter/3-Methodology/images/system_block.pdf}
+  \centering
+  \includegraphics[width=.8\linewidth]{mainmatter/3-Methodology/images/system_block.pdf}
   \caption{System Block Diagram for Protein-Drug Prediction}
   \label{fig:system}
 \end{figure}
-
-Figure ~\ref{fig:system} shows the different stages of research for building a protein drug prediction system. The data is collected by exploring the available internet sources and required dataset is downloaded for processing. From the data, the missing values are removed in data preprocessing to aid proper training. From the raw drugs and proteins profile, SMILES and FASTA sequences are extracted respectively. Now the features are extracted based on the sequence provided. Then, the features are fed into Deep Learning Algorithm where the training is performed to create the right prediction system. The training follows by testing and validation of data under different settings of protein and drug combinations.
 
 
 \subsection{Data Collection}
@@ -80,13 +81,17 @@ For the drug-target interaction (i.e. drug-protein interaction), KIBA scores wer
 Various components were used to form the prediction system. Protein interaction depends on its structural, chemical, molecular(related to H-bond) and electrostatic properties. The structural representation form basis for creating features in other properties. The primary canonical structure of protein-drug set are fed into interaction block. The interaction parameter is filtered accordingly to the filter type. Similarly, the drug feature set are created to be trained with the machine learning algorithm. Finally, after training the training dataset, cross validation of the model was done.
 
 \section{Building Components of Features Processing}
+
+The prediction system is built upon the feature extraction of proteins and drugs. \ref{fig:system2} shows the building components of the Input Vectors for feeding the deep learning network. The KIBA Prediction id done by feeding canonical protein fasta and drug smiles. The other features are constructed on their basis. PSSM matrix is constructed using PSSM matrices of human genome protein library from UniProt~\cite{UniProtConsortium2018} and the protein's FASTA. Two features, \acrfull{et} and \acrfull{pssmdt} are extracted from PSSM. From FASTA, Labelled encodings and \acrfull{rpt} matrix are created. From the SMILES, only labelled encodings is extracted.
+
+
 \begin{figure}[H]\centering
   \includegraphics[width=0.9\linewidth]{mainmatter/3-Methodology/images/Algorithm.pdf}
   \caption{Schematic Block Diagram for Protein-Drug Prediction}
   \label{fig:system2}
-\end{figure}
+\end{figure} 
 
-Figure \ref{fig:system2} shows the building components of the Input Vectors for feeding the deep learning network. The KIBA Prediction id done by feeding canonical protein fasta and drug smiles. The other features are constructed on their basis. PSSM matrix is constructed using PSSM matrices of human genome protein library from UniProt~\cite{UniProtConsortium2018} and the protein's FASTA. Two features, \acrfull{et} and \acrfull{pssmdt} are extracted from PSSM. From FASTA, Labelled encodings and \acrfull{rpt} matrix are created. From the SMILES, only labelled encodings is extracted.
+
 
 
   \input{mainmatter/3-Methodology/sections/kiba.tex}
