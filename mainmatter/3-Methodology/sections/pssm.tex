@@ -81,7 +81,7 @@
     }
 \end{table}
 
-Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating PSSM score values. The sequence following shows the process of calculating the scores once the PSSM distribution of the whole family is calculated. Table \ref{table:motif_movement} shows the score distribution of lowercase amino acid sequence (starting after 4th position) determined by the size of the sliding window.
+Table \ref{table:PSSM_Analysis} shows a conventional process of calculating PSSM score values. The sequence following shows the process of calculating the scores once the PSSM distribution of the whole family is calculated. Table \ref{table:motif_movement} shows the score distribution of lowercase amino acid sequence (starting after 4th position) determined by the size of the sliding window.
 
 \seqsplit{ACTC\textbf{agccccagc}GGAGGTGAAGGACGTCCTTCCCCAGGAGCCGGTGAGAAGCGCAGTCGGGGGCACGGGGATGAGCTCAGGGGCCTCTAGAAAGATGTAGCTGGGACCTCGGGAAGCCCTGGCCTCCAGGTAGTCTCAGGAGAGCTACTCAGGGTCGGGCTTGGGGAGAGGAGGAGCGGGGGTGAGGCCAGCAGCA} 
 
@@ -92,7 +92,7 @@ Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating PSSM 
 % \end{table}
 % % \end{wraptable}
 
-.3, .1, .1, 0, 0, .2, .7, .5, .2  == Sum(2.1) - posix(4) -- See Table \ref{wrapTable:pssm-score}
+.3, .1, .1, 0, 0, .2, .7, .5, .2  == Sum(2.1) - posix(4) -- See table \ref{wrapTable:pssm-score}
 
 \begin{figure}
     \centering 
@@ -164,7 +164,7 @@ Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating PSSM 
   
   
   \subsection{Residue feature} 
-  The Statistical Residue Vector Space \acrshort{srv} \cite{Wong2018} plays an important role in Residue Residue Interaction and creates a basis for structural stability of the protein sequence itself. It is related to the tertiary structure of the protein sequence. Nonetheless, another function is to create a correlated sequence of information whereby two proteins are distantly related by sequence. Simultaneously, it is highly related to the functional characteristic of protein.  With this, Table ~\ref{table:r2r} as attached in Appendix depicts a 20 x 20 matrix whose rows and columns represent 20 standard amino acids.
+  The Statistical Residue Vector Space \acrshort{srv} \cite{Wong2018} plays an important role in Residue Residue Interaction and creates a basis for structural stability of the protein sequence itself. It is related to the tertiary structure of the protein sequence. Nonetheless, another function is to create a correlated sequence of information whereby two proteins are distantly related by sequence. Simultaneously, it is highly related to the functional characteristic of protein.  With this, table ~\ref{table:r2r} as attached in Appendix depicts a 20 x 20 matrix whose rows and columns represent 20 standard amino acids.
   
   \subsubsection{Residue Probing Transformation(RPT) feature}
   RPT as proposed by Jeong et al.\cite{Jeong2011}, and implemented by Pujan et al.\cite{Mishra2019}, emphasize domains with similar conservation rates by grouping domain families based on their conservation score in the PSSM profile.
@@ -193,7 +193,7 @@ Table \ref{table:PSSM_Analysis} shows a rudimentary process of calculating PSSM 
   
   The labeled encoding techniques is used to represent the canonical structure of drugs and proteins. The structural canonical information is preserved while sending the feature set to deep learning method. An array of integers are formed from particular sequence while representing the structural information.
   
-  The Labelled Encodings of protein and drugs can be defined by Table \ref{table:label_encoding} :
+  The Labelled Encodings of protein and drugs can be defined by table \ref{table:label_encoding} :
   \begin{table}[H]
     \centering
     \caption{Labeled Encoding of Proteins and Drugs}

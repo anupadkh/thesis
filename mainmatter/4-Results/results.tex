@@ -45,7 +45,9 @@ where $b_i$ is the prediction value for higher affinity $\delta_i$ and $b_j$ is 
 
 \section{Results}
 
-The deep learning method was implemented with various filter sizes of Convolutional Layer of Protein and Drugs. Only the comparable results have been shown in Table \ref{table:results}. The training and validation plots under different settings is clearly shown by Figure \ref{fig:ci_curve}. The different settings are:
+The method proposed by this research, \acrfull{featdti} contains 3 \acrfull{cnn}-blocks. It evaluates \acrfull{rpt}, acrfull{edt} and \acrfull{pssmdt} based on the inputs (Protein FASTA and Drugs SMILES) provided. The features are then calculated by the model to calculate the \acrfull{kiba} scores.
+
+The deep learning method was implemented with various filter sizes of Convolutional Layer of Protein and Drugs. The different sizes were chosen as the lengths of drugs' canonical SMILES sequence and proteins' FASTA sequence differ. Only the comparable results have been shown in table \ref{table:results}. The training and validation plots under different settings is clearly shown by Figure \ref{fig:ci_curve}. The different settings described by Figure \ref{fig:train_val} are:
 \begin{itemize}
     \item Setting 1 (S1): The validation proteins and drugs appear in training set.
     \item Setting 2 (S2): The validation Protein is seen in training set but validation drugs aren't present while training.
@@ -53,7 +55,31 @@ The deep learning method was implemented with various filter sizes of Convolutio
     \item Setting 4 (S4): The validation Protein and Drugs don't appear in training set
 \end{itemize}
 
-\begin{table}[H]
+\begin{figure}[tbp]
+    \centering
+    \subfloat[S1][Setting 1]{
+        \includegraphics[width=.2\textwidth]{mainmatter/4-Results/images/S1.png}
+        \label{fig:s1}
+    }
+    \subfloat[S2][Setting 2]{
+        \includegraphics[width=.2\textwidth]{mainmatter/4-Results/images/S2.png}
+        \label{fig:s2}
+    }
+    \subfloat[S3][Setting 3]{
+        \includegraphics[width=.2\textwidth]{mainmatter/4-Results/images/S3.png}
+        \label{fig:s3}
+    }
+    \subfloat[S4][Setting 4]{
+        \includegraphics[width=.2\textwidth]{mainmatter/4-Results/images/S4.png}
+        \label{fig:s4}
+    }
+    \caption[Different Settings Of Training and Validation Sets]{
+        Redish represents the Validation set and Bluish represents the Training Set, Description based on validation Set: \ref{sub@fig:s1} has repeated protein and drugs, \ref{sub@fig:s2} has repeated drugs but unique proteins, \ref{sub@fig:s3} has repeated proteins but unique drugs, and \ref{sub@fig:s4} has unique proteins and drugs.
+        }
+    \label{fig:train_val}
+\end{figure}
+
+\begin{table}[tbp]
     \centering
     \caption{Experiments results under different settings (S1, S2, S3, S4)}
     \begin{tabular}{|l|c|c|c|c|c|c|}
@@ -88,27 +114,51 @@ The deep learning method was implemented with various filter sizes of Convolutio
 \end{table}
 
 \section{Analysis}
-The Table \ref{table:results} shows that the optimal filter window size under all settings can be chosen equal to 8 for both drugs and proteins. The highest C-Index Score of (87.30\%) was obtained under Setting 1 when both the drugs and proteins were present in the validation set and training set. This can also be better realized visually from Figure \ref{fig:ci_curve}.
+Table \ref{table:results} shows that the optimal filter window size under all settings can be chosen equal to 8 for both drugs and proteins. The highest C-Index Score of (87.30\%) was obtained under Setting 1 when both the drugs and proteins were present in the validation set and training set. This can also be better realized visually from Figure \ref{fig:ci_curve}.
  
-\begin{figure}[H]\centering
+\begin{figure}[tbp]\centering
     \subfloat[][Setting 1]{
         \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S1_CI.png}
+        \label{fig:s1_cindex}
     }
     \qquad
     \subfloat[][Setting 2]{
-        \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S2_CI.png}
+        \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S3_CI.png}
+        \label{fig:s2_cindex}
     }
     \qquad
     \subfloat[][Setting 3]{
-        \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S3_CI.png}
+        \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S2_CI.png}
+        \label{fig:s3_cindex}
     }
     \qquad
     \subfloat[][Setting 4]{
         \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S4_CI.png}
+        \label{fig:s4_cindex}
     }
-    \caption{Plot of Training-Validation C-Index Scores over various Settings}
+    \caption[Concordance Score during Training]{Plot of Training-Validation C-Index Scores over various Settings: 
+    \ref{sub@fig:s1_cindex} has highest score, \ref{sub@fig:s2_cindex} shows lowest score, \ref{sub@fig:s3_cindex} ranks 2\textsuperscript{nd} and \ref{sub@fig:s4_cindex} ranks the 3\textsuperscript{rd}
+    }
     \label{fig:ci_curve}
 \end{figure}
+
+The comparison between the scores evaluated in same dataset has been compared and presented in table \ref{table:results_comparison} \cite{ozturk2018deepdta}. 
+
+\begin{table}
+    \centering
+    \caption[]{Results comparison}
+    \label{table:results_comparison}
+    \begin{tabular}{|l|c|c|r|r|}
+        \hline
+        
+        Methods & Proteins & Compounds & CI-Score & MSE \\ \hline
+        KronRLS & Smith-Waterman & Pubchem Sim & 0.782 & 0.411 \\ \hline
+        SimBoost & Smith-Waterman & Pubchem Simboost & 0.836 & 0.222 \\ \hline
+        DeepDTA & CNN & CNN & 0.863 & 0.194 \\ \hline
+        FeatDTI & CNN & CNN & \textbf{0.8730} & \textbf{0.177} \\ \hline
+        
+        \end{tabular}
+\end{table}
 
 \section{Conclusion}
 The training of the model proved a better choice as we added the new feature dimension for proteins to get a generalization of all the feature sets extracted from the drug and protein sequence.
@@ -136,6 +186,9 @@ Similarly, the prediction scores and actual scores for validation sets is shown 
     \caption{Testing Results on KIBA score Prediction}
     \label{fig:val_train}
 \end{figure}
+
+
+
 
 \iffalse The similarity measures are evaluated using \cite{Cock2009}. \fi
 
