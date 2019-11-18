@@ -102,11 +102,6 @@
       \end{cases}
       \label{eq:relu}
   \end{equation}
-  
-  \subsection{Choice of Optimizers}
-
-  
-
 
   \begin{figure}
     \centering
@@ -117,6 +112,14 @@
     \caption{Relu Activation Function}
   \end{figure}
 
+  
+  \subsection{Choice of Optimizers}
+
+  Optimizers are the functions that estimate the global maximum/minimum for the problem domain. Their characteristics to find the global extremes or local extremes depend on the type of problem and 
+  
+
+
+  
   \iffalse
   \subsubsection{LSTM}
   As the \acrfull{rnn} often suffers from vanishing gradient problem~\footnote{Vanishing Gradient:During the training of RNN, the model vectors form a part of a loop and makes an unstable network.}, we use a \acrshort{lstm} Layer to learn the global pattern of the feature sets resulting after concatenation of different stacked layers outputs. The LSTM architecture can be seen in Figure ~\ref{fig:lstm}:
