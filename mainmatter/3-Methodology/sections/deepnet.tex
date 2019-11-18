@@ -28,27 +28,49 @@
   From figure~\ref{fig:dlm}, the Embedding feature provided by keras for vector representation of both drug fingerprint and protein sequence are utilized. The one-hot encodings of the drugs and protein sequences are inputs to this layer. It turns positive integers (indexes) into dense vectors of fixed size. eg. [[4], [20]] -> [[0.25, 0.1], [0.6, -0.2]].
 
   \subsubsection{Convolution Neural Network}
-  To learn the local patterns in the input vector, we use \acrshort{cnn}. While Dense Layers can learn the global parameters, \acrshort{cnn} is used to understand the local patterns. It does so by increasing the depth layer, which in turn is designed to learn different patterns as shown in Figure ~\ref{fig:cnn}.
+  \acrfull{cnn} are used for feature generation in machine learning system. They improve a machine learning system in three perspectives: sparse interactions, parameter sharing and equivariant representations. While a conventional neural network is tight network for instance, a Dense Layer creates an interaction of every input unit to that of output units; \acrshort{cnn} have sparse interactions. This differentiates the learning pattern of \acrshort{cnn} from other networks by understanding the local patterns in the input vector. While traditional Neural Networks mostly involve learning the global parameters, \acrshort{cnn} is used to learn local patterns. It does so by reducing the kernel (aka filter) smaller than the input. For example, when an image can have thousands of pixels, the kernel size can be tens or hundreds of pixels as shown in Figure ~\ref{fig:cnn}. 
+  
+  Parameter Sharing refers when the same parameter is used for multiple times in model. In conventional neural net, each parameter is used only once when computing the output of a layer. In \acrshort{cnn}, as the window sweeps over all the images, the same pixels create different representations with the position of sweeping window. So the parameter sharing property of \acrshort{cnn} identifies one representation for the pixel at a time.
+  
+  Equivariance property of \acrshort{cnn} is caused due to parameter sharing. It is defined as a property defined as when the input is translated, so is the output. When processing some time-series data the convolution produces a timeline sequence of features that appear in the input. For example, the convolution operations in movie will produce the feature timeline for the picture pixels.
+
+  This research uses \acrfull{cnn} to learn the sequential representation of drug and proteins. As the primary structure of proteins and drugs are in fact representations of their 2D representations, the convolution operation will help to learn such features for further analysis. Again, 3D representations are also learned by higher layers of convolution layers. \cite{Adhikari2017}
+
+
+\iffalse
   \begin{figure}[H]
     \centering
     \includegraphics[width=.8\linewidth]{mainmatter/3-Methodology/images/cnn.png}
     \caption{Convolutional Neural Network}
     \label{fig:cnn}
   \end{figure} 
+\fi
+
 
   \begin{figure}
     \centering
     \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/System-Block-CNN-Layer.pdf}
     \caption{Working of CNN Block}
-    \label{fig:cnn-2}
+    \label{fig:cnn}
   \end{figure}
   
+  \subsubsection{Pooling Layer}
+  
+  The Pooling layer was used to modify the output of its preceding layer. For example the max pooling renders the maximum output from a rectangular neighborhood and average pooling renders average value from the the rectangular neighborhood. It was used to downsample the learned parameters from the grid of 2 dimensions returned by Convolution Layer. This work used Global Max Pooling to reduce the dimension and extract the extreme features learned from \acrshort{cnn}. Thus, it got reduced to 1 dimension by taking the highest values from the window size(corresponding to shape of 1\textsuperscript{st} dimensional element). The Pooling operation has been described by Figure ~\ref{fig:pool_layer}.
+
+  \begin{figure}[H] \centering
+    \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/pooling.pdf}
+    \caption{Pooling Layer}
+    \label{fig:pool_layer}
+  \end{figure}
+
   \subsubsection{Dense Layer}
-  Dense Layer is a neural layer which fully connects the input layer to output layer. It can be used to learn the global pattern of the feature data. The representation can be seen from Figure ~\ref{fig:dense}.
+  Dense Layer is a neural layer which fully connects the input layer to output layer. It performs a linear operation on the layer's input vector. At every node in output of the dense layer generally follows an activation function that creates a generalization rule for the input vectors at the node. The research work used the dense layer to learn the global pattern from the feature data. The representation can be seen from Figure ~\ref{fig:dense}. As the output required is a regression value, it uses relu for activation.
+
   \input{mainmatter/3-Methodology/images/dense.tex}
   
   \subsubsection{Dropout Layer}
-  Our model becomes undesirable when every component of the input layer makes a significant change to the output layer. To reduce the effect of unimportant features the dropout layer was used. Thus the backpropagation network tries to ignore the noise features and minimizes the unrealizable prediction of the learning problem. This can be expressed diagrammatically in Figure ~\ref{fig:dropout}.
+  Our model becomes undesirable when every component of the input layer makes a significant change to the output layer. To reduce the effect of unimportant features the dropout layer was used. Thus the backpropagation network tries to ignore the noise features and minimizes the unrealizable prediction of the learning problem. This has been expressed diagrammatically in Figure ~\ref{fig:dropout}.
   \begin{figure}
     [H] \centering
     \captionsetup{justification=justified}
@@ -59,17 +81,36 @@
   
   \end{figure}
   
-  \subsubsection{Pooling Layer}
-  The Pooling layer is used to downsample the learned parameters from the grid of 3 dimensions returned by Convolution Layer. It gets reduced to 1 dimension by taking the highest values from the window size(corresponding to shape of 1\textsuperscript{st} dimensional element).
-  \begin{figure}[H] \centering
-    \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/pooling.pdf}
-    \caption{Pooling Layer}
-    \label{fig:pool_layer}
-  \end{figure}
+  
   
   \subsubsection{Concatenation Layer}
-  Concatenation Layer as the name implies is used to simply join two vectors so that a feature set comprising of multiple features can be created. Their positional index indicates the feature set being manipulated.
+  Concatenation Layer as the name implies is used to simply join two vectors so that a feature set comprising of multiple features can be created. Their positional index indicates the feature set being manipulated. The first dimensional length of input matrices and their no. of dimension should be same to concatenate the matrices.
+
+  \subsubsection{Activation Layer}
   
+  Activation Layer is a function that takes an input and provides an output based on the value. There are various kinds of Activation functions like Sigmoid, ReLu, Leaky Relu, tanh, Gaussian, Sinusoid etc. The research uses ReLu function for the activation layers.
+  
+  \subsubsection{Rectified Linear Unit}
+  The output of Rectified Linear Unit (ReLu) is from 0 to infinity. For a normalized ReLu, the output will be between 0 to 1. The parametric equation is shown in Eq~\ref{eq:relu}.
+
+  \begin{equation}
+    f(x) = 
+      \begin{cases}
+        0 & ,for \quad x <= 0 \\
+        x & ,for \quad x > 0
+      \end{cases}
+      \label{eq:relu}
+  \end{equation}
+  
+  \begin{figure}
+    \centering
+    % \subfloat[ Relu Activation ][Relu Activation Function ]{
+      \includegraphics[width=.45\textwidth]{mainmatter/3-Methodology/images/relu.png}
+    % }
+    \label{fig:relu}
+    \caption{Relu Activation Function}
+  \end{figure}
+
   \iffalse
   \subsubsection{LSTM}
   As the \acrfull{rnn} often suffers from vanishing gradient problem~\footnote{Vanishing Gradient:During the training of RNN, the model vectors form a part of a loop and makes an unstable network.}, we use a \acrshort{lstm} Layer to learn the global pattern of the feature sets resulting after concatenation of different stacked layers outputs. The LSTM architecture can be seen in Figure ~\ref{fig:lstm}:
