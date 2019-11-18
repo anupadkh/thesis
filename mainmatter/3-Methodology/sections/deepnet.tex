@@ -25,7 +25,7 @@
   
   \subsection{Components description used from Tensorflow (Keras)}
   \subsubsection{Embedding Layer}
-  From figure~\ref{fig:dlm}, the Embedding feature provided by keras for vector representation of both drug fingerprint and protein sequence are utilized. The one-hot encodings of the drugs and protein sequences are inputs to this layer. It turns positive integers (indexes) into dense vectors of fixed size. eg. [[4], [20]] -> [[0.25, 0.1], [0.6, -0.2]].
+  From figure~\ref{fig:dlm}, the Embedding feature provided by keras for vector representation of both drug fingerprint and protein sequence are utilized. The label encodings of the drugs and protein sequences are inputs to this layer. It turns positive integers (indexes) into dense vectors of fixed size. eg. [[4], [20]] -> [[0.25, 0.1], [0.6, -0.2]].
 
   \subsubsection{Convolution Neural Network}
   \acrfull{cnn} are used for feature generation in machine learning system. They improve a machine learning system in three perspectives: sparse interactions, parameter sharing and equivariant representations. While a conventional neural network is tight network for instance, a Dense Layer creates an interaction of every input unit to that of output units; \acrshort{cnn} have sparse interactions. This differentiates the learning pattern of \acrshort{cnn} from other networks by understanding the local patterns in the input vector. While traditional Neural Networks mostly involve learning the global parameters, \acrshort{cnn} is used to learn local patterns. It does so by reducing the kernel (aka filter) smaller than the input. For example, when an image can have thousands of pixels, the kernel size can be tens or hundreds of pixels as shown in Figure ~\ref{fig:cnn}. 
@@ -50,7 +50,7 @@
   \begin{figure}
     \centering
     \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/System-Block-CNN-Layer.pdf}
-    \caption{Working of CNN Block}
+    \caption[Working of CNN Block]{The small window from the image grid forms }
     \label{fig:cnn}
   \end{figure}
   
@@ -60,7 +60,7 @@
 
   \begin{figure}[H] \centering
     \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/pooling.pdf}
-    \caption{Pooling Layer}
+    \caption[Pooling Layer]{Pooling Layer: MaxPooling takes the maximum value from the pooling window and AveragePooling takes the mean from the pooling window.}
     \label{fig:pool_layer}
   \end{figure}
 
@@ -93,6 +93,7 @@
   \subsubsection{Rectified Linear Unit}
   The output of Rectified Linear Unit (ReLu) is from 0 to infinity. For a normalized ReLu, the output will be between 0 to 1. The parametric equation is shown in Eq~\ref{eq:relu}.
 
+  
   \begin{equation}
     f(x) = 
       \begin{cases}
@@ -102,6 +103,11 @@
       \label{eq:relu}
   \end{equation}
   
+  \subsection{Choice of Optimizers}
+
+  
+
+
   \begin{figure}
     \centering
     % \subfloat[ Relu Activation ][Relu Activation Function ]{
