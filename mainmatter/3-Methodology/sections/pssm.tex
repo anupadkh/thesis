@@ -94,16 +94,26 @@ Table \ref{table:PSSM_Analysis} shows a conventional process of calculating PSSM
 
 .3, .1, .1, 0, 0, .2, .7, .5, .2  == Sum(2.1) - posix(4) -- See table \ref{wrapTable:pssm-score}
 
-\begin{figure}
+\begin{figure}[htbp]
     \centering 
-          %  \subfloat[]{\includegraphics[width=.3\textwidth]{mainmatter/3-Methodology/images/data/distribution.png}}
-          \qquad
-           \subfloat[][KIBA Scores]{\includegraphics[width=.49\textwidth]{mainmatter/3-Methodology/images/figures/distribution.png}}
-           \qquad
-           \subfloat[][Logarithmic Label Encodings of Drug Sequence]{\includegraphics[width=.49\textwidth]{mainmatter/3-Methodology/images/figures/drug_length_logarithmic.png}}
-           \qquad
-           \subfloat[][Logarithmic Labeled Encodings of Protein Sequence]{\includegraphics[width=.49\textwidth]{mainmatter/3-Methodology/images/figures/prot_length.png}}
-           \caption[Dataset Distribution]{Data Distribution of KIBA-interaction scores, Drug Sequences and Protein Sequences}
+          %  \subfloat[]{\includegraphics[width=.3\textwidth]{dataset/images/KIBA_scores.png}}
+          
+           \subfloat[][Drug-Protein Interaction]{
+             \includegraphics[width=.5\textwidth]{dataset/images/KIBA_scores.png}
+             \label{fig:kiba_scores}
+             }
+
+           \subfloat[][Drugs SMILES Sequence]{
+            \label{fig:drug_dist}  
+            \includegraphics[width=.5\textwidth]{dataset/images/SMILES_distribution.png}
+            }
+
+           \subfloat[][Protein FASTA Sequence]{
+             \includegraphics[width=.5\textwidth]{dataset/images/FASTA_distribution.png}
+             \label{fig:prot_dist}
+            }
+
+           \caption[KDE Distribution]{Kernel Density Estimation Distribution of KIBA-interaction scores of Drug Sequences and Protein Sequences. \ref{sub@fig:kiba_scores} Distribution of KIBA Scores in Protein-Drug Interaction Pair, \ref{sub@fig:drug_dist} Distribution of length in Labeled Encodings of Drug Sequence, \ref{sub@fig:prot_dist} Distribution of length in Labelled Encodings Protein Sequence }
            \label{fig:kiba_drug_protein}
 \end{figure}
   

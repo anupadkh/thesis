@@ -132,19 +132,19 @@ The deep learning method was implemented with various filter sizes of Convolutio
 \begin{figure}[tbp]
     \centering
     \subfloat[S1][Setting 1]{
-        \includegraphics[width=.2\textwidth]{mainmatter/4-Results/images/S1.png}
+        \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S1.png}
         \label{fig:s1}
-    }
+    } \qquad
     \subfloat[S2][Setting 2]{
-        \includegraphics[width=.2\textwidth]{mainmatter/4-Results/images/S2.png}
+        \includegraphics[width=.4\textwidth]{mainmatter/4-Results/images/S2.png}
         \label{fig:s2}
-    }
+    } \qquad
     \subfloat[S3][Setting 3]{
-        \includegraphics[width=.2\textwidth]{mainmatter/4-Results/images/S3.png}
+        \includegraphics[width=.4\textwidth]{mainmatter/4-Results/images/S3.png}
         \label{fig:s3}
-    }
+    } \qquad
     \subfloat[S4][Setting 4]{
-        \includegraphics[width=.2\textwidth]{mainmatter/4-Results/images/S4.png}
+        \includegraphics[width=.4\textwidth]{mainmatter/4-Results/images/S4.png}
         \label{fig:s4}
     }
     \caption[Different Settings Of Training and Validation Sets]{Different Settings Of Training and Validation Sets
@@ -187,6 +187,29 @@ The deep learning method was implemented with various filter sizes of Convolutio
     \label{table:results}
 \end{table}
 
+\subsubsection{Performance of optimizers in Setting 1}
+
+The values obtained by using different optimizers is shown in table \ref{table:optimizer}. It shows that Adam optimizer exhibits the best optimizer results in comparison to Stochastic Gradient Descent, Adagrad and RMSProp. In fact the other optimizers perform quite poorly compared to Adam optimizer. The learning factor was lowered by using callback ReduceLROnPlateau by a factor of 0.2 when the validation loss didn't increase in 5 consecutive epochs.
+
+\begin{table} [H]
+    \centering
+    \caption[Scores of different Optimizer] {Scores obtained using other optimizers}
+    \label{table:optimizer}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        
+        Selection of Optimizer & CI-Index & MSE \\ \toprule 
+        
+        \hline
+        SGD & 0.1087 & 5.320060 \\ \hline
+        Adagrad & 0.749753 & 2.202080 \\ \hline
+        RMSProp & 0.748766 & 2.202080 \\ \hline
+        Adam    & 0.873094 & 0.177053 \\ \hline
+        
+    \end{tabular}
+    
+\end{table}
+
 \section{Analysis}
 Table \ref{table:results} shows that the optimal filter window size under all settings can be chosen equal to 8 for both drugs and proteins. The highest C-Index Score of (87.30\%) was obtained under Setting 1 when both the drugs and proteins were present in the validation set and training set. This can also be better realized visually from Figure \ref{fig:ci_curve}.
  
@@ -216,9 +239,9 @@ Table \ref{table:results} shows that the optimal filter window size under all se
     \label{fig:ci_curve}
 \end{figure}
 
-The comparison between the scores evaluated in same dataset has been compared and presented in table \ref{table:results_comparison} \cite{ozturk2018deepdta}. 
+The comparison between the scores evaluated in same dataset has been compared and presented in table \ref{table:results_comparison} \cite{ozturk2018deepdta}. The benchmark dataset is publicly available in Journal of Chemical Information and Modeling \cite{Tang2013}.
 
-\begin{table}
+\begin{table} [H]
     \centering
     \caption[]{Results comparison}
     \label{table:results_comparison}
