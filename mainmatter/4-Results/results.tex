@@ -22,14 +22,14 @@ The sequence information of drugs and proteins live in their canonical form.
 Therefore we relied on Neural Net Sequence Embedding technique to form the primary representation. Both protein and drug were converted to Embedding vectors after creation of their labelled encodings. 
 
 \subsubsection{Secondary Features Selection}
-These are the structural components of protein especially related to alpha and beta strands of Protein segments. All the protein Sequences are subjected to Equation~(\ref{eq:pssm}) from the labelled encodings. The \acrshort{pssm} matrix is calculated using PSI-BLAST\cite{Schaffer2001}. Then all the testing protein sets are evaluated with the resultant PSSM to form a new PSSM matrix specific to the testing protein. Thus, we expect to explore how proteins relate with the interaction experiments with the protein domain. From the \acrshort{pssm}, we evaluate the other evolutionary and distance vectors using equations \ref{eq:rpt}, \ref{eq:pssmddt}, \ref{eq:pssmsdt} and \ref{eq:edt}.
+These are the structural components of protein especially related to alpha and beta strands of Protein segments. All the protein Sequences are subjected to Equation~(\ref{eq:pssm}) from the labelled encodings. The \acrshort{pssm} matrix is calculated using PSI-BLAST\citep{Schaffer2001}. Then all the testing protein sets are evaluated with the resultant PSSM to form a new PSSM matrix specific to the testing protein. Thus, we expect to explore how proteins relate with the interaction experiments with the protein domain. From the \acrshort{pssm}, we evaluate the other evolutionary and distance vectors using equations \ref{eq:rpt}, \ref{eq:pssmddt}, \ref{eq:pssmsdt} and \ref{eq:edt}.
 
 \subsection{Implementation}
 % We explore basically the following algorithms for analyses on protein-drug interactions:
 
 
 \subsubsection{Stacked Features}
-Basically, we implement the architecture in Figure ~\ref{fig:dlm} for our model design. It is implemented in Python using the TensorFlow framework consisting of keras. The training contained of 200 epochs. The learning rates and early stopping were manipulated in the training process by using keras callback functions. The training and testing was done using a 5-fold cross-validation set prepared manually. To evaluate the performance of the model, we used concordance index(CI)\cite{Xu2015} as defined by equation~\ref{eq:ci}:
+Basically, we implement the architecture in Figure ~\ref{fig:dlm} for our model design. It is implemented in Python using the TensorFlow framework consisting of keras. The training contained of 200 epochs. The learning rates and early stopping were manipulated in the training process by using keras callback functions. The training and testing was done using a 5-fold cross-validation set prepared manually. To evaluate the performance of the model, we used concordance index(CI)\citep{Xu2015} as defined by equation~\ref{eq:ci}:
 \begin{equation}
     CI = \frac{1}{Z} \sum_{\delta_i > \delta_j} h(b_i - b_j)
     \label{eq:ci}
@@ -239,7 +239,7 @@ Table \ref{table:results} shows that the optimal filter window size under all se
     \label{fig:ci_curve}
 \end{figure}
 
-The comparison between the scores evaluated in same dataset has been compared and presented in table \ref{table:results_comparison} \cite{ozturk2018deepdta}. The benchmark dataset is publicly available in Journal of Chemical Information and Modeling \cite{Tang2013}.
+The comparison between the scores evaluated in same dataset has been compared and presented in table \ref{table:results_comparison} \citep{ozturk2018deepdta}. The benchmark dataset is publicly available in Journal of Chemical Information and Modeling \citep{Tang2013}.
 
 \begin{table} [H]
     \centering
@@ -286,7 +286,7 @@ Similarly, the prediction scores and actual scores for validation sets is shown 
 
 
 
-\iffalse The similarity measures are evaluated using \cite{Cock2009}. \fi
+\iffalse The similarity measures are evaluated using \citep{Cock2009}. \fi
 
 \iffalse
 The accuracy plots and cindex plots are shown in Figure ~\ref{fig:results}

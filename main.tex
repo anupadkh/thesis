@@ -11,13 +11,13 @@
 \documentclass[openright, hidelinks, a4paper, twoside, openany, 12pt]{report}
 
 %%%%%%%%%%%%%%%%% END OF DOCUMENT TYPE DEFINITION
-
+\input{self_package.tex}
 \input{configs.tex}
 \DeclareUnicodeCharacter{0080}{HERE-HERE-HERE}
 %%%%%%%%%%%%%%%%% PARAGRAPHS CONFIGURATION
 
-\setlength{\parindent}{1.3cm}
-\setlength{\parskip}{0.2cm}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.1cm}
 
 %%%%%%%%%%%%%%%%% END OF PARAGRAPHS CONFIGURATION
 
@@ -68,6 +68,7 @@
 %%%%%%%%%%%%%%%%% MAIN DOCUMENT
 
 \begin{document}
+\input{self_config.tex}
 
 \frenchspacing
 
@@ -149,6 +150,7 @@
 % \pagenumbering{arabic}
 % \setcounter{page}{0}
 
+
 \input{mainmatter/1-Introduction/introduction.tex}
 
 \input{mainmatter/2-Development/development.tex}
@@ -164,7 +166,8 @@
 
 % Bibliography
 \renewcommand{\bibname}{References}
-\bibliographystyle{abbrv}
+
+\bibliographystyle{apa}
 \bibliography{bibliography/sample}
 \addcontentsline{toc}{chapter}{References}
 

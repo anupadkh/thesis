@@ -121,14 +121,14 @@ Table \ref{table:PSSM_Analysis} shows a conventional process of calculating PSSM
   \subsection{UniProt and CHEMBL}
   
   \subsubsection{UniProt} 
-  The sequence related information of protein is referenced using UniProt Identifier and protein sequence (FASTA) is called using the api from UniProt. \cite{UniProtConsortium2018}
+  The sequence related information of protein is referenced using UniProt Identifier and protein sequence (FASTA) is called using the api from UniProt. \citep{UniProtConsortium2018}
   
   
   \subsubsection{CHEMBL}
-  The molecular fingerprints related to drugs are referenced usning CHEMBL Identifier and the drug sequence is called from CHEMBL database. \cite{Gaulton2017}
+  The molecular fingerprints related to drugs are referenced usning CHEMBL Identifier and the drug sequence is called from CHEMBL database. \citep{Gaulton2017}
   \fi
   \subsection{PSI-BLAST}
-  PSI-Blast tools relates with multiple sequence alignments from a family of protein sequences\cite{Schaffer2001}. This helps to create a \acrshort{pssm} - Equation (\ref{eq:pssm}) - matrix referred to as secondary protein structure. For this study, the PSSM profile of every protein sequence is obtained by executing iteration of PSI-BLAST against \cite[KEGG]{Schaffer2001} protein. PSSM profile is a matrix of L*20 dimensions whereby 20 is the standard type of amino acids and L being the length of the protein. The larger positive scores represent conserved positions, which in turn implies critical functional residues that are required to perform various intermolecular interactions.\cite[PSSM]{Schaffer2001}
+  PSI-Blast tools relates with multiple sequence alignments from a family of protein sequences\citep{Schaffer2001}. This helps to create a \acrshort{pssm} - Equation (\ref{eq:pssm}) - matrix referred to as secondary protein structure. For this study, the PSSM profile of every protein sequence is obtained by executing iteration of PSI-BLAST against \cite[KEGG]{Schaffer2001} protein. PSSM profile is a matrix of L*20 dimensions whereby 20 is the standard type of amino acids and L being the length of the protein. The larger positive scores represent conserved positions, which in turn implies critical functional residues that are required to perform various intermolecular interactions.\cite[PSSM]{Schaffer2001}
   
   \begin{equation}
     PSSM = \begin{bmatrix}
@@ -141,7 +141,7 @@ Table \ref{table:PSSM_Analysis} shows a conventional process of calculating PSSM
   \end{equation}
   
   \subsubsection{PSSM-DT}
-  Two forms of \acrshort{pssm} distance transformation techniques are used to transform the \acrshort{pssm} information into fixed dimensional vectors \cite{Xu2015}. The PSSM-DT (PSSM-Distance Transformation) can transform the \acrshort{pssm} information into uniform numeric representation by approximately measuring the occurrence probabilities of any pairs of amino acid. It results in two types of feature matrices: PSSM-SDT and PSSM-DDT defined by:
+  Two forms of \acrshort{pssm} distance transformation techniques are used to transform the \acrshort{pssm} information into fixed dimensional vectors \citep{Xu2015}. The PSSM-DT (PSSM-Distance Transformation) can transform the \acrshort{pssm} information into uniform numeric representation by approximately measuring the occurrence probabilities of any pairs of amino acid. It results in two types of feature matrices: PSSM-SDT and PSSM-DDT defined by:
   
   \begin{equation}[H]
     PSSM-SDT(i,lg) = \sum_{i=1}^{L-lg} S_{i,j} \times \frac{ S_{i,j+lg} }{L-lg} 
@@ -158,7 +158,7 @@ Table \ref{table:PSSM_Analysis} shows a conventional process of calculating PSSM
   Thus we have [380 ~\eqref{eq:pssmddt}+20 ~\eqref{eq:pssmsdt} = 400] x lg matrix which will be used as protein-specific vector in this work.
   
   \subsubsection{Evolutionary Distance Transformation Matrix}
-  The mutational information of protein can be more informative than the sequence information itself\cite{Zhang2014}. Evolutionary difference formula (EDF) is used to represent mutation difference between adjacent residues. Secondly, the PSSM is converted into 20 x 20 matrix (ED-PSSM). These extracts are the non co-occurrence probability for two amino acids separated by a certain distance \textit{d} in the protein from the PSSM profile. For example, d=1 implies that the two amino acids are consecutive; d=2 implies that there is one amino acid between the two. Next, the EDT feature vector computed from ED-PSSM can be represented as (~\ref{eq:Pmat}): 
+  The mutational information of protein can be more informative than the sequence information itself\citep{Zhang2014}. Evolutionary difference formula (EDF) is used to represent mutation difference between adjacent residues. Secondly, the PSSM is converted into 20 x 20 matrix (ED-PSSM). These extracts are the non co-occurrence probability for two amino acids separated by a certain distance \textit{d} in the protein from the PSSM profile. For example, d=1 implies that the two amino acids are consecutive; d=2 implies that there is one amino acid between the two. Next, the EDT feature vector computed from ED-PSSM can be represented as (~\ref{eq:Pmat}): 
   \begin{equation}
     \label{eq:Pmat}
     P = [ \partial_1 ,\partial_2, \dots, \partial_\Omega]
@@ -174,10 +174,10 @@ Table \ref{table:PSSM_Analysis} shows a conventional process of calculating PSSM
   
   
   \subsection{Residue feature} 
-  The Statistical Residue Vector Space \acrshort{srv} \cite{Wong2018} plays an important role in Residue Residue Interaction and creates a basis for structural stability of the protein sequence itself. It is related to the tertiary structure of the protein sequence. Nonetheless, another function is to create a correlated sequence of information whereby two proteins are distantly related by sequence. Simultaneously, it is highly related to the functional characteristic of protein.  With this, table ~\ref{table:r2r} as attached in Appendix depicts a 20 x 20 matrix whose rows and columns represent 20 standard amino acids.
+  The Statistical Residue Vector Space \acrshort{srv} \citep{Wong2018} plays an important role in Residue Residue Interaction and creates a basis for structural stability of the protein sequence itself. It is related to the tertiary structure of the protein sequence. Nonetheless, another function is to create a correlated sequence of information whereby two proteins are distantly related by sequence. Simultaneously, it is highly related to the functional characteristic of protein.  With this, table ~\ref{table:r2r} as attached in Appendix depicts a 20 x 20 matrix whose rows and columns represent 20 standard amino acids.
   
   \subsubsection{Residue Probing Transformation(RPT) feature}
-  RPT as proposed by Jeong et al.\cite{Jeong2011}, and implemented by Pujan et al.\cite{Mishra2019}, emphasize domains with similar conservation rates by grouping domain families based on their conservation score in the PSSM profile.
+  RPT as proposed by \citep{Jeong2011}, and implemented by \citep{Mishra2019}, emphasize domains with similar conservation rates by grouping domain families based on their conservation score in the PSSM profile.
   \begin{equation}
     RPT = \begin{bmatrix}
       S_{1,1} & S_{1,2} & \dots & S_{1,20} \\
