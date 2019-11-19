@@ -1,7 +1,7 @@
 \setcounter{page}{1}
 \chapter{Introduction}
 \section{Background}
-Treatment of diseases are mostly associated with applying foreign medicinal components into human body. The rudimentary means of curing diseases has been growing with applied ayurbedas since the past. The chemical perspective of curing diseases slowly evolved into modern chemistry as drug facilities developed around the globe. The extensive research and documentation changed the world where people have come to trust fully in chemist's drugs to mitigate the ailments in the body. With the growing chemical intereset in the community, the need to develop better drugs and quick solutions increased even higher. With the identification of new diseases and dire need of understanding the mechanism to cure such diseases, the drug research started gaining its speed.
+Treatment of diseases are mostly associated with applying foreign medicinal components into human body. The rudimentary means of curing diseases has been growing with applied ayurbedas since the past. The chemical perspective of curing diseases slowly evolved into modern chemistry as drug facilities developed around the globe. The extensive research and documentation changed the world where people have come to trust fully in chemist's drugs to mitigate the ailments in the body. With the growing chemical interest in the community, the need to develop better drugs and quick solutions increased even higher. With the identification of new diseases and dire need of understanding the mechanism to cure such diseases, the drug research started gaining its speed.
 
 ~\acrfull{cadd} mechanism have been developing bio-informatics ever since the "Next Industrial Revolution" possibilities started grow~\citep{Leelananda2016,Brown2017}. The interest started as Fortune magazine published the article "Designing Drugs by Computer at Merk". Experimenting with computational power and technical human resources in biomedicine, the concepts started to form scopes like \acrfull{hts} -- A technique to screen desired drugs from other drugs. \acrshort{hts} was evolving eventually to find precedence over finding novel therapeutics. The desire to increase high hit rate did grow as the traditional \acrshort{hts} led to few probable leads. As research developed on computational drug design, \acrshort{cadd} study broadened based on the computational resources required. ~\acrshort{cadd} can be classified into two general categories: Structure-based \acrshort{cadd} and Ligand-based~\acrshort{cadd}.
 
@@ -27,7 +27,7 @@ Target Structure and Ligand Structures are the major parameters of the research.
 (52498, 254)
 180244
 \fi
-The Dataset contains scores of the interaction of proteins and drugs based on \acrshort{kiba} scores. We use \arabic{no_drugs} drugs from CHEMBL and \arabic{no_proteins} proteins from UniProt to get their structural information. The interaction of 180244 is obtained from the research work produced by \citep{Tang2013}, and by removing the unrecognized interactions. The interactions is based on KIBA score -- an integrated approach by combining the power of thermodynamic constants and activity percentage of drug-target interaction profile.
+The Dataset contains scores of the interaction of proteins and drugs based on \acrshort{kiba} scores. We use \arabic{no_drugs} drugs from CHEMBL and \arabic{no_proteins} proteins from UniProt to get their structural information. The interaction of 180244 is obtained from the research work produced by \citep{Tang2013}, and by removing the unrecognized interactions. The interactions are based on KIBA score -- an integrated approach by combining the power of thermodynamic constants and activity percentage of drug-target interaction profile.
 
 \iffalse
 
@@ -41,15 +41,15 @@ For figures, tables, equations and further information, open the file "tips.tex"
 \fi
  
 \section{Statement of Problem}
-The simple technique of encoding the sequence information of drugs and proteins to identify if a drug will interact with the protein or not has a major issue in that while drugs encoding information can be used to make drug related predictions, the protein encodings require additional feature vector input to properly form their representational vectors. For instance, the docking of drugs to protein structure doesn't only depend on surface area, a condition that structural representation can learn with proper algorithm, but also with electric field and H-bond properties \citep{Wong2018}. Therefore, modeling a machine learning algorithm sometimes overfit the situation or poorly classify the problem. In this work, we explore various features integration like R2RSRV and PSSM matrix along with sequence feature set and reproduce a regression problem for solving the prediction problem.
+The simple technique of encoding the sequence information of drugs and proteins to identify if a drug will interact with the protein or not has a major issue. While drugs encoding information can be used to make drug related predictions, the protein encodings require additional feature vector input to properly form their representational vectors. For instance, the docking of drugs to protein structure doesn't only depend on surface area, a condition that structural representation can learn with proper algorithm, but also with electric field and H-bond properties \citep{Wong2018}. Therefore, modeling a machine learning algorithm sometimes overfit the situation or poorly classify the problem. In this work, we explore various features integration like R2RSRV and PSSM matrix along with sequence feature set and reproduce a regression problem for solving the prediction problem.
 
 \subsection{Selection of Prediction Score}
 
-Out of the many score functions; STITCH, Davis, Metz\_Anastassiadis and KIBA scores, KIBA scores are used for the prediction of drug and protein interaction problem. The main reasons being: STITCH scores don't fully explore the primary thermodynamic dissociation constants used for drug-target interaction profile and other scores are used by KIBA~\citep{Tang2013}.  Again, KIBA scores database consists of experimental data and secondary data (from literature) of drug-target interaction. Choosing the KIBA as the output score for two protein and drug sequences, we model our machine learning algorithm for prediction of interaction.
+Out of the many score functions; STITCH, Davis, Metz\_Anastassiadis and KIBA scores, KIBA scores were used for the prediction of drug and protein interaction problem. The main reasons are: STITCH scores don't fully explore the primary thermodynamic dissociation constants used for drug-target interaction profile. The information of other scores are present in KIBA~\citep{Tang2013}, as shown in section~\ref{section:kiba}. Again, KIBA scores dataset is sourced from multiple databases \citep{Kanehisa2000}, \citep{Wishart2018}, \citep{Hecker2012} and \citep{Sharma2010} a consists of experimental data and secondary data (from literature) of drug-target interaction. Choosing the KIBA as the output score for two protein and drug sequences, we model our machine learning algorithm for prediction of interaction.
 
 \subsection{Selection of Features}
 
-For the protein family, the focus here is with the kinase target family because of its essential roles in cellular signaling transduction for many cancers and inflammatory diseases~\citep{Tang2013,Kanehisa2000}. We concentrate on proteins dataset, specifically because their interaction is quite tricky when considered among chemical, atomic, structural and electrical nature of protein residues~\citep{Mathai2019}. Our basis for forming the matrices and vectors related to protein sequence comes from the fact that these features represent specific properties related to the protein and its residues. Also, the literatures describing the feature sets characteristics and results motivates us towards the selection of these parameters: \acrshort{pssmdt}, \acrshort{edt}, \acrshort{rpt} and embedding vectors.
+For the protein family, the focus here is with the kinase target family because of their essential roles in cellular signaling transduction for many cancers and inflammatory diseases~\citep{Tang2013,Kanehisa2000}. We concentrate on proteins dataset, specifically because their interaction is quite tricky when considered among chemical, atomic, structural and electrical nature of protein residues~\citep{Mathai2019}. Our basis for forming the matrices and vectors related to protein sequence came from the fact that these features represent specific properties related to the protein and its residues. Also, the literatures describing the feature sets characteristics and results motivates us towards the selection of these parameters: labeled encodings, \acrshort{pssmdt}, \acrshort{edt} and \acrshort{rpt}.
 
 
 \section{Objectives}
@@ -60,11 +60,8 @@ The objectives of the research are:
     \item To design a deep learning architecture using \acrfull{cnn} for predicting the protein-drug interactions.
 \end{itemize}
 
-% \section{Scope of Work}
+\section{Scope of Work}
 
-
-
-\section{Organization of Report}
 
 \subsection{Choosing Method of Interaction}
 Out of the two methods of contact prediction: Global Methods and Local Methods, where Global Method tries to predict the label of one residue pair considering the label of others while Local Method tries to predict the label of one residue pair without considering the label of others; we use Global Methods as a means of contact prediction. We try to run different variations in Residual Methods: Using Distance Prediction, Coevolutionary features, Sequence Representation. 
@@ -79,3 +76,33 @@ Convnets, as they still are quite helpful in solving an image recognition proble
 
 \subsection{Training and Testing}
 A basic PC was used to create initial models. Google Colabs was used to train the deep convolutionary stack due to requirement of GPU. The models were saved on the runtime so that the next training could be resumed immediately after the cease of Colab's VM Session.
+
+\section{Organization of Thesis}
+
+{{\uppercase{\bf{Chapter 1}}}
+is the introductory chapter that includes background of the study, problem statement, objectives of thesis and scope of the work.
+}
+
+{{\uppercase{\bf{Chapter 2}}}
+    is the literature review about the work. It describes No Free Lunch Algorithm and Generalized Optimization; their concepts and implications to this work. The build up describes how the various literatures assist to provide motivation to this work.
+}
+
+{{\uppercase{\bf{Chapter 3}}}
+  describes details of Methodology used for Protein and Drug Interaction prediction problem. The system block of \acrfull{featdti} is described. The properties of data used for training the model are described. It underlines the principles on \acrfull{pssm}, \acrfull{pssmdt}, \acrfull{edt}, \acrfull{rpt}, and labeled encodings used for feeding the Deep Learning Network. The components of \acrfull{featdti} used as deep learning model in this work are described.
+}
+
+{{\uppercase{\bf{Chapter 4}}}
+    describes the experimental settings and results produced in this work. The analysis of work produced is described in detail.
+}
+
+{{\uppercase{\bf{Chapter 5 and Chapter 6}}}
+    describe the conclusions from the work and recommendations for future work. 
+}
+
+{{\uppercase{\bf{Appendix}}}
+     enlists the data parameters used in the work and describes their integration in this work.
+}
+
+{{\uppercase{\bf{References}}}
+    enlists the references used for this thesis completion.
+}

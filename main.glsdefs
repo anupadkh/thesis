@@ -1,0 +1,750 @@
+\ifglsentryexists{latex}{}%
+{%
+\gls@defglossaryentry{latex}%
+{%
+name={latex},%
+sort={latex},%
+type={main},%
+first={latex},%
+firstplural={latexs},%
+text={latex},%
+plural={latexs},%
+description={Is a mark up language specially suited for scientific documents},%
+descriptionplural={Is a mark up language specially suited for scientific documents},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{maths}{}%
+{%
+\gls@defglossaryentry{maths}%
+{%
+name={mathematics},%
+sort={mathematics},%
+type={main},%
+first={mathematics},%
+firstplural={mathematicss},%
+text={mathematics},%
+plural={mathematicss},%
+description={Mathematics is what mathematicians do},%
+descriptionplural={Mathematics is what mathematicians do},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{formula}{}%
+{%
+\gls@defglossaryentry{formula}%
+{%
+name={formula},%
+sort={formula},%
+type={main},%
+first={formula},%
+firstplural={formulas},%
+text={formula},%
+plural={formulas},%
+description={A mathematical expression},%
+descriptionplural={A mathematical expression},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{kegg}{}%
+{%
+\gls@defglossaryentry{kegg}%
+{%
+name={KEGG},%
+sort={KEGG},%
+type={acronym},%
+first={Kyoto Encyclopedia of Genes and Genomes\glsspace (KEGG)},%
+firstplural={Kyoto Encyclopedia of Genes and Genomes\acrpluralsuffix \glsspace (KEGG\acrpluralsuffix )},%
+text={KEGG},%
+plural={KEGG\acrpluralsuffix },%
+description={Kyoto Encyclopedia of Genes and Genomes},%
+descriptionplural={Kyoto Encyclopedia of Genes and Genomes\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Kyoto Encyclopedia of Genes and Genomes},%
+longplural={Kyoto Encyclopedia of Genes and Genomess},%
+short={KEGG},%
+shortplural={KEGGs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{kiba}{}%
+{%
+\gls@defglossaryentry{kiba}%
+{%
+name={KIBA},%
+sort={KIBA},%
+type={acronym},%
+first={Kinase Inhibitor Bioactivity\glsspace (KIBA)},%
+firstplural={Kinase Inhibitor Bioactivity\acrpluralsuffix \glsspace (KIBA\acrpluralsuffix )},%
+text={KIBA},%
+plural={KIBA\acrpluralsuffix },%
+description={Kinase Inhibitor Bioactivity},%
+descriptionplural={Kinase Inhibitor Bioactivity\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Kinase Inhibitor Bioactivity},%
+longplural={Kinase Inhibitor Bioactivitys},%
+short={KIBA},%
+shortplural={KIBAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{pssm}{}%
+{%
+\gls@defglossaryentry{pssm}%
+{%
+name={PSSM},%
+sort={PSSM},%
+type={acronym},%
+first={Position Specific Scoring Matrix\glsspace (PSSM)},%
+firstplural={Position Specific Scoring Matrix\acrpluralsuffix \glsspace (PSSM\acrpluralsuffix )},%
+text={PSSM},%
+plural={PSSM\acrpluralsuffix },%
+description={Position Specific Scoring Matrix},%
+descriptionplural={Position Specific Scoring Matrix\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Position Specific Scoring Matrix},%
+longplural={Position Specific Scoring Matrixs},%
+short={PSSM},%
+shortplural={PSSMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{srv}{}%
+{%
+\gls@defglossaryentry{srv}%
+{%
+name={R2RSRV},%
+sort={R2RSRV},%
+type={acronym},%
+first={Residue Residue Statistical Residual Vector\glsspace (R2RSRV)},%
+firstplural={Residue Residue Statistical Residual Vector\acrpluralsuffix \glsspace (R2RSRV\acrpluralsuffix )},%
+text={R2RSRV},%
+plural={R2RSRV\acrpluralsuffix },%
+description={Residue Residue Statistical Residual Vector},%
+descriptionplural={Residue Residue Statistical Residual Vector\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Residue Residue Statistical Residual Vector},%
+longplural={Residue Residue Statistical Residual Vectors},%
+short={R2RSRV},%
+shortplural={R2RSRVs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{lstm}{}%
+{%
+\gls@defglossaryentry{lstm}%
+{%
+name={LSTM},%
+sort={LSTM},%
+type={acronym},%
+first={Long Short Term Memory\glsspace (LSTM)},%
+firstplural={Long Short Term Memory\acrpluralsuffix \glsspace (LSTM\acrpluralsuffix )},%
+text={LSTM},%
+plural={LSTM\acrpluralsuffix },%
+description={Long Short Term Memory},%
+descriptionplural={Long Short Term Memory\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Long Short Term Memory},%
+longplural={Long Short Term Memorys},%
+short={LSTM},%
+shortplural={LSTMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{cnn}{}%
+{%
+\gls@defglossaryentry{cnn}%
+{%
+name={CNN},%
+sort={CNN},%
+type={acronym},%
+first={Convolutional Neural Network\glsspace (CNN)},%
+firstplural={Convolutional Neural Network\acrpluralsuffix \glsspace (CNN\acrpluralsuffix )},%
+text={CNN},%
+plural={CNN\acrpluralsuffix },%
+description={Convolutional Neural Network},%
+descriptionplural={Convolutional Neural Network\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Convolutional Neural Network},%
+longplural={Convolutional Neural Networks},%
+short={CNN},%
+shortplural={CNNs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{pssmdt}{}%
+{%
+\gls@defglossaryentry{pssmdt}%
+{%
+name={PSSM-DT},%
+sort={PSSM-DT},%
+type={acronym},%
+first={Position Specific Scoring Matrix Distance Transformation\glsspace (PSSM-DT)},%
+firstplural={Position Specific Scoring Matrix Distance Transformation\acrpluralsuffix \glsspace (PSSM-DT\acrpluralsuffix )},%
+text={PSSM-DT},%
+plural={PSSM-DT\acrpluralsuffix },%
+description={Position Specific Scoring Matrix Distance Transformation},%
+descriptionplural={Position Specific Scoring Matrix Distance Transformation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Position Specific Scoring Matrix Distance Transformation},%
+longplural={Position Specific Scoring Matrix Distance Transformations},%
+short={PSSM-DT},%
+shortplural={PSSM-DTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{edt}{}%
+{%
+\gls@defglossaryentry{edt}%
+{%
+name={EDT},%
+sort={EDT},%
+type={acronym},%
+first={Evolutionary Distance Transformation\glsspace (EDT)},%
+firstplural={Evolutionary Distance Transformation\acrpluralsuffix \glsspace (EDT\acrpluralsuffix )},%
+text={EDT},%
+plural={EDT\acrpluralsuffix },%
+description={Evolutionary Distance Transformation},%
+descriptionplural={Evolutionary Distance Transformation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Evolutionary Distance Transformation},%
+longplural={Evolutionary Distance Transformations},%
+short={EDT},%
+shortplural={EDTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{rpt}{}%
+{%
+\gls@defglossaryentry{rpt}%
+{%
+name={RPT},%
+sort={RPT},%
+type={acronym},%
+first={Residue Probing Transformation\glsspace (RPT)},%
+firstplural={Residue Probing Transformation\acrpluralsuffix \glsspace (RPT\acrpluralsuffix )},%
+text={RPT},%
+plural={RPT\acrpluralsuffix },%
+description={Residue Probing Transformation},%
+descriptionplural={Residue Probing Transformation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Residue Probing Transformation},%
+longplural={Residue Probing Transformations},%
+short={RPT},%
+shortplural={RPTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{casp}{}%
+{%
+\gls@defglossaryentry{casp}%
+{%
+name={CASP},%
+sort={CASP},%
+type={acronym},%
+first={Critical Assessment of Structure Prediction\glsspace (CASP)},%
+firstplural={Critical Assessment of Structure Prediction\acrpluralsuffix \glsspace (CASP\acrpluralsuffix )},%
+text={CASP},%
+plural={CASP\acrpluralsuffix },%
+description={Critical Assessment of Structure Prediction},%
+descriptionplural={Critical Assessment of Structure Prediction\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Critical Assessment of Structure Prediction},%
+longplural={Critical Assessment of Structure Predictions},%
+short={CASP},%
+shortplural={CASPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{nfl}{}%
+{%
+\gls@defglossaryentry{nfl}%
+{%
+name={NFL},%
+sort={NFL},%
+type={acronym},%
+first={No Free Lunch Algorithm\glsspace (NFL)},%
+firstplural={No Free Lunch Algorithm\acrpluralsuffix \glsspace (NFL\acrpluralsuffix )},%
+text={NFL},%
+plural={NFL\acrpluralsuffix },%
+description={No Free Lunch Algorithm},%
+descriptionplural={No Free Lunch Algorithm\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={No Free Lunch Algorithm},%
+longplural={No Free Lunch Algorithms},%
+short={NFL},%
+shortplural={NFLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{cadd}{}%
+{%
+\gls@defglossaryentry{cadd}%
+{%
+name={CADD},%
+sort={CADD},%
+type={acronym},%
+first={Computer-aided drug discovery\glsspace (CADD)},%
+firstplural={Computer-aided drug discovery\acrpluralsuffix \glsspace (CADD\acrpluralsuffix )},%
+text={CADD},%
+plural={CADD\acrpluralsuffix },%
+description={Computer-aided drug discovery},%
+descriptionplural={Computer-aided drug discovery\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Computer-aided drug discovery},%
+longplural={Computer-aided drug discoverys},%
+short={CADD},%
+shortplural={CADDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{hts}{}%
+{%
+\gls@defglossaryentry{hts}%
+{%
+name={HTS},%
+sort={HTS},%
+type={acronym},%
+first={High Throughput Screening\glsspace (HTS)},%
+firstplural={High Throughput Screening\acrpluralsuffix \glsspace (HTS\acrpluralsuffix )},%
+text={HTS},%
+plural={HTS\acrpluralsuffix },%
+description={High Throughput Screening},%
+descriptionplural={High Throughput Screening\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={High Throughput Screening},%
+longplural={High Throughput Screenings},%
+short={HTS},%
+shortplural={HTSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{qsar}{}%
+{%
+\gls@defglossaryentry{qsar}%
+{%
+name={QSAR},%
+sort={QSAR},%
+type={acronym},%
+first={Quantitative Structure Activity Relation\glsspace (QSAR)},%
+firstplural={Quantitative Structure Activity Relation\acrpluralsuffix \glsspace (QSAR\acrpluralsuffix )},%
+text={QSAR},%
+plural={QSAR\acrpluralsuffix },%
+description={Quantitative Structure Activity Relation},%
+descriptionplural={Quantitative Structure Activity Relation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Quantitative Structure Activity Relation},%
+longplural={Quantitative Structure Activity Relations},%
+short={QSAR},%
+shortplural={QSARs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{rnn}{}%
+{%
+\gls@defglossaryentry{rnn}%
+{%
+name={RNN},%
+sort={RNN},%
+type={acronym},%
+first={Recursive Neural Network\glsspace (RNN)},%
+firstplural={Recursive Neural Network\acrpluralsuffix \glsspace (RNN\acrpluralsuffix )},%
+text={RNN},%
+plural={RNN\acrpluralsuffix },%
+description={Recursive Neural Network},%
+descriptionplural={Recursive Neural Network\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Recursive Neural Network},%
+longplural={Recursive Neural Networks},%
+short={RNN},%
+shortplural={RNNs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{et}{}%
+{%
+\gls@defglossaryentry{et}%
+{%
+name={ET},%
+sort={ET},%
+type={acronym},%
+first={Evolutionary Transformation\glsspace (ET)},%
+firstplural={Evolutionary Transformation\acrpluralsuffix \glsspace (ET\acrpluralsuffix )},%
+text={ET},%
+plural={ET\acrpluralsuffix },%
+description={Evolutionary Transformation},%
+descriptionplural={Evolutionary Transformation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Evolutionary Transformation},%
+longplural={Evolutionary Transformations},%
+short={ET},%
+shortplural={ETs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{featdti}{}%
+{%
+\gls@defglossaryentry{featdti}%
+{%
+name={FeatDTI},%
+sort={FeatDTI},%
+type={acronym},%
+first={Feature Based Drug Target Interaction\glsspace (FeatDTI)},%
+firstplural={Feature Based Drug Target Interaction\acrpluralsuffix \glsspace (FeatDTI\acrpluralsuffix )},%
+text={FeatDTI},%
+plural={FeatDTI\acrpluralsuffix },%
+description={Feature Based Drug Target Interaction},%
+descriptionplural={Feature Based Drug Target Interaction\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Feature Based Drug Target Interaction},%
+longplural={Feature Based Drug Target Interactions},%
+short={FeatDTI},%
+shortplural={FeatDTIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{sgd}{}%
+{%
+\gls@defglossaryentry{sgd}%
+{%
+name={SGD},%
+sort={SGD},%
+type={acronym},%
+first={Stochastic Gradient Descent\glsspace (SGD)},%
+firstplural={Stochastic Gradient Descent\acrpluralsuffix \glsspace (SGD\acrpluralsuffix )},%
+text={SGD},%
+plural={SGD\acrpluralsuffix },%
+description={Stochastic Gradient Descent},%
+descriptionplural={Stochastic Gradient Descent\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Stochastic Gradient Descent},%
+longplural={Stochastic Gradient Descents},%
+short={SGD},%
+shortplural={SGDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{adam}{}%
+{%
+\gls@defglossaryentry{adam}%
+{%
+name={Adam},%
+sort={Adam},%
+type={acronym},%
+first={Adaptive Moment Estimation\glsspace (Adam)},%
+firstplural={Adaptive Moment Estimation\acrpluralsuffix \glsspace (Adam\acrpluralsuffix )},%
+text={Adam},%
+plural={Adam\acrpluralsuffix },%
+description={Adaptive Moment Estimation},%
+descriptionplural={Adaptive Moment Estimation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Adaptive Moment Estimation},%
+longplural={Adaptive Moment Estimations},%
+short={Adam},%
+shortplural={Adams},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{adagrad}{}%
+{%
+\gls@defglossaryentry{adagrad}%
+{%
+name={AdaGrad},%
+sort={AdaGrad},%
+type={acronym},%
+first={Adaptive Gradient Algorithm\glsspace (AdaGrad)},%
+firstplural={Adaptive Gradient Algorithm\acrpluralsuffix \glsspace (AdaGrad\acrpluralsuffix )},%
+text={AdaGrad},%
+plural={AdaGrad\acrpluralsuffix },%
+description={Adaptive Gradient Algorithm},%
+descriptionplural={Adaptive Gradient Algorithm\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Adaptive Gradient Algorithm},%
+longplural={Adaptive Gradient Algorithms},%
+short={AdaGrad},%
+shortplural={AdaGrads},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{rmsprop}{}%
+{%
+\gls@defglossaryentry{rmsprop}%
+{%
+name={RMSProp},%
+sort={RMSProp},%
+type={acronym},%
+first={Root Mean Squared Propagation\glsspace (RMSProp)},%
+firstplural={Root Mean Squared Propagation\acrpluralsuffix \glsspace (RMSProp\acrpluralsuffix )},%
+text={RMSProp},%
+plural={RMSProp\acrpluralsuffix },%
+description={Root Mean Squared Propagation},%
+descriptionplural={Root Mean Squared Propagation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Root Mean Squared Propagation},%
+longplural={Root Mean Squared Propagations},%
+short={RMSProp},%
+shortplural={RMSProps},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{kde}{}%
+{%
+\gls@defglossaryentry{kde}%
+{%
+name={KDE},%
+sort={KDE},%
+type={acronym},%
+first={Kernel Density Estimation\glsspace (KDE)},%
+firstplural={Kernel Density Estimation\acrpluralsuffix \glsspace (KDE\acrpluralsuffix )},%
+text={KDE},%
+plural={KDE\acrpluralsuffix },%
+description={Kernel Density Estimation},%
+descriptionplural={Kernel Density Estimation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Kernel Density Estimation},%
+longplural={Kernel Density Estimations},%
+short={KDE},%
+shortplural={KDEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

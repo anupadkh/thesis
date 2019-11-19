@@ -4,9 +4,10 @@
 
 \begin{table}
   \centering
-  {\caption{PSSM Analysis Design}
-  \label{table:PSSM_Analysis} }
-    \subfloat[][Protein FASTA Sequence]{
+  \caption[PSSM Analysis Design]{PSSM Scoring Matrix Calculation Steps: \ref{sub@table:PSSM_Analysis:fasta} shows 10 assumed protein fasta sequences. Their lengths is equal to 9 for this example. \ref{sub@table:PSSM_Analysis:frequency} shows the frequency of each amino acids (labelled in first column of the table with alphabetic symbols) present in positional index of fasta sequence from table \ref{sub@table:PSSM_Analysis:fasta}. \ref{sub@table:log_likelihood_pssm} shows the probability of amino acids appearing in different positions of fasta sequence for the protein in table \ref{sub@table:PSSM_Analysis:fasta}. \ref{sub@table:motif_movement} shows the calculation of score for string'\uppercase{agccccagc}' from example in \ref{example:fasta}. This matrix is used to tabulate PSSM matrix at each positional index of the example protein. \ref{sub@wrapTable:pssm-score} tabulates the scores obtained from \ref{sub@table:motif_movement} by sliding window of length 9 at first 10 positions for example in \ref{example:fasta}.
+  }
+  \label{table:PSSM_Analysis}
+    \subfloat[][Protein FASTA Sequence (Motifs)]{
       \label{table:PSSM_Analysis:fasta} 
       \begin{tabular}{|l|l|} \toprule
       \hline
@@ -53,7 +54,7 @@
       \end{tabular}  
       \label{table:log_likelihood_pssm}
     }
-    
+     
   
   \subfloat[][Sliding Window Score Calculation]{
     \centering
@@ -81,9 +82,14 @@
     }
 \end{table}
 
-Table \ref{table:PSSM_Analysis} shows a conventional process of calculating PSSM score values. The sequence following shows the process of calculating the scores once the PSSM distribution of the whole family is calculated. Table \ref{table:motif_movement} shows the score distribution of lowercase amino acid sequence (starting after 4th position) determined by the size of the sliding window.
+Table \ref{table:PSSM_Analysis} shows a conventional process of calculating PSSM score values. The sequence following shows the process of calculating the scores once the PSSM distribution of the whole protein sequence is calculated. Table \ref{table:motif_movement} shows the score distribution of lowercase amino acid sequence (starting after 4th position) determined by the size of the sliding window.
 
-\seqsplit{ACTC\textbf{agccccagc}GGAGGTGAAGGACGTCCTTCCCCAGGAGCCGGTGAGAAGCGCAGTCGGGGGCACGGGGATGAGCTCAGGGGCCTCTAGAAAGATGTAGCTGGGACCTCGGGAAGCCCTGGCCTCCAGGTAGTCTCAGGAGAGCTACTCAGGGTCGGGCTTGGGGAGAGGAGGAGCGGGGGTGAGGCCAGCAGCA} 
+\begin{displayquote}
+  \seqsplit{ACTC\textbf{agccccagc}GGAGGTGAAGGACGTCCTTCCCCAGGAGCCGGTGAGAAGCGCAGTCGGGGGCACGGGGATGAGCTCAGGGGCCTCTAGAAAGATGTAGCTGGGACCTCGGGAAGCCCTGGCCTCCAGGTAGTCTCAGGAGAGCTACTCAGGGTCGGGCTTGGGGAGAGGAGGAGCGGGGGTGAGGCCAGCAGCA} 
+  \label{example:fasta}
+\end{displayquote}
+
+
 
 % % \begin{wraptable}{br}{5.5cm}
 % \begin{table}[H]
@@ -92,28 +98,26 @@ Table \ref{table:PSSM_Analysis} shows a conventional process of calculating PSSM
 % \end{table}
 % % \end{wraptable}
 
-.3, .1, .1, 0, 0, .2, .7, .5, .2  == Sum(2.1) - posix(4) -- See table \ref{wrapTable:pssm-score}
+.3, .1, .1, 0, 0, .2, .7, .5, .2  == Sum(2.1) - posix(4) -- See Table \ref{table:motif_movement}.
 
 \begin{figure}[htbp]
     \centering 
           %  \subfloat[]{\includegraphics[width=.3\textwidth]{dataset/images/KIBA_scores.png}}
           
            \subfloat[][Drug-Protein Interaction]{
-             \includegraphics[width=.5\textwidth]{dataset/images/KIBA_scores.png}
+             \includegraphics[width=1.\textwidth]{dataset/images/KIBA_scores.png}
              \label{fig:kiba_scores}
              }
 
            \subfloat[][Drugs SMILES Sequence]{
             \label{fig:drug_dist}  
-            \includegraphics[width=.5\textwidth]{dataset/images/SMILES_distribution.png}
-            }
-
+            \includegraphics[width=.5\textwidth]{dataset/images/SMILES_distribution.png}}
            \subfloat[][Protein FASTA Sequence]{
              \includegraphics[width=.5\textwidth]{dataset/images/FASTA_distribution.png}
              \label{fig:prot_dist}
             }
 
-           \caption[KDE Distribution]{Kernel Density Estimation Distribution of KIBA-interaction scores of Drug Sequences and Protein Sequences. \ref{sub@fig:kiba_scores} Distribution of KIBA Scores in Protein-Drug Interaction Pair, \ref{sub@fig:drug_dist} Distribution of length in Labeled Encodings of Drug Sequence, \ref{sub@fig:prot_dist} Distribution of length in Labelled Encodings Protein Sequence }
+           \caption[KDE Distribution]{\acrfull{kde} Distribution of KIBA-interaction scores of Drug Sequences and Protein Sequences. \ref{sub@fig:kiba_scores} \acrshort{kde} Distribution of KIBA Scores in Protein-Drug Interaction Pair, \ref{sub@fig:drug_dist} \acrshort{kde} Distribution of length in Labeled Encodings of Drug Sequence, \ref{sub@fig:prot_dist} \acrshort{kde} Distribution of length in Labelled Encodings Protein Sequence }
            \label{fig:kiba_drug_protein}
 \end{figure}
   

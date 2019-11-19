@@ -31,3 +31,8 @@
 %   {\titlerule\vspace{1ex}\filleft}
 %   [\vspace{1ex}\titlerule]
 
+\makeatletter
+\newcommand{\customlabel}[2]{%
+\protected@write \@auxout {}{\string \newlabel {#1}{{#2}{}}}}
+\makeatother
+

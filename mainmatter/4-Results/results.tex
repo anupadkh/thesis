@@ -155,43 +155,47 @@ The deep learning method was implemented with various filter sizes of Convolutio
 
 \begin{table}[tbp]
     \centering
-    \caption{Experiments results under different settings (S1, S2, S3, S4)}
+    \caption[Experiments results under different settings (S1, S2, S3, S4)]{Experiments results under different settings (S1, S2, S3, S4). The model S1 and S4 performed well with same filter size 8 in convolution layer drug-protein. The model S2 performed well with drug filter window of 4 and protein window of 8. The model S3 predicted well with drug window size of 8 and protein window size of 12.}
     \begin{tabular}{|l|c|c|c|c|c|c|}
     \hline 
     
      S.No. & Setting & Drug Smiles & FASTA &  CI-val & MSE  \\ 
        &   & Window Size &  Window Size    & &    \\  \toprule \hline
-     1 & 1 & 4 & 8 & 0.813936 & 0.893064 \\ \hline
-     2 & 1 & 4 & 12 & 0.810844 & 1.285271 \\ \hline
-     3 & 1 & 8 & 8 & 0.873094 & 0.177053 \\ \hline
-     4 & 1 & 8 & 12 & 0.807230 & 1.056755 \\ \hline
-     \\ \hline
-     1 & 2 & 4 & 8 & 0.788051 & 0.678707 \\ \hline
-     2 & 2 & 4 & 12 & 0.802355 & 0.360900 \\ \hline
-     3 & 2 & 8 & 8 & 0.803720 & 0.792821 \\ \hline
-     4 & 2 & 8 & 12 & 0.803853 & 0.672790 \\ \hline
-     \\ \hline
-     1 & 3 & 4 & 8 & 0.815181 & 1.562749 \\ \hline
-     2 & 3 & 4 & 12 & 0.805739 & 1.541746 \\ \hline
-     3 & 3 & 8 & 8 & 0.813063 & 1.259206 \\ \hline
-     4 & 3 & 8 & 12 & 0.824767 & 1.396765 \\ \hline
-     \\ \hline
-     1 & 4 & 4 & 8 & 0.803982 & 0.412271 \\ \hline
-     2 & 4 & 4 & 12 & 0.805961 & 1.510426 \\ \hline
-     3 & 4 & 8 & 8 & 0.815464 & 1.614631 \\ \hline
-     4 & 4 & 8 & 12 & 0.787073 & 0.485298 \\ \hline
-     
-    
-    
+     1 & S1 & 4 & 8 & 0.813936 & 0.893064 \\ \hline
+     2 & S1 & 4 & 12 & 0.810844 & 1.285271 \\ \hline
+     3 & S1 & 8 & 8 & 0.873094 & 0.177053 \\ \hline
+     4 & S1 & 8 & 12 & 0.807230 & 1.056755 \\ \hline \midrule
+      \hline
+
+     1 & S2 & 4 & 8 & 0.788051 & 0.678707 \\ \hline
+     2 & S2 & 4 & 12 & 0.802355 & 0.360900 \\ \hline
+     3 & S2 & 8 & 8 & 0.803720 & 0.792821 \\ \hline
+     4 & S2 & 8 & 12 & 0.803853 & 0.672790 \\ \hline \midrule
+      \hline
+     1 & S3 & 4 & 8 & 0.815181 & 1.562749 \\ \hline
+     2 & S3 & 4 & 12 & 0.805739 & 1.541746 \\ \hline
+     3 & S3 & 8 & 8 & 0.813063 & 1.259206 \\ \hline
+     4 & S3 & 8 & 12 & 0.824767 & 1.396765 \\ \hline \midrule
+      \hline
+     1 & S4 & 4 & 8 & 0.803982 & 0.412271 \\ \hline
+     2 & S4 & 4 & 12 & 0.805961 & 1.510426 \\ \hline
+     3 & S4 & 8 & 8 & 0.815464 & 1.614631 \\ \hline
+     4 & S4 & 8 & 12 & 0.787073 & 0.485298 \\ \hline
     \end{tabular}
     \label{table:results}
 \end{table}
 
-Thus we obtain four different models for prediction of drug and protein interaction. The correct model to choose will depend on type of drug and protein fed into the learning algorithm.
+Here we obtain four different models for prediction of drug and protein interaction. The correct model to choose will depend on type of drug and protein fed into the learning algorithm. To use the correct model, the research work following steps depending on check with input protein FASTA and drug SMILES sequence being fed:
+\begin{itemize}
+    \item If Both drug and protein are found in the training dataset, use model S1 to predict the KIBA score.
+    \item If drug is not found but protein is found in training dataset, use model S2 to predict the KIBA score.
+    \item If protein is found but drug is not found in training dataset, use model S3 to predict the KIBA score.
+    \item If none of the proteins or drugs is found in training dataset, use model S4 to predict the KIBA score.
+\end{itemize}
 
 \subsubsection{Performance of optimizers in Setting 1}
 
-The values obtained by using different optimizers is shown in table \ref{table:optimizer}. It shows that Adam optimizer exhibits the best optimizer results in comparison to Stochastic Gradient Descent, Adagrad and RMSProp. In fact the other optimizers perform quite poorly compared to Adam optimizer. The learning factor was lowered by using callback ReduceLROnPlateau by a factor of 0.2 when the validation loss didn't increase in 5 consecutive epochs.
+The values obtained by using different optimizers is shown in table \ref{table:optimizer} and Figure \ref{fig:optimizer_plot}. It shows that Adam optimizer exhibits the best optimizer results in comparison to Stochastic Gradient Descent, Adagrad and RMSProp. In fact the other optimizers perform quite poorly compared to Adam optimizer. The learning factor was lowered by using callback ReduceLROnPlateau by a factor of 0.2 when the validation loss didn't increase in 5 consecutive epochs.
 
 \begin{table} [H]
     \centering
@@ -212,40 +216,60 @@ The values obtained by using different optimizers is shown in table \ref{table:o
     
 \end{table}
 
+\begin{figure}[htbp]
+    \subfloat[][Concordance Index]{
+        \label{fig:opt-ci}
+        \includegraphics[width=.46\textwidth]{mainmatter/4-Results/images/Experiment_optimizer-CI.png}}\quad
+    \subfloat[][Mean Square Error]{
+        \label{fig:opt-mse}
+        \includegraphics[width=.46\textwidth]{mainmatter/4-Results/images/Experiment_optimizer-MSE.png}
+    } 
+    \caption[Optimizer Chart: CI and MSE]{Bar Chart: Plot of concordance index (CI) and Mean Squared Error(MSE). Adam Optimizer~\ref{sub@fig:opt-ci} shows highest CI score and \ref{sub@fig:opt-mse} shows lowest MSE among all other optimizers. The worst is statistic gradient descent optimizer for protein-drug interaction prediction.}
+    \label{fig:optimizer_plot}
+\end{figure}
+
+% Observing the table \ref{table:optimizer}, the calculations show that
+
 \section{Analysis}
-Table \ref{table:results} shows that the optimal filter window size under all settings can be chosen equal to 8 for both drugs and proteins. The highest C-Index Score of (87.30\%) was obtained under Setting 1 when both the drugs and proteins were present in the validation set and training set. This can also be better realized visually from Figure \ref{fig:ci_curve}.
+Table \ref{table:results} shows that the optimal filter window size under all settings can be chosen equal to 8 for both drugs and proteins. The highest C-Index Score of (87.30\%) was obtained under Setting 1 when both the drugs and proteins were present in the validation set and training set. This can also be better realized visually from Figure \ref{fig:ci_curve} and \ref{fig:ci_curve_2}.
  
 \begin{figure}[tbp]\centering
     \subfloat[][Setting 1]{
-        \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S1_CI.png}
+        \includegraphics[width=.9\textwidth]{mainmatter/4-Results/images/S1_CI.png}
         \label{fig:s1_cindex}
     }
     \qquad
     \subfloat[][Setting 2]{
-        \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S3_CI.png}
+        \includegraphics[width=.9\textwidth]{mainmatter/4-Results/images/S3_CI.png}
         \label{fig:s2_cindex}
     }
+    \caption[Concordance Score during Training (a)]{Plot of Training-Validation C-Index Scores over various Settings: 
+    \ref{sub@fig:s1_cindex} has highest score and \ref{sub@fig:s2_cindex} shows lowest score. Under S1 Setting, the epoch reaches the optimal value after 110 epochs after which the call back automatically stops training the model further. Under S2 Setting, the model validation loss does not improve after 35 epochs.
+    }
+    \label{fig:ci_curve}
+\end{figure}
+
+\begin{figure} \centering
     \qquad
     \subfloat[][Setting 3]{
-        \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S2_CI.png}
+        \includegraphics[width=.9\textwidth]{mainmatter/4-Results/images/S2_CI.png}
         \label{fig:s3_cindex}
     }
     \qquad
     \subfloat[][Setting 4]{
-        \includegraphics[width=.45\textwidth]{mainmatter/4-Results/images/S4_CI.png}
+        \includegraphics[width=.9\textwidth]{mainmatter/4-Results/images/S4_CI.png}
         \label{fig:s4_cindex}
     }
-    \caption[Concordance Score during Training]{Plot of Training-Validation C-Index Scores over various Settings: 
-    \ref{sub@fig:s1_cindex} has highest score, \ref{sub@fig:s2_cindex} shows lowest score, \ref{sub@fig:s3_cindex} ranks 2\textsuperscript{nd} and \ref{sub@fig:s4_cindex} ranks the 3\textsuperscript{rd}
+    \caption[Concordance Score during Training(b)]{ Plot of Training-Validation C-Index Scores over various Settings: \ref{sub@fig:s3_cindex} ranks 2\textsuperscript{nd} and \ref{sub@fig:s4_cindex} ranks the 3\textsuperscript{rd}. Setting S3 in Figure \ref{sub@fig:s3_cindex} was the most suitable training mode but it did not get good cindex score as to that of Setting S1 in Figure \ref{fig:s1_cindex}. Setting S4 in Figure \ref{sub@fig:s4_cindex} shows that the trainings being comparable to Setting S3. As expected both S3 and S4 missed one of their representative drug-protein pair during training.
     }
-    \label{fig:ci_curve}
-\end{figure}
+    \label{fig:ci_curve_2}
+\end{figure}   
 
 The comparison between the scores evaluated in same dataset has been compared and presented in table \ref{table:results_comparison} \citep{ozturk2018deepdta}. The benchmark dataset is publicly available in Journal of Chemical Information and Modeling \citep{Tang2013}.
 
 \begin{table} [H]
     \centering
-    \caption[]{Results comparison}
+    \caption[Results Comparison]{Comparison of performace in prediction scores of protein-drug interaction problem. The performance of other algorithms is retrieved from literature~\citep{ozturk2018deepdta}. The method from this research is represented by FeatDTI. It performs the best amongst all the predictors, with the closest predictor being the DeepDTA.}
     \label{table:results_comparison}
     \begin{tabular}{|l|c|c|r|r|}
         \hline
@@ -260,32 +284,48 @@ The comparison between the scores evaluated in same dataset has been compared an
 \end{table}
 
 \begin{figure}[H]
-    \subfloat[Training Actual Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/train_y.png}}
-    \subfloat[Training Predicted Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/pred_train_y.png}}
-    \subfloat[Training Scores Difference]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/train_diff.png}}
-    \caption{Training Results based on KIBA Score Prediction}
+    \centering
+    \subfloat[Actual Scores]{\includegraphics[width=.46\textwidth]{mainmatter/4-Results/images/train_y.png}
+    \label{fig:train_actual}}
+    \subfloat[Predicted Scores]{\includegraphics[width=.46\textwidth]{mainmatter/4-Results/images/pred_train_y.png}
+    \label{fig:train_predict}
+    } \qquad
+
+    \subfloat[Difference of Actual and Predicted Scores]{\includegraphics[width=.5\textwidth]{mainmatter/4-Results/images/train_diff.png}
+    \label{fig:train_diff}}
+    \caption[Training Results based on KIBA Score Prediction]{Kernel Density Estimation(KDE) plot of Training Results based on KIBA Score Prediction: The model evaluated the data set with actual KIBA scores~\ref{sub@fig:train_actual}. We obtain the predicted KDE of KIBA scores in~\ref{sub@fig:train_predict}. The differences in KIBA scores prediction and actual scores corresponding to same drug-protein pair is plotted in Figure~\ref{sub@fig:train_diff}.}
     \label{fig:pred_train}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=.8\textwidth]{mainmatter/4-Results/images/S1_loss.png}
-    \caption[Training Loss Plot]{Training and Validation Loss Plot of Setting 1 (S1) with Filter Size = 8}
+    \includegraphics[width=1\textwidth]{mainmatter/4-Results/images/S1_loss.png}
+    \caption[Training Loss Plot]{
+        Training and Validation Loss Plot: Plot of Loss function of predicted values with training and validation set. The spikes were an unavoidable consequence of Mini-Batch Gradient Descent in Adam (batch size = 256). Some mini-batches have lossy data for optimization, inducing spikes during the initial phases of training. The loss plot was observed when trained with testing and validation drug-protein pair contained the drugs and proteins sequences used during the training phase. The filter size was 8 for both drugs and proteins. The loss function was stable with validation set and test data set around 115th epoch of training.
+    }
     \label{fig:train_val_loss_plot}
 \end{figure}
 
-Similarly, the prediction scores and actual scores for validation sets are shown in Figure ~\ref{fig:val_train}
+\iffalse
+
+Similarly, the prediction scores and actual scores for validation sets  shown in Figure ~\ref{fig:val_train}
+
+
 \begin{figure}[H]
     \subfloat[Testing Actual Scores]{
-        \includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/val_y.png}
-        }
-    \subfloat[Testing Predicted Scores]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/pred_val_y.png}}
-    \subfloat[Testing Scores Difference]{\includegraphics[width=.3\textwidth]{mainmatter/4-Results/images/val_difference.png}}
-    \caption{Testing Results on KIBA score Prediction}
+        \includegraphics[width=.46\textwidth]{mainmatter/4-Results/images/val_y.png}
+        \label{fig:actual_test}} \qquad
+        \subfloat[Testing Predicted Scores]{\includegraphics[width=.46\textwidth]{mainmatter/4-Results/images/pred_val_y.png}
+    \label{fig:predict_test}
+    } \qquad
+    \subfloat[Testing Scores Difference]{\includegraphics[width=.7\textwidth]{mainmatter/4-Results/images/val_difference.png}}
+    \caption[Testing Results on KIBA score Prediction]{
+        Kernel Density Estimation(KDE) plot of Testing (Validation) Results based on KIBA Score Prediction: The model evaluated the validation data set with actual KIBA scores~\ref{sub@fig:}. We obtain the predicted KDE of KIBA scores in~\ref{sub@fig:train_predict}. The differences in KIBA scores prediction and actual scores corresponding to same drug-protein pair is plotted in Figure~\ref{sub@fig:train_diff}.
+    }
     \label{fig:val_train}
 \end{figure}
 
-
+\fi
 
 
 \iffalse The similarity measures are evaluated using \citep{Cock2009}. \fi

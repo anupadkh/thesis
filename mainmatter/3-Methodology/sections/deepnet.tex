@@ -30,6 +30,14 @@
   \subsubsection{Convolution Neural Network}
   \acrfull{cnn} are used for feature generation in machine learning system. They improve a machine learning system in three perspectives: sparse interactions, parameter sharing and equivariant representations. While a conventional neural network is tight network for instance, a Dense Layer creates an interaction of every input unit to that of output units; \acrshort{cnn} have sparse interactions. This differentiates the learning pattern of \acrshort{cnn} from other networks by understanding the local patterns in the input vector. While traditional Neural Networks mostly involve learning the global parameters, \acrshort{cnn} is used to learn local patterns. It does so by reducing the kernel (aka filter) smaller than the input. For example, when an image can have thousands of pixels, the kernel size can be tens or hundreds of pixels as shown in Figure ~\ref{fig:cnn}. 
   
+  
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{mainmatter/3-Methodology/images/System-Block-CNN-Layer.pdf}
+    \caption[Working of CNN Block]{The small window from the image grid forms }
+    \label{fig:cnn}
+  \end{figure}
+  
   Parameter Sharing refers when the same parameter is used for multiple times in model. In conventional neural net, each parameter is used only once when computing the output of a layer. In \acrshort{cnn}, as the window sweeps over all the images, the same pixels create different representations with the position of sweeping window. So the parameter sharing property of \acrshort{cnn} identifies one representation for the pixel at a time.
   
   Equivariance property of \acrshort{cnn} is caused due to parameter sharing. It is defined as a property defined as when the input is translated, so is the output. When processing some time-series data the convolution produces a timeline sequence of features that appear in the input. For example, the convolution operations in movie will produce the feature timeline for the picture pixels.
@@ -47,16 +55,9 @@
 \fi
 
 
-  \begin{figure}
-    \centering
-    \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/System-Block-CNN-Layer.pdf}
-    \caption[Working of CNN Block]{The small window from the image grid forms }
-    \label{fig:cnn}
-  \end{figure}
+  
   
   \subsubsection{Pooling Layer}
-  
-  The Pooling layer was used to modify the output of its preceding layer. For example the max pooling renders the maximum output from a rectangular neighborhood and average pooling renders average value from the the rectangular neighborhood. It was used to downsample the learned parameters from the grid of 2 dimensions returned by Convolution Layer. This work used Global Max Pooling to reduce the dimension and extract the extreme features learned from \acrshort{cnn}. Thus, it got reduced to 1 dimension by taking the highest values from the window size(corresponding to shape of 1\textsuperscript{st} dimensional element). The Pooling operation has been described by Figure ~\ref{fig:pool_layer}.
 
   \begin{figure}[H] \centering
     \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/pooling.pdf}
@@ -64,6 +65,10 @@
     \label{fig:pool_layer}
   \end{figure}
 
+  
+  The Pooling layer was used to modify the output of its preceding layer. For example the max pooling renders the maximum output from a rectangular neighborhood and average pooling renders average value from the the rectangular neighborhood. It was used to downsample the learned parameters from the grid of 2 dimensions returned by Convolution Layer. This work used Global Max Pooling to reduce the dimension and extract the extreme features learned from \acrshort{cnn}. Thus, it got reduced to 1 dimension by taking the highest values from the window size(corresponding to shape of 1\textsuperscript{st} dimensional element). The Pooling operation has been described by Figure ~\ref{fig:pool_layer}.
+
+  
   \subsubsection{Dense Layer}
   Dense Layer is a neural layer which fully connects the input layer to output layer. It performs a linear operation on the layer's input vector. At every node in output of the dense layer generally follows an activation function that creates a generalization rule for the input vectors at the node. The research work used the dense layer to learn the global pattern from the feature data. The representation can be seen from Figure ~\ref{fig:dense}. As the output required is a regression value, it uses relu for activation.
 
@@ -71,8 +76,7 @@
   
   \subsubsection{Dropout Layer}
   Our model becomes undesirable when every component of the input layer makes a significant change to the output layer. To reduce the effect of unimportant features the dropout layer was used. Thus the backpropagation network tries to ignore the noise features and minimizes the unrealizable prediction of the learning problem. This has been expressed diagrammatically in Figure ~\ref{fig:dropout}.
-  \begin{figure}
-    [H] \centering
+  \begin{figure}[tbh] \centering
     \captionsetup{justification=justified}
     \includegraphics[width=.5\linewidth]{mainmatter/3-Methodology/images/dropout.jpeg}
     \caption[Dropout Layer]{a) Standard neural network whose all the nodes have weights connected to higher nodes and lower nodes. 
@@ -112,11 +116,46 @@
     \caption{Relu Activation Function}
   \end{figure}
 
-  
+   
   \subsection{Choice of Optimizers}
 
-  Optimizers are the functions that estimate the global maximum/minimum for the problem domain. Their characteristics to find the global extremes or local extremes depend on the type of problem and 
+  Optimizers are the functions that estimate the global maximum/minimum for a problem domain. Their characteristics to find the global extremes or local extremes depend on the type of problem type and the optimization parameters used to train the algorithm. The choice of optimizer influences both the speed of convergence and whether it occurs. 
+  The optimizers aim to minimize the cost function $ J( \theta; x^{(i)}; y^{(i)}) $ where $\theta$ is the optimization rule for cost function and $x{(i)},y{(i)}$ are the input,output parameters. The optimizers chosen to minimize the cost function associated to protein-drug prediction are:
   
+  \subsubsection{Stochastic Gradient Descent(SGD)}
+
+  The optimization formula for \acrfull{sgd}:
+  \begin{equation}
+    \theta = \theta - \eta \cdot \nabla_\theta J( \theta; x^{(i)}; y^{(i)})
+  \end{equation}
+
+  \subsubsection{Adaptive Moment Estimation(Adam)}
+
+  The optimization formula for \acrfull{adam}:
+  \begin{equation}
+  \begin{aligned} V _ { d \theta } & = \beta _ { 1 } V _ { d \theta } + \left( 1 - \beta _ { 1 } \right) d \theta \\ S _ { d \theta } & = \beta _ { 2 } S _ { d \theta } + \left( 1 - \beta _ { 2 } \right) d \theta \\ V \operatorname { corr } _ { d \theta } & = \frac { V _ { d \theta } } { \left( 1 - \beta _ { 1 } \right) ^ { t } } \\ S c o r r _ { d \theta } & = \frac { S _ { d \theta } } { \left( 1 - \beta _ { 2 } \right) ^ { t } } \\ \theta & = \theta - \alpha \frac { d \theta } { \sqrt { S _ { d \theta } } + \varepsilon } \end{aligned}
+  \end{equation}
+
+  \subsubsection{Root Mean Squared Propagation(RMSProp)}
+
+  \begin{equation}
+    W_{dW} = \beta{W_{dW}} + (1-\beta) {\nabla\theta}^{2}
+  \end{equation}
+
+  \begin{equation}
+    \theta = \theta - \eta \cdot \frac{\nabla_\theta}{\sqrt{W_{dW}} + \epsilon}  J( \theta; x^{(i)}; y^{(i)})
+  \end{equation}
+
+
+  \subsubsection{Adaptive Gradient Algorithm(AdaGrad)}
+  
+  \begin{equation}
+    W_{dW} = \beta{W_{dW}} + (1-\beta) {\nabla\theta}
+  \end{equation}
+
+  \begin{equation}
+    \theta = \theta - \eta \cdot W_{dW} J( \theta; x^{(i)}; y^{(i)})
+  \end{equation}
 
 
   
