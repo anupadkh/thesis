@@ -1,15 +1,18 @@
-\chapter{Conclusions}
+\chapter{Conclusions and Recommendations}
 
-The research was conducted for series of experiments using different CNN architectures and validated using four different settings of drug and protein combinations. The experiments show that the network requires past knowledge on proteins and drugs to yield the best results. The model could yield best scores when both the protein and drug were present in the training phase. We also conclude that if the domain has fewer parameters to learn from, we can represent them in new dimensions to achieve better results in machine learning problem.
+The research was conducted for series of experiments using different CNN architectures and validated using four different settings of drug and protein combinations. The experiments show that the network required past knowledge on proteins and drugs to yield the best results. The model would yield best scores when both the protein and drug were present in the training phase. We also conclude that if the domain has fewer parameters to learn from, we can represent them in new dimensions to achieve better results in machine learning problem.The research work concludes with two major statements.
 
-Finally, it concludes that:
-\begin{itemize}
-    \item Proteins need to be represented in higher dimensions of R2RSRV factors and the domain representation by using PSSM features along with the sequence information for formulating protein-solving network architecture.
-    \item A deep learning network architecture consisting of three stacked \acrfull{cnn} was designed. The optimized network has \acrshort{cnn} with filter length of size 8 and three sets of stacked \acrshort{cnn} layers. The generalization of learned features was obtained with stacked dense layers.
-\end{itemize}
+\section{Conclusions}
+% \begin{itemize}
+    % \item 
+    Proteins need to be represented in higher dimensions relating to its properties of evolutionary components and physicochemical components. The transformation vectors obtained from \acrfull{pssm} of a protein relate to other similar proteins. The similarity assessed by the motifs movements find the proteins from same family, the mutational properties of proteins. Thereby, it helps to identify homologous proteins in same domain and at the same time identifies the regions of differences in two protein sequences. The physicochemical properties of proteins represented by \acrfull{srv} build properly with \acrshort{pssm}. The main reason for getting a good performance was mainly because they built the remaining information not learnt from the sequence data.
+    % The R2RSRV factors and the domain representation by using PSSM features along with the sequence information for formulating protein-solving network architecture. While the sequential information have major role in providing predictions 
+    % \item 
 
-\chapter{Recommendations}
+    A deep learning network architecture consisting of three stacked \acrfull{cnn} layers was designed. Other extreme features evaluated from \acrshort{pssm} were directly fed to the dense neurons. The optimized network has \acrshort{cnn} with filter length of size 8 and three sets of stacked \acrshort{cnn} layers. The generalization of learned features was obtained with stacked dense layers.
+% \end{itemize}
+
+\section{Recommendations}
 % \section{Future Works}
 
 At present, the sample space of~\acrfull{nfl} has been explored by forming the different feature-sets. The different feature sets on chemical values of drugs can be used to represent a much broader spectrum of drug molecule representation. In case of protein, protein folds could be the incorporated information which could be supplemented for the available 3D protein structures and a good prediction algorithm chosen for CASP\citep{CASP82008}. For the features being evaluated, the Grid-Search CV could be applied over various algorithms and Stacking Generalization could be used to create a better optimized machine learning solution to predict protein-drug interaction score from sequence information. Successively, important is a correct modeling of Pharmacophore modeling of drug-proteins pairs so that it can be applied directly to medical supervisions. 
-

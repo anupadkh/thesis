@@ -175,7 +175,9 @@ The deep learning method was implemented with various filter sizes of Convolutio
 \begin{table}[tbp]
     \centering
     \caption[Experiments results under different settings (S1, S2, S3, S4)]{Experiments results under different settings (S1, S2, S3, S4). The model S1 and S4 performed well with same filter size 8 in convolution layer drug-protein. The model S2 performed well with drug filter window of 4 and protein window of 8. The model S3 predicted well with drug window size of 8 and protein window size of 12.}
+    \setlength\extrarowheight{8pt}
     \begin{tabular}{|l|c|c|c|c|c|c|}
+    
     \hline 
     
      S.No. & Setting & Drug Smiles & FASTA &  CI-val & MSE  \\ 
@@ -303,16 +305,16 @@ The comparison between the scores evaluated in same dataset has been compared an
         
         \end{tabular}
 \end{table}
-
+ 
 \begin{figure}[H]
     \centering
-    \subfloat[Actual Scores]{\includegraphics[width=.46\textwidth]{mainmatter/4-Results/images/train_y.png}
+    \subfloat[Actual Scores]{\includegraphics[width=.46\textwidth]{mainmatter/4-Results/images/Original.png}
     \label{fig:train_actual}}
-    \subfloat[Predicted Scores]{\includegraphics[width=.46\textwidth]{mainmatter/4-Results/images/pred_train_y.png}
+    \subfloat[Predicted Scores]{\includegraphics[width=.46\textwidth]{mainmatter/4-Results/images/Predicted.png}
     \label{fig:train_predict}
     } \qquad
 
-    \subfloat[Difference of Actual and Predicted Scores]{\includegraphics[width=.5\textwidth]{mainmatter/4-Results/images/train_diff.png}
+    \subfloat[Difference of Actual and Predicted Scores]{\includegraphics[width=.5\textwidth]{mainmatter/4-Results/images/Difference.png}
     \label{fig:train_diff}}
     \caption[Training Results based on KIBA Score Prediction]{Kernel Density Estimation(KDE) plot of Training Results based on KIBA Score Prediction: The model evaluated the data set with actual KIBA scores~\ref{sub@fig:train_actual}. We obtain the predicted KDE of KIBA scores in~\ref{sub@fig:train_predict}. The differences in KIBA scores prediction and actual scores corresponding to same drug-protein pair is plotted in Figure~\ref{sub@fig:train_diff}.}
     \label{fig:pred_train}
