@@ -118,6 +118,7 @@
 {
 \let\oldnumberline\numberline%
 \renewcommand{\numberline}{\figurename~\oldnumberline}
+\renewcommand*{\addvspace}[1]{}
 \listoffigures
 \thispagestyle{empty}
 }
@@ -125,12 +126,15 @@
 {
 \let\oldnumberline\numberline%
 \renewcommand{\numberline}{\tablename~\oldnumberline}%
+\renewcommand*{\addvspace}[1]{}
 \listoftables
 }
-\thispagestyle{empty}
+\thispagestyle{empty} 
 
 
 \addtocontents{toc}{~\hfill\textbf{Page}\par}
+
+
 \addtocontents{lof}{~\hfill\textbf{Page}\par}
 \addtocontents{lot}{~\hfill\textbf{Page}\par}
 
