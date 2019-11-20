@@ -36,3 +36,13 @@
 \protected@write \@auxout {}{\string \newlabel {#1}{{#2}{}}}}
 \makeatother
 
+
+\newcounter{bibcount}
+
+\makeatletter
+\patchcmd{\@lbibitem}{\item[}{\item[\hfil\stepcounter{bibcount}{\thebibcount.}}{}{}
+\setlength{\bibhang}{2\parindent}
+\renewcommand\NAT@bibsetup%
+   [1]{\setlength{\leftmargin}{\bibhang}\setlength{\itemindent}{-\parindent}%
+       \setlength{\itemsep}{\bibsep}\setlength{\parsep}{\z@}}
+\makeatother
