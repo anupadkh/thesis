@@ -28,8 +28,7 @@ These are the structural components of protein especially related to alpha and b
 % We explore basically the following algorithms for analyses on protein-drug interactions:
 
 
-\subsubsection{Stacked Features}
-The architecture as per Figure ~\ref{fig:dlm} was implemented for our model design via Python using the TensorFlow framework consisting of keras. The training contained of 200 epochs. The learning rates and early stopping were manipulated in the training process by using keras callback functions. The training and testing was performed using a 5-fold cross-validation set prepared manually. To evaluate the performance of the model, we used concordance index(CI)\citep{Xu2015} as defined by equation~\ref{eq:ci}:
+The architecture as per Figure ~\ref{fig:dlm} was implemented for our model design via Python using the TensorFlow framework consisting of keras. The training contained of 200 epochs. The changing learning rates and early stopping were manipulated in the training process by using keras callback functions. The training and testing was performed using a 60:20:20 cross-validation set prepared in dataset~\cite{He2017}. To evaluate the performance of the model, we used concordance index(CI)\citep{Xu2015} as defined by equation~\ref{eq:ci}:
 \begin{equation}
     CI = \frac{1}{Z} \sum_{\delta_i > \delta_j} h(b_i - b_j)
     \label{eq:ci}
@@ -43,7 +42,27 @@ where $b_i$ is the prediction value for higher affinity $\delta_i$ and $b_j$ is 
     \end{cases}
 \end{equation}
 
-\section{Results}
+\begin{table} [H]
+    \centering
+    \caption{Experimental Settings} 
+    \label{table:experiment}
+    \begin{tabular}{|l|r|}
+    \hline
+    
+    \textbf{Description} & \textbf{Settings} \\ \hline
+    No. of filters & 32 \\ \hline
+    Filter Length(Compounds) & 4,8 \\ \hline
+    Filter Length(Proteins) & 8,12 \\ \hline
+    Epochs & 200 \\ \hline
+    Hidden Neurons & 1024, 1024, 512 \\ \hline
+    Batch-size & 256 \\ \hline
+    Dropout & 0.1 \\ \hline
+    Optimizer & Adam \\ \hline
+    Learning Rate & 0.001 \\ \hline
+    Training, Test, Validation splits & 60,20,20 \\ \hline
+    
+    \end{tabular}
+    \end{table}
 
 The method proposed by this research, \acrfull{featdti} contains 3 \acrfull{cnn}-blocks. It evaluates \acrfull{rpt}, acrfull{edt} and \acrfull{pssmdt} based on the inputs (Protein FASTA and Drugs SMILES) provided. The features are then calculated by the model to calculate the \acrfull{kiba} scores.
 
@@ -182,7 +201,7 @@ The deep learning method was implemented with various filter sizes of Convolutio
      3 & S4 & 8 & 8 & 0.815464 & 1.614631 \\ \hline
      4 & S4 & 8 & 12 & 0.787073 & 0.485298 \\ \hline
     \end{tabular}
-    \label{table:results}
+    \label{table:results} 
 \end{table}
 
 Here we obtain four different models for prediction of drug and protein interaction. The correct model to choose will depend on type of drug and protein fed into the learning algorithm. To use the correct model, the research work following steps depending on check with input protein FASTA and drug SMILES sequence being fed:
@@ -191,7 +210,7 @@ Here we obtain four different models for prediction of drug and protein interact
     \item If drug is not found but protein is found in training dataset, use model S2 to predict the KIBA score.
     \item If protein is found but drug is not found in training dataset, use model S3 to predict the KIBA score.
     \item If none of the proteins or drugs is found in training dataset, use model S4 to predict the KIBA score.
-\end{itemize}
+\end{itemize} 
 
 \subsubsection{Performance of optimizers in Setting 1}
 
@@ -240,7 +259,7 @@ Table \ref{table:results} shows that the optimal filter window size under all se
     }
     \qquad
     \subfloat[][Setting 2]{
-        \includegraphics[width=.9\textwidth]{mainmatter/4-Results/images/S3_CI.png}
+        \includegraphics[width=.9\textwidth]{mainmatter/4-Results/images/S2_CI.png}
         \label{fig:s2_cindex}
     }
     \caption[Concordance Score during Training (a)]{Plot of Training-Validation C-Index Scores over various Settings: 
@@ -252,7 +271,7 @@ Table \ref{table:results} shows that the optimal filter window size under all se
 \begin{figure} \centering
     \qquad
     \subfloat[][Setting 3]{
-        \includegraphics[width=.9\textwidth]{mainmatter/4-Results/images/S2_CI.png}
+        \includegraphics[width=.9\textwidth]{mainmatter/4-Results/images/S3_CI.png}
         \label{fig:s3_cindex}
     }
     \qquad
@@ -260,14 +279,16 @@ Table \ref{table:results} shows that the optimal filter window size under all se
         \includegraphics[width=.9\textwidth]{mainmatter/4-Results/images/S4_CI.png}
         \label{fig:s4_cindex}
     }
-    \caption[Concordance Score during Training(b)]{ Plot of Training-Validation C-Index Scores over various Settings: \ref{sub@fig:s3_cindex} ranks 2\textsuperscript{nd} and \ref{sub@fig:s4_cindex} ranks the 3\textsuperscript{rd}. Setting S3 in Figure \ref{sub@fig:s3_cindex} was the most suitable training mode but it did not get good cindex score as to that of Setting S1 in Figure \ref{fig:s1_cindex}. Setting S4 in Figure \ref{sub@fig:s4_cindex} shows that the trainings being comparable to Setting S3. As expected both S3 and S4 missed one of their representative drug-protein pair during training.
+    \caption[Concordance Score during Training(b)]{ Plot of Training-Validation C-Index Scores over various Settings: \ref{sub@fig:s3_cindex} ranks 2\textsuperscript{nd} and \ref{sub@fig:s4_cindex} ranks the 4\textsuperscript{rd}. Setting S2 in Figure \ref{sub@fig:s2_cindex} shows that the trainings being comparable to Setting S3. As expected both S3 and S2 missed one of their representative drug-protein pair during training.
     }
     \label{fig:ci_curve_2}
-\end{figure}   
+\end{figure}
 
-The comparison between the scores evaluated in same dataset has been compared and presented in table \ref{table:results_comparison} \citep{ozturk2018deepdta}. The benchmark dataset is publicly available in Journal of Chemical Information and Modeling \citep{Tang2013}.
+The Figures \ref{fig:ci_curve}, \ref{fig:ci_curve_2} show that only S1 is a valid model. The dropout used improves the training for setting S1 only, that's why other settings S2, S3 and S4 have validation c-index score always higher than training c-index scores.
 
-\begin{table} [H]
+The comparison between the scores evaluated in same dataset has been compared and presented in table \ref{table:results_comparison} \citep{ozturk2018deepdta}. The benchmark dataset is publicly available in Journal of Chemical Information and Modeling \citep{Tang2013,He2017}.
+
+\begin{table}[H] 
     \centering
     \caption[Results Comparison]{Comparison of performace in prediction scores of protein-drug interaction problem. The performance of other algorithms is retrieved from literature~\citep{ozturk2018deepdta}. The method from this research is represented by FeatDTI. It performs the best amongst all the predictors, with the closest predictor being the DeepDTA.}
     \label{table:results_comparison}
