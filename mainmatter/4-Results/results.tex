@@ -1,4 +1,4 @@
-\chapter{Results}
+\chapter{Results and Discussion}
 
 
 \section{Experiments}
@@ -248,6 +248,26 @@ The values obtained by using different optimizers is shown in table \ref{table:o
     \caption[Optimizer Chart: CI and MSE]{Bar Chart: Plot of concordance index (CI) and Mean Squared Error(MSE). Adam Optimizer~\ref{sub@fig:opt-ci} shows highest CI score and \ref{sub@fig:opt-mse} shows lowest MSE among all other optimizers. The worst is statistic gradient descent optimizer for protein-drug interaction prediction.}
     \label{fig:optimizer_plot}
 \end{figure}
+
+\subsubsection{Validation}
+To validate the results obtained by the work, Hold-Out test was used on different test train splits. The train-test-validate sets were trained in S1 setting (See Figure \ref{fig:train_val}). The results have been tabulated in table \ref{table:validation_hold_out}.
+
+\begin{table}
+    \centering
+    \caption[Validation Using Test-Train Splits]{The table below presents different test-train splits used by the work. The results indicate that the obtained c-index score is highly dependent on chosen test-train-split sets. With the decreasing size of validation set, the difficult protein-drug sets were learned by the model. }
+    \begin{tabular}{|r|r|c|c|c|}
+    \hline
+    
+    S.No. & Train-Test-Validate & Setting & C-index Score  & C-index Score  \\
+        &                       &          & (Training) & (Testing)        \\
+    \hline
+    1 & 60-20-20 & S1 & 0.9072 & 0.8730 \\ \hline
+    2 & 70-20-10 & S1 & 0.9286 & 0.8963 \\ \hline
+    3 & 80-10-10 & S1 & 0.9306 & 0.9014 \\ \hline
+    
+    \end{tabular}
+    \label{table:validation_hold_out}
+    \end{table}
 
 % Observing the table \ref{table:optimizer}, the calculations show that
 

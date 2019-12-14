@@ -29,13 +29,18 @@
 \date{2019}
 
 \title{Protein Drug Interaction from their sequence:Using SMILES and FASTA }
+\newcommand{\mytitle}{Protein Drug Interaction from their sequence:Using SMILES and FASTA}
 \newcommand{\mysubtitle}{}
 \newcommand{\mygrade}{Electrical Engineering}
 \newcommand{\myuniversity}{Tribhuwan University}
 \newcommand{\myinstitute}{Institute of Engineering}
 \newcommand{\mydepartment}{Department of Electronics and Computer Engineering}
 \newcommand{\mycampus}{Pulchowk Campus}
-\newcommand{\myadvisorA}{Dr. Surendra Shrestha}
+\newcommand{\myadvisorA}{Associate Prof. Surendra Shrestha}
+\newcommand{\myexternal}{Er. Saurav Dhungana}
+\newcommand{\myexternalOffice}{Lead Engineer, Leapfrog Technology, Inc. }
+\newcommand{\myexternalOfficeAddress}{Charkhal Road, Kathmandu, Nepal}
+\newcommand{\mychair}{Prof. Subarna Shakya, PhD} 
 %\newcommand{\myadvisorB}{Department Bertan of Electrical Engineering}
 %\newcommand{\myadvisorC}{Department Bertan of Electrical Engineering}
 
@@ -67,9 +72,8 @@
 
 %%%%%%%%%%%%%%%%% MAIN DOCUMENT
 
-\begin{document}
 \input{self_config.tex}
-
+\begin{document}
 \frenchspacing
 
 % Frontmatter
@@ -93,14 +97,16 @@
 %   \refstepcounter{\@captype}%
 %   {\centering #1\par}%
 % }
-
+\linespread{2}
 %\input{frontmatter/1-coverpage.tex}
 \input{frontmatter/2-titlepage.tex}
 \thispagestyle{empty}
-\input{frontmatter/3-dedication.tex}
-\thispagestyle{empty}
 \input{frontmatter/titlepages/copyright.tex}
 \thispagestyle{empty}
+% \input{frontmatter/titlepages/acceptance.tex}
+% \thispagestyle{empty}
+% \input{frontmatter/3-dedication.tex}
+\thispagestyle{empty} 
 \input{frontmatter/titlepages/recommendatiion.tex}
 \thispagestyle{empty}
 
@@ -137,9 +143,10 @@
 
 \addtocontents{lof}{~\hfill\textbf{Page}\par}
 \addtocontents{lot}{~\hfill\textbf{Page}\par}
-
+\setglossarystyle{alttree}
+\glssetwidest{helloworld}
 \printglossary[type=\acronymtype]
-\thispagestyle{empty}
+\thispagestyle{empty} 
 % \printnomenclature
 
 % \newcommand{\listequationsname}{List of Equations}
