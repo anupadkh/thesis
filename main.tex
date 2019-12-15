@@ -120,7 +120,6 @@
 \renewcommand{\contentsname}{Table of Contents}
 \tableofcontents
 \thispagestyle{empty}
-
 {
 \let\oldnumberline\numberline%
 \renewcommand{\numberline}{\figurename~\oldnumberline}
@@ -139,7 +138,7 @@
 
 
 \addtocontents{toc}{~\hfill\textbf{Page}\par}
-
+% \renewcommand{\cftchappresnum}{Chapter }
 
 \addtocontents{lof}{~\hfill\textbf{Page}\par}
 \addtocontents{lot}{~\hfill\textbf{Page}\par}

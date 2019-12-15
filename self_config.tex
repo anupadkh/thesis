@@ -46,3 +46,12 @@
    [1]{\setlength{\leftmargin}{\bibhang}\setlength{\itemindent}{-\parindent}%
        \setlength{\itemsep}{\bibsep}\setlength{\parsep}{\z@}}
 \makeatother
+
+\usepackage{titletoc}% http://ctan.org/pkg/titletoc
+\titlecontents*{chapter}% <section-type>
+  [0pt]% <left>
+  {}% <above-code>
+  % {\MakeUppercase{chapter \NUMBERstring{chapter} :} \: }
+  {\bfseries\MakeUppercase\chaptername ~ \bfseries\MakeUppercase\thecontentslabel\quad}% <numbered-entry-format>
+  {}% <numberless-entry-format>
+  {\bfseries\hfill\contentspage}% <filler-page-format>
