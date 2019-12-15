@@ -4,28 +4,31 @@
 
 \begin{table}
   \centering
-  \caption[PSSM Analysis Design]{PSSM Scoring Matrix Calculation Steps: \ref{sub@table:PSSM_Analysis:fasta} shows 10 assumed protein fasta sequences. Their lengths is equal to 9 for this example. \ref{sub@table:PSSM_Analysis:frequency} shows the frequency of each amino acids (labelled in first column of the table with alphabetic symbols) present in positional index of fasta sequence from table \ref{sub@table:PSSM_Analysis:fasta}. \ref{sub@table:log_likelihood_pssm} shows the probability of amino acids appearing in different positions of fasta sequence for the protein in table \ref{sub@table:PSSM_Analysis:fasta}. \ref{sub@table:motif_movement} shows the calculation of score for string'\uppercase{agccccagc}' from example in \ref{example:fasta}. This matrix is used to tabulate PSSM matrix at each positional index of the example protein. \ref{sub@wrapTable:pssm-score} tabulates the scores obtained from \ref{sub@table:motif_movement} by sliding window of length 9 at first 10 positions for example in \ref{example:fasta}.
+  \caption[PSSM Analysis Design]{PSSM Scoring Matrix Calculation Steps. The ordering of tables follows the calculation procedure.
   }
   \label{table:PSSM_Analysis}
-    \subfloat[][Protein FASTA Sequence (Motifs)]{
+    \subfloat[height=30em][Motiffs of length 9.]{
       \label{table:PSSM_Analysis:fasta} 
-      % \subcaption{10 assumed protein fasta sequences. Their lengths is equal to 9 for this example.}
-      \begin{tabular}{|l|l|} \toprule
+      % \hspace*{5cm}
+      \begin{tabular}{|l|l|} 
+      \toprule
       \hline
-      1 & GAGGTAAAC \\ \hline
-      2 & TCCGTAAGT \\ \hline
-      3 & CAGGTTGGA \\ \hline
-      4 & ACAGTCAGT \\ \hline
-      5 & TAGGTCATT \\ \hline
-      6 & TAGGTACTG \\ \hline
-      7 & ATGGTAACT \\ \hline
-      8 & CAGGTATAC \\ \hline
-      9 & TGTGTGAGT \\ \hline
-      10 & AAGGTAAGT \\ \hline
+      S.No. & Motif Sequence  \\ \hline
+      1 & G A G G T A A A C \\ \hline
+      2 & T C C G T A A G T \\ \hline
+      3 & C A G G T T G G A \\ \hline
+      4 & A C A G T C A G T \\ \hline
+      5 & T A G G T C A T T \\ \hline
+      6 & T A G G T A C T G \\ \hline
+      7 & A T G G T A A C T \\ \hline
+      8 & C A G G T A T A C \\ \hline
+      9 & T G T G T G A G T \\ \hline
+      10 & A A G G T A A G T \\ \hline
       
       \end{tabular}
     }
-    \subfloat[][Frequency Table]{
+
+    \subfloat[][Frequency Table. The frequency of (ACGT) in motifs of \ref{sub@table:PSSM_Analysis:fasta}]{
       \label{table:PSSM_Analysis:frequency}
       \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|} \toprule
         \hline
@@ -41,7 +44,7 @@
     } 
   
   
-  \subfloat[][Log-Likelihood Matrix]{
+  \subfloat[][Log-Likelihood Matrix. The probability of (A,C,G,T) appearing in different positions in table \ref{sub@table:PSSM_Analysis:fasta}]{
     % \rule{4cm}{0cm}
     \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|} \toprule
       \hline 
@@ -57,7 +60,7 @@
     }
      
   
-  \subfloat[][Sliding Window Score Calculation]{
+  \subfloat[][Sliding Window Score Calculation. The calculation of score for string'\uppercase{agccccagc}' from example \ref{example:fasta}.]{
     \centering
     \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
     \hline 
@@ -73,7 +76,7 @@
     }
 
     
-    \subfloat[][Score of sliding window motifs]{
+    \subfloat[][Score of sliding window motifs.]{
     \label{wrapTable:pssm-score}
     \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
       \hline
@@ -83,12 +86,16 @@
     }
 \end{table}
 
-Table \ref{table:PSSM_Analysis} shows a conventional process of calculating PSSM score values. The sequence following shows the process of calculating the scores once the PSSM distribution of the whole protein sequence is calculated. Table \ref{table:motif_movement} shows the score distribution of lowercase amino acid sequence (starting after 4th position) determined by the size of the sliding window.
+Table \ref{table:PSSM_Analysis} shows a conventional process of calculating PSSM score values. The score is calculated for Example \ref{example:fasta} below:
+
 
 \begin{displayquote}
   \seqsplit{ACTC\textbf{agccccagc}GGAGGTGAAGGACGTCCTTCCCCAGGAGCCGGTGAGAAGCGCAGTCGGGGGCACGGGGATGAGCTCAGGGGCCTCTAGAAAGATGTAGCTGGGACCTCGGGAAGCCCTGGCCTCCAGGTAGTCTCAGGAGAGCTACTCAGGGTCGGGCTTGGGGAGAGGAGGAGCGGGGGTGAGGCCAGCAGCA} 
   \label{example:fasta}
 \end{displayquote}
+
+Table \ref{table:PSSM_Analysis:fasta} shows 10 assumed protein fasta sequences. Table \ref{table:PSSM_Analysis:frequency} shows the frequency of each amino acids (labelled in first column of the table with alphabetic symbols) present in positional index of fasta sequence from table \ref{table:PSSM_Analysis:fasta}. Table \ref{table:log_likelihood_pssm} shows the probability of amino acids appearing in different positions of fasta sequence for the protein in table \ref{table:PSSM_Analysis:fasta}. Table \ref{table:motif_movement} shows the calculation of score for string'\uppercase{agccccagc}' from example in \ref{example:fasta}. This matrix is used to tabulate PSSM matrix at each positional index of the example protein. Table \ref{wrapTable:pssm-score} tabulates the scores obtained from Table \ref{table:motif_movement} by sliding window of length 9 at first 10 positions for example in \ref{example:fasta}. Table \ref{table:motif_movement} shows the score distribution of lowercase amino acid sequence (starting after 4th position) determined by the size of the sliding window.
+
 
 
 
