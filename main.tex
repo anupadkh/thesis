@@ -107,6 +107,8 @@
 % \renewcommand{\cftchappagefont}{\normalfont}
 % \frontmatter
 \renewcommand{\cftchapafterpnum}{\vspace{-5pt}}
+\renewcommand{\cftsecafterpnum}{\vspace{-5pt}}
+\renewcommand{\cftsubsecafterpnum}{\vspace{-5pt}}
 
 \input{frontmatter/2-titlepage.tex}
 \thispagestyle{empty}
@@ -166,7 +168,7 @@
 \setglossarystyle{alttree}
 \glssetwidest{helloworld}
 \printglossary[type=\acronymtype, title={List of Abbreviations}]
-\setcounter{page}{12}
+\setcounter{page}{11}
 \addcontentsline{toc}{chapter}{List of Abbreviations}
 % \thispagestyle{empty} 
 % \printnomenclature
