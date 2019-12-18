@@ -11,7 +11,22 @@
   {\centering\normalfont\normalsize\bfseries}
   {\MakeUppercase{chapter \NUMBERstring{chapter} :} \: }
   {12pt}
-  {\MakeUppercase}
+  {\MakeUppercase} 
+
+\setlength\cftaftertoctitleskip{0pt}
+\setlength\cftbeforetoctitleskip{0pt}
+\setlength\cftafterloftitleskip{0pt}
+\setlength\cftbeforeloftitleskip{0pt}
+\setlength\cftafterlottitleskip{0pt}
+\setlength\cftbeforelottitleskip{0pt}
+ 
+\renewcommand{\cfttoctitlefont}
+  {\centering\fontsize{12pt}{12pt}\selectfont\bfseries\MakeUppercase}
+\renewcommand{\cftloftitlefont}
+  {\centering\fontsize{12pt}{12pt}\selectfont\bfseries\MakeUppercase}
+\renewcommand{\cftlottitlefont}
+  {\centering\fontsize{12pt}{12pt}\selectfont\bfseries\MakeUppercase}
+
 
 \sectionfont{\fontsize{12pt}{12pt}\selectfont}
 
@@ -48,10 +63,10 @@
 \makeatother
 
 \usepackage{titletoc}% http://ctan.org/pkg/titletoc
-\titlecontents*{chapter}% <section-type>
-  [0pt]% <left>
-  {}% <above-code>
-  % {\MakeUppercase{chapter \NUMBERstring{chapter} :} \: }
-  {\bfseries\MakeUppercase\chaptername ~ \bfseries\MakeUppercase\thecontentslabel\quad}% <numbered-entry-format>
-  {}% <numberless-entry-format>
-  {\bfseries\hfill\contentspage}% <filler-page-format>
+% \titlecontents*{chapter}% <section-type>
+%   [0pt]% <left>
+%   {}% <above-code>
+%   % {\MakeUppercase{chapter \NUMBERstring{chapter} :} \: }
+%   {\bfseries\MakeUppercase\chaptername ~ \bfseries\MakeUppercase\thecontentslabel\quad}% <numbered-entry-format>
+%   {}% <numberless-entry-format>
+%   {\bfseries\hfill\contentspage}% <filler-page-format>

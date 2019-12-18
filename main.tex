@@ -23,16 +23,16 @@
  
 
 %%%%%%%%%%%%%%%%% PREAMBLE
-
+\addtocontents{toc}{~\hfill\textbf{Page}\par}
 
 \author{Anup Adhikari}
 \date{2019}
 
-\title{Protein Drug Interaction from their sequence:Using SMILES and FASTA }
+\title{Protein~ Drug~ Interaction~ from~ their~ Sequence:~ using~ SMILES~ and~ FASTA }
 \newcommand{\mytitle}{Protein Drug Interaction from their sequence:Using SMILES and FASTA}
 \newcommand{\mysubtitle}{}
 \newcommand{\mygrade}{Electrical Engineering}
-\newcommand{\myuniversity}{Tribhuwan University}
+\newcommand{\myuniversity}{Tribhuvan University}
 \newcommand{\myinstitute}{Institute of Engineering}
 \newcommand{\mydepartment}{Department of Electronics and Computer Engineering}
 \newcommand{\mycampus}{Pulchowk Campus}
@@ -99,53 +99,76 @@
 % }
 \linespread{2}
 %\input{frontmatter/1-coverpage.tex}
+\let\cftchapfontorig\cftchapfont
+\let\cftchappagefontorig\cftchappagefont
+\renewcommand{\cftchapfont}{\itshape}
+\renewcommand{\cftchappagefont}{\itshape}%
+% \renewcommand{\cftchapfont}{\normalfont}
+% \renewcommand{\cftchappagefont}{\normalfont}
+% \frontmatter
+\renewcommand{\cftchapafterpnum}{\vspace{-5pt}}
+
 \input{frontmatter/2-titlepage.tex}
 \thispagestyle{empty}
+\pagenumbering{roman}
+
+\setcounter{page}{1}
+ 
 \input{frontmatter/titlepages/copyright.tex}
-\thispagestyle{empty}
+% \thispagestyle{empty}
 % \input{frontmatter/titlepages/acceptance.tex}
 % \thispagestyle{empty}
-% \input{frontmatter/3-dedication.tex}
-\thispagestyle{empty} 
+\input{frontmatter/3-dedication.tex}
+% \thispagestyle{empty} 
 \input{frontmatter/titlepages/recommendatiion.tex}
-\thispagestyle{empty}
+% \thispagestyle{empty}
 
 \input{frontmatter/titlepages/acceptance.tex}
 
-\thispagestyle{empty}
+% \thispagestyle{empty}
 \input{frontmatter/4-abstract.tex}
-\thispagestyle{empty}
+% \thispagestyle{empty}
 \input{frontmatter/5-acknowledges.tex}
-\thispagestyle{empty}
+% \thispagestyle{empty}
+\pagebreak
 \renewcommand{\contentsname}{Table of Contents}
 \tableofcontents
-\thispagestyle{empty}
+% \thispagestyle{empty}
+
+\pagebreak
 {
 \let\oldnumberline\numberline%
 \renewcommand{\numberline}{\figurename~\oldnumberline}
 \renewcommand*{\addvspace}[1]{}
+\addcontentsline{toc}{chapter}{List of Figures}
 \listoffigures
-\thispagestyle{empty}
+% \thispagestyle{empty}
 }
 
+\pagebreak
 {
 \let\oldnumberline\numberline%
 \renewcommand{\numberline}{\tablename~\oldnumberline}%
 \renewcommand*{\addvspace}[1]{}
+\addcontentsline{toc}{chapter}{List of Tables}
 \listoftables
 }
-\thispagestyle{empty} 
+% \thispagestyle{empty} 
 
 
-\addtocontents{toc}{~\hfill\textbf{Page}\par}
+
 % \renewcommand{\cftchappresnum}{Chapter }
 
 \addtocontents{lof}{~\hfill\textbf{Page}\par}
 \addtocontents{lot}{~\hfill\textbf{Page}\par}
+
+\pagebreak
 \setglossarystyle{alttree}
 \glssetwidest{helloworld}
-\printglossary[type=\acronymtype]
-\thispagestyle{empty} 
+\printglossary[type=\acronymtype, title={List of Abbreviations}]
+\setcounter{page}{12}
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+% \thispagestyle{empty} 
 % \printnomenclature
 
 % \newcommand{\listequationsname}{List of Equations}
@@ -160,7 +183,17 @@
 % \renewcommand{\doublespacing}
 % \newpage
 % \pagenumbering{arabic}
-% \setcounter{page}{0}
+
+
+
+\addtocontents{toc}{\protect\renewcommand{\cftchapfont}{\cftchapfontorig}}
+\addtocontents{toc}{\protect\renewcommand{\cftchappagefont}{\cftchappagefontorig}}
+% \mainmatter
+% \part{Report}
+\setcounter{chapter}{0}
+\blankpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
 
 \input{mainmatter/1-Introduction/introduction.tex}
@@ -171,8 +204,14 @@
 \input{mainmatter/4-Results/results.tex}
 \input{mainmatter/5-Conclusion/conclusion.tex}
 % \input{mainmatter/5-Conclusion/limitations.tex}
-
+ 
 % Backmatter
+\titleformat{\chapter}[hang]
+  {\centering\normalfont\normalsize\bfseries}
+  {\MakeUppercase{{ } } \: }
+  {12pt}
+  {\MakeUppercase} 
+
 
 \input{backmatter/appendix/appendix.tex}
 
